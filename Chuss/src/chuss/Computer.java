@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Computer implements Interactable {
 
+    //FIELDS
+
     private Move chosenMove;
 
     public Computer() {
@@ -19,10 +21,13 @@ public class Computer implements Interactable {
     }
 
     private Move chooseMove() {
+        //Starts the move evaluation process.
 
         return null;
 
     }
+
+    //ACCESSORS
 
     public Move getMove() {
 

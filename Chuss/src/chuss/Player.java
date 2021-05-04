@@ -20,7 +20,7 @@ public class Player implements Interactable {
 
         this.board = board;
 
-        getUserInput();
+        chosenMove = getUserInput();
 
     }
 
@@ -31,7 +31,6 @@ public class Player implements Interactable {
         System.out.print("Enter your move (? for help): ");
 
         String move = input.nextLine();
-        System.out.print(move);
 
         if(move.equals("?")) {
             //If the user asks for help
@@ -45,9 +44,11 @@ public class Player implements Interactable {
 
         }
 
-        return null;
+        return new Move(board, move);
 
     }
+
+    //ACCESSORS
 
     public Move getMove() {
 

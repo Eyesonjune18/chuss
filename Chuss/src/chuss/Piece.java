@@ -1,6 +1,8 @@
 package chuss;
 
-//The Piece parent object. Stores data and behavior required by all types of pieces.
+//The Piece objects. All child Piece objects extend the main Piece object,
+//Which stores common data and behavior that is required by all pieces.
+//Individual pieces store any necessary data and behavior for their particular type.
 
 import java.awt.*;
 
@@ -31,6 +33,14 @@ public class Piece {
         moveCount = 0;
         this.pos = pos;
         this.color = color;
+
+    }
+
+    //ACCESSORS
+
+    public String getString() {
+
+        return pString;
 
     }
 

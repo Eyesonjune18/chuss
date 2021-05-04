@@ -8,15 +8,18 @@ import java.awt.*;
 
 public class Board {
 
+    //FIELDS
+
     private final boolean DEBUG = false;
     //Constant to determine whether [DEBUG TEXT] will be displayed for this class
-
     private final int size = 8;
     //The amount of tiles (width and height) on the board
     private final int tSize = size - 1;
     //Used when referencing the "true size," usually when iterating starting from 0
     private final Piece[][] board;
     //The Piece array that represents the actual chess board
+
+    //CONSTRUCTORS
 
     public Board() {
         //The default constructor for the Board object, creates a board
@@ -37,6 +40,7 @@ public class Board {
     }
 
     private Piece[][] readFen(String fen) {
+        //Takes in a FEN string and turns it into a Piece array (board).
 
         Piece[][] fenBoard = new Piece[size][size];
         //Initialize a board to add pieces to and return
@@ -115,9 +119,9 @@ public class Board {
                 if(board[x][y] != null) {
                     //If there is a piece on the tile
 
-                    if(squaresPrinted % 2 == 0) System.out.print("[" + board[x][y].pString + "]");
+                    if(squaresPrinted % 2 == 0) System.out.print("[" + board[x][y].getString() + "]");
                     //If squaresPrinted is even, print "[<pString>]"
-                    else System.out.print("(" + board[x][y].pString + ")");
+                    else System.out.print("(" + board[x][y].getString() + ")");
                     //If squaresPrinted is odd, print "(<pString>)"
 
                 } else {
@@ -157,10 +161,24 @@ public class Board {
 
     }
 
+    //ACCESSORS
+
     public Piece pieceAt(Point boardPos) {
 
         if(board[boardPos.x][boardPos.y] != null) return board[boardPos.x][boardPos.y];
         else return null;
+
+    }
+
+    //MUTATORS
+
+    public void doMove(Move move) {
+
+        System.out.println("Moving piece " + move.getMovedPiece().getString());
+        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
+        board[move.getStartX()][move.getStartY()] = null;
+
+        printBoard();
 
     }
 
