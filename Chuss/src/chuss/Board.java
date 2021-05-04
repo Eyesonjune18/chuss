@@ -39,6 +39,35 @@ public class Board {
 
     }
 
+
+    //ACCESSORS
+
+    public Piece pieceAt(Point boardPos) {
+
+        if(board[boardPos.x][boardPos.y] != null) return board[boardPos.x][boardPos.y];
+        else return null;
+
+    }
+
+    //MUTATORS
+
+    public void doMove(Move move) {
+
+        if(DEBUG) System.out.println("Moving piece: " + move.getMovedPiece().getString());
+        //[DEBUG TEXT] Prints the string of the piece being moved
+
+        if(!move.getMovedPiece().isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
+        //If the move is illegal, throw an IllegalArgument
+
+        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
+        //Sets the tile at the end position to the moved piece
+        board[move.getStartX()][move.getStartY()] = null;
+        //Sets the tile at the start position to null (empty tile)
+
+    }
+
+    //OTHER
+
     private Piece[][] readFen(String fen) {
         //Takes in a FEN string and turns it into a Piece array (board).
 
@@ -59,7 +88,7 @@ public class Board {
             //TODO: Possibly convert to HashMap
 
             if(c >= '1' && c <= '8') x += (c - 49);
-            //If c is between num 1 through 8, add num - 1 to the x value
+                //If c is between num 1 through 8, add num - 1 to the x value
             else if(c == '/') {
                 x = -1;
                 //Go back to the start of the rank
@@ -82,8 +111,8 @@ public class Board {
             else if(c == 'k') fenBoard[x][y] = new King(Color.BLACK, new Point(x, y));
             else if(c == 'e') fenBoard[x][y] = new Earl(Color.BLACK, new Point(x, y));
             else if(c == 'm') fenBoard[x][y] = new Monk(Color.BLACK, new Point(x, y));
-            else throw new IllegalArgumentException("ERROR: invalid FEN string");
-            //If c is not a recognized character, inform the user that the FEN string is invalid
+            else throw new IllegalArgumentException("ERROR: Invalid FEN string");
+            //If c is not a recognized character, throw an IllegalArgument
 
             x++;
             //Every time the current character has been checked, move over a tile
@@ -128,7 +157,7 @@ public class Board {
                     //If there is no piece on the tile
 
                     if(squaresPrinted % 2 == 0) System.out.print("[ ]");
-                    //If squaresPrinted is even, print "[ ]"
+                        //If squaresPrinted is even, print "[ ]"
                     else System.out.print("( )");
                     //If squaresPrinted is odd, print "( )"
 
@@ -158,27 +187,7 @@ public class Board {
 
         //[TEMPORARILY REMOVED] drawCaptured(blackCaptured);
         System.out.println();
-
-    }
-
-    //ACCESSORS
-
-    public Piece pieceAt(Point boardPos) {
-
-        if(board[boardPos.x][boardPos.y] != null) return board[boardPos.x][boardPos.y];
-        else return null;
-
-    }
-
-    //MUTATORS
-
-    public void doMove(Move move) {
-
-        System.out.println("Moving piece " + move.getMovedPiece().getString());
-        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
-        board[move.getStartX()][move.getStartY()] = null;
-
-        printBoard();
+        System.out.println();
 
     }
 

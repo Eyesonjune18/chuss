@@ -13,9 +13,14 @@ public class ChussMain {
         //[TEST CODE]
         Board board = new Board();
         board.printBoard();
-        Player p1 = new Player(board);
-        board.doMove(p1.getMove());
-        board.printBoard();
+
+        while(true) {
+
+            Player p1 = new Player(board);
+            board.doMove(p1.getMove());
+            board.printBoard();
+
+        }
         //[END OF TEST CODE]
 
     }

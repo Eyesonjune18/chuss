@@ -28,23 +28,32 @@ public class Player implements Interactable {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter your move (? for help): ");
+        String move = null;
+        boolean again = false;
 
-        String move = input.nextLine();
+        do {
 
-        if(move.equals("?")) {
-            //If the user asks for help
+            System.out.print("Enter your move (? for help): ");
+            move = input.nextLine();
 
-            System.out.printf("%nHELP: To move, you must type a move in the following format:"
-                + "%n<STARTING TILE> <ENDING TILE>"
-                + "%nThe starting tile is the tile of the piece you wish to move."
-                + "%nThe ending tile is the tile you wish to move your piece to."
-                + "%nEach tile is notated with \"<COLUMN><RANK>\", example: \"e5\""
-                + "%n%nFull example move: \"a5 g5\"%n");
+            if(move.equals("?")) {
+                //If the user asks for help
 
-        }
+                System.out.printf("%nHELP: To move, you must type a move in the following format:"
+                        + "%n<STARTING TILE> <ENDING TILE>"
+                        + "%nThe starting tile is the tile of the piece you wish to move."
+                        + "%nThe ending tile is the tile you wish to move your piece to."
+                        + "%nEach tile is notated with \"<COLUMN><RANK>\", example: \"e5\""
+                        + "%n%nFull example move: \"a5 g5\"%n");
+
+                again = true;
+
+            } else again = false;
+
+        } while(again);
 
         return new Move(board, move);
+        //Returns a Move object made from the SMN string
 
     }
 
