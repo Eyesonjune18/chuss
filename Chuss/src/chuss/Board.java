@@ -12,8 +12,10 @@ public class Board {
     //Constant to determine whether [DEBUG TEXT] will be displayed for this class
 
     private final int size = 8;
+    //The amount of tiles (width and height) on the board
     private final int tSize = size - 1;
-    private Piece[][] board;
+    //Used when referencing the "true size," usually when iterating starting from 0
+    private final Piece[][] board;
     //The Piece array that represents the actual chess board
 
     public Board() {
@@ -34,7 +36,7 @@ public class Board {
 
     }
 
-    protected Piece[][] readFen(String fen) {
+    private Piece[][] readFen(String fen) {
 
         Piece[][] fenBoard = new Piece[size][size];
         //Initialize a board to add pieces to and return
@@ -100,7 +102,7 @@ public class Board {
         //Keeps track of the total number of squares that has been printed
 
         for(int y = tSize; y >= 0; y--) {
-            //Loop through y-values from the top to the bottom
+            //Loop through y-values from top to bottom
 
             if(y != tSize) System.out.println();
             //If not on the first iteration of y-loop, go down a line (avoids leading line break)
@@ -108,39 +110,57 @@ public class Board {
             //Print the rank number
 
             for(int x = 0; x <= tSize; x++) {
+                //Loop through x-values from left to right
 
                 if(board[x][y] != null) {
+                    //If there is a piece on the tile
 
                     if(squaresPrinted % 2 == 0) System.out.print("[" + board[x][y].pString + "]");
+                    //If squaresPrinted is even, print "[<pString>]"
                     else System.out.print("(" + board[x][y].pString + ")");
+                    //If squaresPrinted is odd, print "(<pString>)"
 
                 } else {
+                    //If there is no piece on the tile
 
                     if(squaresPrinted % 2 == 0) System.out.print("[ ]");
+                    //If squaresPrinted is even, print "[ ]"
                     else System.out.print("( )");
+                    //If squaresPrinted is odd, print "( )"
 
                 }
 
                 squaresPrinted++;
+                //Increment squaresPrinted for each iteration of the x-loop
 
             }
 
             squaresPrinted++;
+            //Increment squaresPrinted for each iteration of the y-loop
 
         }
 
         System.out.println();
         System.out.print(" ");
+        //Print an extra line and the leading whitespace for the column identifiers
 
         for(int i = 0; i < size; i++) {
+            //Repeat <size> times
 
-            char colChar = (char) (i + 97);
-            System.out.print("  " + colChar);
+            System.out.print("  " + (char) (i + 97));
+            //Print the column identifier chars by casting from int
 
         }
 
         //[TEMPORARILY REMOVED] drawCaptured(blackCaptured);
         System.out.println();
+
+    }
+
+    public Piece pieceAt(Point boardPos) {
+
+        if(board[boardPos.x][boardPos.y] != null) return board[boardPos.x][boardPos.y];
+        else return null;
 
     }
 

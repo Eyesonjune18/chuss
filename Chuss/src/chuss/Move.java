@@ -20,6 +20,27 @@ public class Move {
 
     }
 
+    public Move(Board board, String moveStr) {
+
+        Point[] move = interpretMove(moveStr);
+
+        movedPiece = board.pieceAt(move[0]);
+        startPos = move[0];
+        endPos = move[1];
+
+    }
+
+    private Point[] interpretMove(String moveStr) {
+
+        Point[] move = new Point[2];
+
+        moveStr = moveStr.replace(" ", "");
+        char[] cMove = moveStr.toCharArray();
+
+        return move;
+
+    }
+
     public Piece getMovedPiece() {
 
         return movedPiece;

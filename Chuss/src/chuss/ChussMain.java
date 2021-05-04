@@ -13,7 +13,7 @@ public class ChussMain {
         //[TEST CODE]
         Board board = new Board();
         board.printBoard();
-        board.printBoard();
+        new Player(board);
         //[END OF TEST CODE]
 
     }

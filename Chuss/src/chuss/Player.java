@@ -7,12 +7,18 @@ import java.util.Scanner;
 
 public class Player implements Interactable {
 
-    private Move chosenMove;
+    private final boolean DEBUG = false;
+    //Constant to determine whether [DEBUG TEXT] will be displayed for this class
 
-    public Player() {
+    private Move chosenMove;
+    private final Board board;
+
+    public Player(Board board) {
         //The constructor for the Player object. Gets a one-time user
         //input and turns it into a move object to be passed back to
         //the main game.
+
+        this.board = board;
 
         getUserInput();
 
@@ -21,6 +27,23 @@ public class Player implements Interactable {
     private Move getUserInput() {
 
         Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter your move (? for help): ");
+
+        String move = input.nextLine();
+        System.out.print(move);
+
+        if(move.equals("?")) {
+            //If the user asks for help
+
+            System.out.printf("%nHELP: To move, you must type a move in the following format:"
+                + "%n<STARTING TILE> <ENDING TILE>"
+                + "%nThe starting tile is the tile of the piece you wish to move."
+                + "%nThe ending tile is the tile you wish to move your piece to."
+                + "%nEach tile is notated with \"<COLUMN><RANK>\", example: \"e5\""
+                + "%n%nFull example move: \"a5 g5\"%n");
+
+        }
 
         return null;
 
