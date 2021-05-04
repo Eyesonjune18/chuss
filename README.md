@@ -15,4 +15,4 @@ VOCAB KEY
   - Checkmate: when a king is being attacked by another piece and there is no legal move to take the king out of check
   - Self-check: when a move results in one's own king being in check
   - FEN (Forsyth-Edwards Notation): a string representing the entire board state
-  - SMN (Standard Move Notation): a string representing a single move, in format <start pos> <end pos>
+  - SMN (Standard Move Notation): a string representing a single move, in format "[start pos] [end pos]"
