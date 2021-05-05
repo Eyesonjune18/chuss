@@ -194,10 +194,9 @@ public class Move {
     private MoveType findMoveType() {
         //Figures out what direction the move goes in
 
-        if(getAbsX() != 0 && getAbsY() == 0) return MoveType.HORIZONTAL;
-        else if(absX == 0 && getAbsY() != 0) return MoveType.VERTICAL;
-        else if(absX == 0 && getAbsY() == 0) return MoveType.NONE;
-        else if(absX == getAbsY()) return MoveType.DIAGONAL;
+        if(absX != 0 && absY == 0) return MoveType.HORIZONTAL;
+        else if(absX == 0 && absY != 0) return MoveType.VERTICAL;
+        else if(absX == absY) return MoveType.DIAGONAL;
         else if((absX == 1 && absY == 2) || (absX == 2 && absY == 1)) return MoveType.KNIGHT;
         else return MoveType.NONE;
 
@@ -208,12 +207,12 @@ public class Move {
         int modX = 1;
         int modY = 1;
 
-        if(getDelX() < 0) modX = -1;
-        if(getDelY() < 0) modY = -1;
+        if(delX < 0) modX = -1;
+        if(delY < 0) modY = -1;
 
         //TODO: Possibly add something to make sure only horizontal, vertical, and diagonal moves get cleared
 
-        if(getAbsX() == getAbsY()) {
+        if(absX == absY) {
             //If the move is diagonal
 
             int y = getStartY() + modY;
@@ -229,7 +228,7 @@ public class Move {
 
             }
 
-        } else if(getDelX() != 0 && getDelY() == 0) {
+        } else if(delX != 0 && delY == 0) {
             //If the move is horizontal
 
             for(int x = getStartX() + modX; x != getEndX(); x += modX) {
@@ -240,7 +239,7 @@ public class Move {
 
             }
 
-        } else if(getDelX() == 0 && getDelY() != 0) {
+        } else if(delX == 0 && delY != 0) {
             //If the move is vertical
 
             for(int y = getStartY() + modY; y != getEndY(); y += modY) {
