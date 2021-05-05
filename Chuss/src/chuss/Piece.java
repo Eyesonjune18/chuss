@@ -1,12 +1,12 @@
 package chuss;
 
 //The Piece objects. All child Piece objects extend the main Piece object,
-//Which stores common data and behavior that is required by all pieces.
+//which stores common data and behavior that is required by all pieces.
 //Individual pieces store any necessary data and behavior for their particular type.
 
 import java.awt.*;
 
-public class Piece {
+public abstract class Piece {
     /*
     GENERAL PIECE RULES:
     1. May not move to their current position
@@ -95,9 +95,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Pawn(Color color, Point pos) {
+    public Pawn(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "P";
         if(color == Color.BLACK) pString = "p";
 
@@ -130,13 +130,15 @@ public class Piece {
         int yChange = colorMod * (move.getEndY() - move.getStartY());
 
         if(xChange == 0 && yChange == 1 && move.getCapturedPiece() == null) c1 = true;
-        if(xChange == 0 && yChange == 2 && move.getCapturedPiece() == null && moveCount == 0 && move.getMoveBoard().pieceAt(new Point(move.getStartX(), (move.getStartY() + colorMod))) == null) c2 = true;
+        if(xChange == 0 && yChange == 2 && move.getCapturedPiece() == null && moveCount == 0 &&
+                move.getMoveBoard().pieceAt(new Point(move.getStartX(), move.getStartY() + colorMod)) == null) c2 = true;
         //TODO: Absolutely disgusting conditional above, must fix (possibly keep the "next square" as a field for pawns?)
         if(xChange == 1 && yChange == 1 && move.getCapturedPiece() != null) {
 
             if(move.getCapturedPiece().getColor() != color) c3 = true;
 
         }
+        //TODO: En passant captures
 
         return c1 ^ c2 ^ c3 ^ c4;
 
@@ -151,11 +153,26 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Rook(Color color, Point pos) {
+    public Rook(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "R";
         if(color == Color.BLACK) pString = "r";
+
+    }
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1 = false;
+        //If the move does not collide with any other pieces
+        boolean c2 = false;
+        //If the move is a valid castle
+
+        return c1 ^ c2;
 
     }
 
@@ -167,9 +184,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Knight(Color color, Point pos) {
+    public Knight(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "N";
         if(color == Color.BLACK) pString = "n";
 
@@ -183,9 +200,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Bishop(Color color, Point pos) {
+    public Bishop(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "B";
         if(color == Color.BLACK) pString = "b";
 
@@ -199,9 +216,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Queen(Color color, Point pos) {
+    public Queen(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "Q";
         if(color == Color.BLACK) pString = "q";
 
@@ -215,9 +232,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public King(Color color, Point pos) {
+    public King(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "K";
         if(color == Color.BLACK) pString = "k";
 
@@ -232,9 +249,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Earl(Color color, Point pos) {
+    public Earl(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "E";
         if(color == Color.BLACK) pString = "e";
 
@@ -250,9 +267,9 @@ public class Piece {
 
     //CONSTRUCTORS
 
-    public Monk(Color color, Point pos) {
+    public Monk(Color color, int x, int y) {
 
-        super(color, pos);
+        super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "M";
         if(color == Color.BLACK) pString = "m";
 

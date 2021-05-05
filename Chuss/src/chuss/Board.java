@@ -18,6 +18,7 @@ public class Board {
     //Used when referencing the "true size," usually when iterating starting from 0
     private final Piece[][] board;
     //The Piece array that represents the actual chess board
+    private final UserInterface ui = new CommandInterface(this);
 
     //CONSTRUCTORS
 
@@ -39,13 +40,30 @@ public class Board {
 
     }
 
-
     //ACCESSORS
+
+    public Piece pieceAt(int x, int y) {
+
+        return pieceAt(new Point(x, y));
+
+    }
 
     public Piece pieceAt(Point boardPos) {
 
         if(board[boardPos.x][boardPos.y] != null) return board[boardPos.x][boardPos.y];
         else return null;
+
+    }
+
+    public int getSize() {
+
+        return tSize;
+
+    }
+
+    public UserInterface getUI() {
+
+        return ui;
 
     }
 
@@ -70,6 +88,7 @@ public class Board {
 
     private Piece[][] readFen(String fen) {
         //Takes in a FEN string and turns it into a Piece array (board).
+        //TODO: Add full FEN interpretation, not just board layout
 
         Piece[][] fenBoard = new Piece[size][size];
         //Initialize a board to add pieces to and return
@@ -95,22 +114,22 @@ public class Board {
                 y--;
                 //Go down a rank
             }
-            else if(c == 'P') fenBoard[x][y] = new Pawn(Color.WHITE, new Point(x, y));
-            else if(c == 'R') fenBoard[x][y] = new Rook(Color.WHITE, new Point(x, y));
-            else if(c == 'N') fenBoard[x][y] = new Knight(Color.WHITE, new Point(x, y));
-            else if(c == 'B') fenBoard[x][y] = new Bishop(Color.WHITE, new Point(x, y));
-            else if(c == 'Q') fenBoard[x][y] = new Queen(Color.WHITE, new Point(x, y));
-            else if(c == 'K') fenBoard[x][y] = new King(Color.WHITE, new Point(x, y));
-            else if(c == 'E') fenBoard[x][y] = new Earl(Color.WHITE, new Point(x, y));
-            else if(c == 'M') fenBoard[x][y] = new Monk(Color.WHITE, new Point(x, y));
-            else if(c == 'p') fenBoard[x][y] = new Pawn(Color.BLACK, new Point(x, y));
-            else if(c == 'r') fenBoard[x][y] = new Rook(Color.BLACK, new Point(x, y));
-            else if(c == 'n') fenBoard[x][y] = new Knight(Color.BLACK, new Point(x, y));
-            else if(c == 'b') fenBoard[x][y] = new Bishop(Color.BLACK, new Point(x, y));
-            else if(c == 'q') fenBoard[x][y] = new Queen(Color.BLACK, new Point(x, y));
-            else if(c == 'k') fenBoard[x][y] = new King(Color.BLACK, new Point(x, y));
-            else if(c == 'e') fenBoard[x][y] = new Earl(Color.BLACK, new Point(x, y));
-            else if(c == 'm') fenBoard[x][y] = new Monk(Color.BLACK, new Point(x, y));
+            else if(c == 'P') fenBoard[x][y] = new Pawn(Color.WHITE, x, y);
+            else if(c == 'R') fenBoard[x][y] = new Rook(Color.WHITE, x, y);
+            else if(c == 'N') fenBoard[x][y] = new Knight(Color.WHITE, x, y);
+            else if(c == 'B') fenBoard[x][y] = new Bishop(Color.WHITE, x, y);
+            else if(c == 'Q') fenBoard[x][y] = new Queen(Color.WHITE, x, y);
+            else if(c == 'K') fenBoard[x][y] = new King(Color.WHITE, x, y);
+            else if(c == 'E') fenBoard[x][y] = new Earl(Color.WHITE, x, y);
+            else if(c == 'M') fenBoard[x][y] = new Monk(Color.WHITE, x, y);
+            else if(c == 'p') fenBoard[x][y] = new Pawn(Color.BLACK, x, y);
+            else if(c == 'r') fenBoard[x][y] = new Rook(Color.BLACK, x, y);
+            else if(c == 'n') fenBoard[x][y] = new Knight(Color.BLACK, x, y);
+            else if(c == 'b') fenBoard[x][y] = new Bishop(Color.BLACK, x, y);
+            else if(c == 'q') fenBoard[x][y] = new Queen(Color.BLACK, x, y);
+            else if(c == 'k') fenBoard[x][y] = new King(Color.BLACK, x, y);
+            else if(c == 'e') fenBoard[x][y] = new Earl(Color.BLACK, x, y);
+            else if(c == 'm') fenBoard[x][y] = new Monk(Color.BLACK, x, y);
             else throw new IllegalArgumentException("ERROR: Invalid FEN string");
             //If c is not a recognized character, throw an IllegalArgument
 
@@ -124,71 +143,10 @@ public class Board {
 
     }
 
-    protected void printBoard() {
-        //Prints the board in basic ASCII format.
-
-        //[TEMPORARILY REMOVED] System.out.println();
-        //[TEMPORARILY REMOVED] drawCaptured(whiteCaptured);
-        //[TEMPORARILY REMOVED] System.out.println();
-
-        int squaresPrinted = 0;
-        //Keeps track of the total number of squares that has been printed
-
-        for(int y = tSize; y >= 0; y--) {
-            //Loop through y-values from top to bottom
-
-            if(y != tSize) System.out.println();
-            //If not on the first iteration of y-loop, go down a line (avoids leading line break)
-            System.out.print((y + 1) + " ");
-            //Print the rank number
-
-            for(int x = 0; x <= tSize; x++) {
-                //Loop through x-values from left to right
-
-                if(board[x][y] != null) {
-                    //If there is a piece on the tile
-
-                    if(squaresPrinted % 2 == 0) System.out.print("[" + board[x][y].getString() + "]");
-                    //If squaresPrinted is even, print "[<pString>]"
-                    else System.out.print("(" + board[x][y].getString() + ")");
-                    //If squaresPrinted is odd, print "(<pString>)"
-
-                } else {
-                    //If there is no piece on the tile
-
-                    if(squaresPrinted % 2 == 0) System.out.print("[ ]");
-                        //If squaresPrinted is even, print "[ ]"
-                    else System.out.print("( )");
-                    //If squaresPrinted is odd, print "( )"
-
-                }
-
-                squaresPrinted++;
-                //Increment squaresPrinted for each iteration of the x-loop
-
-            }
-
-            squaresPrinted++;
-            //Increment squaresPrinted for each iteration of the y-loop
-
-        }
-
-        System.out.println();
-        System.out.print(" ");
-        //Print an extra line and the leading whitespace for the column identifiers
-
-        for(int i = 0; i < size; i++) {
-            //Repeat <size> times
-
-            System.out.print("  " + (char) (i + 97));
-            //Print the column identifier chars by casting from int
-
-        }
-
-        //[TEMPORARILY REMOVED] drawCaptured(blackCaptured);
-        System.out.println();
-        System.out.println();
-
-    }
+//    public boolean checkCollision(Move move) {
+//
+//
+//
+//    }
 
 }
