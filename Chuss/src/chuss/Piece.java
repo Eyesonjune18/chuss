@@ -126,14 +126,14 @@ public abstract class Piece {
         if(color == Color.BLACK) colorMod = -1;
         //If the pawn is black, sets colorMod to -1 to "invert" the rules
 
-        int xChange = Math.abs(move.getEndX() - move.getStartX());
-        int yChange = colorMod * (move.getEndY() - move.getStartY());
+        int absX = move.getAbsX();
+        int delY = colorMod * move.getDelY();
 
-        if(xChange == 0 && yChange == 1 && move.getCapturedPiece() == null) c1 = true;
-        if(xChange == 0 && yChange == 2 && move.getCapturedPiece() == null && moveCount == 0 &&
-                move.getMoveBoard().pieceAt(new Point(move.getStartX(), move.getStartY() + colorMod)) == null) c2 = true;
+        if(absX == 0 && delY == 1 && move.getCapturedPiece() == null) c1 = true;
+        if(absX == 0 && delY == 2 && move.getCapturedPiece() == null && moveCount == 0 &&
+                move.getMoveBoard().pieceAt(move.getStartX(), move.getStartY() + colorMod) == null) c2 = true;
         //TODO: Absolutely disgusting conditional above, must fix (possibly keep the "next square" as a field for pawns?)
-        if(xChange == 1 && yChange == 1 && move.getCapturedPiece() != null) {
+        if(absX == 1 && delY == 1 && move.getCapturedPiece() != null) {
 
             if(move.getCapturedPiece().getColor() != color) c3 = true;
 
@@ -160,6 +160,8 @@ public abstract class Piece {
         if(color == Color.BLACK) pString = "r";
 
     }
+
+    //OTHER
 
     @Override
     public boolean isLegal(Move move) {
@@ -198,6 +200,24 @@ public abstract class Piece {
 
     }
 
+    //OTHER
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1 = false;
+        //If the move is a Knight move
+
+        c1 = move.getMoveType() == MoveType.KNIGHT;
+        //Checks if the move is a Knight move
+
+        return c1;
+
+    }
+
 } class Bishop extends Piece {
     /*
     BISHOP RULES:
@@ -214,6 +234,26 @@ public abstract class Piece {
 
     }
 
+    //OTHER
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1 = false;
+        //If the move is diagonal and does not collide with any other pieces
+
+        c1 = move.getMoveType() == MoveType.DIAGONAL;
+        //Checks if the move is diagonal
+        if(c1) c1 = move.checkPath();
+        //Checks if the move is free of collisions
+
+        return c1;
+
+    }
+
 } class Queen extends Piece {
     /*
     QUEEN RULES:
@@ -227,6 +267,28 @@ public abstract class Piece {
         super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "Q";
         if(color == Color.BLACK) pString = "q";
+
+    }
+
+    //OTHER
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1 = false;
+        //If the move is horizontal or vertical and does not collide with any other pieces
+
+        c1 = move.getMoveType() == MoveType.HORIZONTAL ||
+                move.getMoveType() == MoveType.VERTICAL ||
+                move.getMoveType() == MoveType.DIAGONAL;
+        //Checks if the move is horizontal or vertical
+        if(c1) c1 = move.checkPath();
+        //Checks if the move is free of collisions
+
+        return c1;
 
     }
 

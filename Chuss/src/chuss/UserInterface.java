@@ -1,5 +1,8 @@
 package chuss;
 
+//Abstract type for UIs, allows for two different types of interaction with the Board object
+//using either a command line (console/ASCII) or a graphic interface (program window)
+
 import java.util.Scanner;
 
 public abstract class UserInterface {
@@ -7,10 +10,12 @@ public abstract class UserInterface {
     //FIELDS
 
     protected Board board;
+    //The board that the UI will be used to interact with
 
     //CONSTRUCTORS
 
     public UserInterface(Board board) {
+        //Constructor for UserInterface implementers
 
         this.board = board;
 
@@ -27,6 +32,7 @@ public abstract class UserInterface {
     //CONSTRUCTORS
 
     public CommandInterface(Board board) {
+        //Main constructor for the CommandInterface
 
         super(board);
 
@@ -35,6 +41,7 @@ public abstract class UserInterface {
     //OTHER
 
     public Move getMove() {
+        //Takes user input for a move and returns the Move object
 
         Scanner input = new Scanner(System.in);
         //Scanner for the console input

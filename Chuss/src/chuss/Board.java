@@ -1,6 +1,6 @@
 package chuss;
 
-//TODO: Add vocab key in README
+//TODO: Add tag key in README
 //The Board object. Stores all necessary info about the current game.
 
 import chuss.Piece.Color;
