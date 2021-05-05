@@ -143,10 +143,4 @@ public class Board {
 
     }
 
-//    public boolean checkCollision(Move move) {
-//
-//
-//
-//    }
-
 }

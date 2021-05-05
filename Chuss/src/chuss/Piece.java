@@ -4,6 +4,7 @@ package chuss;
 //which stores common data and behavior that is required by all pieces.
 //Individual pieces store any necessary data and behavior for their particular type.
 
+import chuss.Move.MoveType;
 import java.awt.*;
 
 public abstract class Piece {
@@ -71,7 +72,6 @@ public abstract class Piece {
         //True if move does resolve check state
 
         c1 = move.getStartPos() != move.getEndPos();
-        c2 = true;
         if(move.getCapturedPiece() != null) c2 = move.getCapturedPiece().getColor() != move.getMovedPiece().getColor();
         c3 = true;
         c4 = true;
@@ -168,9 +168,15 @@ public abstract class Piece {
         //If the move is universally illegal, return false
 
         boolean c1 = false;
-        //If the move does not collide with any other pieces
+        //If the move is horizontal or vertical and does not collide with any other pieces
         boolean c2 = false;
         //If the move is a valid castle
+
+        c1 = move.getMoveType() == MoveType.HORIZONTAL ||
+            move.getMoveType() == MoveType.VERTICAL;
+        //Checks if the move is horizontal or vertical
+        if(c1) c1 = move.checkPath();
+        //Checks if the move is free of collisions
 
         return c1 ^ c2;
 
