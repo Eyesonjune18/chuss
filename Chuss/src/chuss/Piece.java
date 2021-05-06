@@ -68,24 +68,21 @@ public abstract class Piece {
     public boolean isLegal(Move move) {
         //Checks all universal move conditions to determine if a move is legal for any piece.
 
-        boolean c1 = true;
+        boolean c1;
         //True if the piece is not moving into itself
         boolean c2 = true;
         //True if the piece is not trying to capture a friendly piece
-        boolean c3 = true;
+        boolean c3;
         //True if the piece is on the correct side for this turn
-        boolean c4 = true;
-        //True if move does not result in self-check
-        boolean c5 = true;
-        //True if move does resolve check state
+        boolean c4;
+        //True if move resolves check state
 
         c1 = move.getStartPos() != move.getEndPos();
         if(move.getCapturedPiece() != null) c2 = move.getCapturedPiece().getColor() != move.getMovedPiece().getColor();
         c3 = color == move.getMoveBoard().getTurn();
         c4 = true;
-        c5 = true;
 
-        return c1 && c2 && c3 && c4 && c5;
+        return c1 && c2 && c3 && c4;
 
     }
 

@@ -37,12 +37,12 @@ public class Move {
 
     //CONSTRUCTORS
 
-    public Move(Board board, Piece movedPiece, Piece capturedPiece, int x, int y, int x1, int y1) {
+    public Move(Board board, int x, int y, int x1, int y1) {
         //The manual constructor for the Move object.
 
         this.board = board;
-        this.movedPiece = movedPiece;
-        this.capturedPiece = capturedPiece;
+        this.movedPiece = board.pieceAt(x, y);
+        this.capturedPiece = board.pieceAt(x1, y1);
         startPos = new Point(x, y);
         endPos = new Point(x1, y1);
         delX = endPos.x - startPos.x;
@@ -51,6 +51,20 @@ public class Move {
         absY = Math.abs(delY);
         overrideLegal = false;
         moveType = findMoveType();
+
+    }
+
+    public Move(Board board, Point start, Point end) {
+        //The manual constructor that uses Point objects instead of individual ints.
+
+        this(board, start.x, start.y, end.x, end.y);
+
+    }
+
+    public Move(Board board, int x, int y, Point end) {
+        //The manual constructor that uses x and y ints for the start position and a Point for the end position.
+
+        this(board, x, y, end.x, end.y);
 
     }
 

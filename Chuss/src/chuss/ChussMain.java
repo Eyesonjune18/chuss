@@ -14,11 +14,30 @@ public class ChussMain {
         Board board = new Board();
         UserInterface ui = new CommandInterface(board);
         ui.updateBoard();
+        Player p1 = new Player(board);
 
-        while(true) {
+        boolean gameOver = true;
 
-            Player p1 = new Player(board);
-            board.doMove(p1.getMove());
+        while(gameOver) {
+
+            boolean illegalMove;
+
+            do {
+
+                try {
+
+                    board.doMove(p1.getMove());
+                    illegalMove = false;
+
+                } catch (IllegalArgumentException e) {
+
+                    System.out.println("Illegal move, try again");
+                    illegalMove = true;
+
+                }
+
+            } while(illegalMove);
+
             ui.updateBoard();
 
         }

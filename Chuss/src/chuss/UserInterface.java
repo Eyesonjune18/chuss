@@ -84,7 +84,9 @@ public abstract class UserInterface {
 
         //[TEMPORARILY REMOVED] System.out.println();
         //[TEMPORARILY REMOVED] drawCaptured(whiteCaptured);
-        //[TEMPORARILY REMOVED] System.out.println();
+
+        System.out.println();
+        //Adds a line before the board starts printing
 
         int squaresPrinted = 0;
         //Keeps track of the total number of squares that has been printed
