@@ -18,7 +18,11 @@ public class Board {
     //Used when referencing the "true size," usually when iterating starting from 0
     private final Piece[][] board;
     //The Piece array that represents the actual chess board
+    private Color turn;
+    //The side that whose turn it is
     private final UserInterface ui = new CommandInterface(this);
+    //The UI for the board
+    //TODO: Remove hard-coded CommandInterface initializer
 
     //CONSTRUCTORS
 
@@ -26,7 +30,8 @@ public class Board {
         //The default constructor for the Board object, creates a board
         //from the standard starting chess layout FEN string.
 
-         this("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+         this("rnbqkbnr/pppppppp/////PPPPPPPP/RNBQKBNR");
+         //Call the FEN constructor with the FEN string for the default chess setup
 
     }
 
@@ -37,10 +42,18 @@ public class Board {
         board = readFen(fen);
         //Set the board field containing the piece array
         //to the array returned by the FEN interpreter
+        turn = Color.WHITE;
+        //Sets the starting turn to white
 
     }
 
     //ACCESSORS
+
+    public int getSize() {
+
+        return tSize;
+
+    }
 
     public Piece pieceAt(int x, int y) {
 
@@ -55,9 +68,9 @@ public class Board {
 
     }
 
-    public int getSize() {
+    public Color getTurn() {
 
-        return tSize;
+        return turn;
 
     }
 
@@ -70,6 +83,7 @@ public class Board {
     //MUTATORS
 
     public void doMove(Move move) {
+        //Performs a move on the board when passed a move object.
 
         if(DEBUG) System.out.println("Moving piece: " + move.getMovedPiece().getString());
         //[DEBUG TEXT] Prints the string of the piece being moved
@@ -77,10 +91,16 @@ public class Board {
         if(!move.getMovedPiece().isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
         //If the move is illegal, throw an IllegalArgument
 
+        move.getMovedPiece().incMoveCount(1);
+
         board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
         //Sets the tile at the end position to the moved piece
         board[move.getStartX()][move.getStartY()] = null;
         //Sets the tile at the start position to null (empty tile)
+
+        if(turn == Color.WHITE) turn = Color.BLACK;
+        else turn = Color.WHITE;
+        //Change the current turn color
 
     }
 

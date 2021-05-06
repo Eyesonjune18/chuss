@@ -12,7 +12,7 @@ public abstract class Piece {
     GENERAL PIECE RULES:
     1. May not move to their current position
     2. May not capture a friendly piece
-    3. May not collide with any pieces between their start and end position (Pawn, Rook, Bishop, Queen)
+    3. May not be moved on an enemy turn
     4. May not put themselves in check
     5. Must make a move that takes themselves out of check if they are in check
     */
@@ -55,6 +55,14 @@ public abstract class Piece {
 
     }
 
+    //MUTATORS
+
+    public void incMoveCount(int i) {
+
+        moveCount += i;
+
+    }
+
     //OTHER
 
     public boolean isLegal(Move move) {
@@ -65,7 +73,7 @@ public abstract class Piece {
         boolean c2 = true;
         //True if the piece is not trying to capture a friendly piece
         boolean c3 = true;
-        //True if no collisions occur
+        //True if the piece is on the correct side for this turn
         boolean c4 = true;
         //True if move does not result in self-check
         boolean c5 = true;
@@ -73,7 +81,7 @@ public abstract class Piece {
 
         c1 = move.getStartPos() != move.getEndPos();
         if(move.getCapturedPiece() != null) c2 = move.getCapturedPiece().getColor() != move.getMovedPiece().getColor();
-        c3 = true;
+        c3 = color == move.getMoveBoard().getTurn();
         c4 = true;
         c5 = true;
 
@@ -169,7 +177,7 @@ public abstract class Piece {
         if(!super.isLegal(move)) return false;
         //If the move is universally illegal, return false
 
-        boolean c1 = false;
+        boolean c1;
         //If the move is horizontal or vertical and does not collide with any other pieces
         boolean c2 = false;
         //If the move is a valid castle
@@ -208,7 +216,7 @@ public abstract class Piece {
         if(!super.isLegal(move)) return false;
         //If the move is universally illegal, return false
 
-        boolean c1 = false;
+        boolean c1;
         //If the move is a Knight move
 
         c1 = move.getMoveType() == MoveType.KNIGHT;
@@ -242,7 +250,7 @@ public abstract class Piece {
         if(!super.isLegal(move)) return false;
         //If the move is universally illegal, return false
 
-        boolean c1 = false;
+        boolean c1;
         //If the move is diagonal and does not collide with any other pieces
 
         c1 = move.getMoveType() == MoveType.DIAGONAL;
@@ -278,7 +286,7 @@ public abstract class Piece {
         if(!super.isLegal(move)) return false;
         //If the move is universally illegal, return false
 
-        boolean c1 = false;
+        boolean c1;
         //If the move is horizontal or vertical and does not collide with any other pieces
 
         c1 = move.getMoveType() == MoveType.HORIZONTAL ||
@@ -305,6 +313,27 @@ public abstract class Piece {
         super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "K";
         if(color == Color.BLACK) pString = "k";
+
+    }
+
+    //OTHER
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1;
+        //If the move is vertical, horizontal or diagonal and only one tile away
+
+        c1 = (move.getMoveType() == MoveType.HORIZONTAL ||
+                move.getMoveType() == MoveType.VERTICAL ||
+                move.getMoveType() == MoveType.DIAGONAL) &&
+                (move.getAbsX() <= 1 && move.getAbsY() <= 1);
+        //Checks if the move is valid for a King
+
+        return c1;
 
     }
 

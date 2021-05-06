@@ -146,4 +146,8 @@ public abstract class UserInterface {
 
     }
 
+} class GraphicInterface {
+
+
+
 }
