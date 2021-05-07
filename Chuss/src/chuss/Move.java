@@ -30,14 +30,14 @@ public class Move {
     //The change in X with absolute value
     private final int absY;
     //The change in Y with absolute value
-    private final boolean overrideLegal;
-    //Whether to override the move legality check
+    private final boolean overrideTurn;
+    //Whether to override the turn legality check
     private final MoveType moveType;
     //Whether the move is horizontal, vertical, diagonal, or none
 
     //CONSTRUCTORS
 
-    public Move(Board board, int x, int y, int x1, int y1) {
+    public Move(Board board, int x, int y, int x1, int y1, boolean override) {
         //The manual constructor for the Move object.
 
         this.board = board;
@@ -49,8 +49,15 @@ public class Move {
         delY = endPos.y - startPos.y;
         absX = Math.abs(delX);
         absY = Math.abs(delY);
-        overrideLegal = false;
+        overrideTurn = override;
         moveType = findMoveType();
+
+    }
+
+    public Move(Board board, int x, int y, int x1, int y1) {
+        //The manual constructor for the Move object, with default override parameter of false.
+
+        this(board, x, y, x1, y1, false);
 
     }
 
@@ -65,6 +72,14 @@ public class Move {
         //The manual constructor that uses x and y ints for the start position and a Point for the end position.
 
         this(board, x, y, end.x, end.y);
+
+    }
+
+    public Move(Board board, int x, int y, Point end, boolean override) {
+        //The manual constructor that uses x and y ints for the start position
+        //and a Point for the end position, and adds the override parameter
+
+        this(board, x, y, end.x, end.y, override);
 
     }
 
@@ -85,7 +100,7 @@ public class Move {
         delY = endPos.y - startPos.y;
         absX = Math.abs(delX);
         absY = Math.abs(delY);
-        overrideLegal = false;
+        overrideTurn = false;
         moveType = findMoveType();
 
     }
@@ -172,7 +187,7 @@ public class Move {
 
     public boolean getOverride() {
 
-        return overrideLegal;
+        return overrideTurn;
 
     }
 
