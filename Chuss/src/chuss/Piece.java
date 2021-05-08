@@ -331,7 +331,7 @@ public abstract class Piece {
                 (move.getAbsX() <= 1 && move.getAbsY() <= 1);
         //Checks if the move is valid for a King
 
-        return true;
+        return c1;
 
     }
 
