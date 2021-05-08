@@ -4,16 +4,18 @@ package chuss;
 //The Board object. Stores all necessary info about the current game.
 
 import chuss.Piece.Color;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.awt.*;
 
 public class Board {
 
+    //ENUMS
+
+    public enum BoardState {CHECK, CHECKMATE, STALEMATE, NONE}
+
     //FIELDS
 
-    private final boolean DEBUG = true;
+    private final boolean DEBUG = false;
     //Constant to determine whether [DEBUG TEXT] will be displayed for this class
     private final int size = 8;
     //The amount of tiles (width and height) on the board
@@ -24,22 +26,17 @@ public class Board {
     //The Piece array that represents the actual chess board
     private Color turn;
     //The side that whose turn it is
-    private Point wKingPos;
-    //The current coordinates of the white King
-    private Point bKingPos;
-    //The current coordinates of the black King
-    private List<Piece> wPieces;
-    //A list of all white pieces on the board
-    private List<Piece> bPieces;
-    //A list of all black pieces on the board
-    private final UserInterface ui;
-    //The UI for the board
-    private Interactable whiteUser;
-    //The Interactable that is controlling the white side
-    private Interactable blackUser;
-    //The Interactable that is controlling the black side
-
-    //TODO: Remove hard-coded initializers
+    private Point wKingPos, bKingPos;
+    //The current coordinates of the white and black Kings
+    private ArrayList<Piece> wPieces, bPieces;
+    //A list of all white and black pieces on the board
+    private final ArrayList<String> wCaptured, bCaptured;
+    //A list of captured pieces for each side
+    private Interactable whiteUser, blackUser;
+    //The Interactables that are controlling the white and black side
+    private BoardState state;
+    //What state the board is in (check, checkmate, etc)
+    //TODO: Convert boolean to enum for stalemate etc
 
     //CONSTRUCTORS
 
@@ -64,17 +61,18 @@ public class Board {
         wKingPos = findKing(Color.WHITE);
         //Finds and stores the white King's coordinates
         if(DEBUG) System.out.println("White King is at [" + wKingPos.x + ", " + wKingPos.y + "]");
-        //[DEBUG TEXT] Prints out where the White King is
+        //[DEBUG TEXT] Prints out where the white King is
         bKingPos = findKing(Color.BLACK);
         //Finds and stores the black King's coordinates
-        ui = new CommandInterface(this);
-        //Stores the UserInterface that the board is using
+        if(DEBUG) System.out.println("Black King is at [" + bKingPos.x + ", " + bKingPos.y + "]");
+        //[DEBUG TEXT] Prints out where the black King is
+        wCaptured = new ArrayList<>();
+        bCaptured = new ArrayList<>();
         whiteUser = null;
         //Initializes the white user
         blackUser = null;
         //Initializes the black user
-        if(DEBUG) System.out.println("Black King is at [" + bKingPos.x + ", " + bKingPos.y + "]");
-        //[DEBUG TEXT] Prints out where the black King is
+        state = BoardState.NONE;
 
     }
 
@@ -86,16 +84,16 @@ public class Board {
 
     }
 
-    public Piece pieceAt(int x, int y) {
-
-        return pieceAt(new Point(x, y));
-
-    }
-
     public Piece pieceAt(Point boardPos) {
 
         if(board[boardPos.x][boardPos.y] != null) return board[boardPos.x][boardPos.y];
         else return null;
+
+    }
+
+    public Piece pieceAt(int x, int y) {
+
+        return pieceAt(new Point(x, y));
 
     }
 
@@ -105,9 +103,10 @@ public class Board {
 
     }
 
-    public UserInterface getUI() {
+    public ArrayList<String> getCaptured(Color color) {
 
-        return ui;
+        if(color == Color.WHITE) return wCaptured;
+        else return bCaptured;
 
     }
 
@@ -118,50 +117,13 @@ public class Board {
 
     }
 
-    //MUTATORS
+    public BoardState getState() {
 
-    public void doMove(Move move) {
-        //Performs a move on the board when passed a move object.
-
-        if(move.getMovedPiece() == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
-        //If there is no piece at the starting position, throw an Illegal Argument
-
-        if(DEBUG) System.out.println("Moving piece: " + move.getMovedPiece().getString());
-        //[DEBUG TEXT] Prints the string of the piece being moved
-
-        if(!move.getMovedPiece().isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
-        //If the move is illegal for this piece type, throw an IllegalArgument
-
-        if(findCheck(move)) throw new IllegalArgumentException("ERROR: Move cannot result in self-check");
-        //If the King is put in check by this move, throw an IllegalArgument
-        //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
-
-        move.getMovedPiece().incMoveCount(1);
-        //Add 1 to the moveCount of the moved piece
-
-        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
-        //Sets the tile at the end position to the moved piece
-        board[move.getStartX()][move.getStartY()] = null;
-        //Sets the tile at the start position to null (empty tile)
-
-        if(move.getMovedPiece() instanceof King) {
-            //If the moved piece is a King
-
-            if(turn == Color.WHITE) wKingPos = move.getEndPos();
-            //If the King is white, make the move's end position the new wKingPos
-            else bKingPos = move.getEndPos();
-            //If the King is black, make the move's end position the new bKingPos
-
-        }
-
-        if(turn == Color.WHITE) turn = Color.BLACK;
-        else turn = Color.WHITE;
-        //Change the current turn color
-
-        generateFen();
-        //[TEST CODE] Generates the FEN string of the board every time a move is made
+        return state;
 
     }
+
+    //MUTATORS
 
     public void setUser(Interactable user, Color color) {
         //Sets either user based on the Interactable passed in.
@@ -205,7 +167,6 @@ public class Board {
 
         for(char c : fenArr) {
             //For each char in the FEN string:
-            //TODO: Possibly convert to HashMap
 
             if(c >= '1' && c <= '9') x += (c - 49);
                 //If c is between num 1 through 8, add num - 1 to the x value
@@ -405,6 +366,7 @@ public class Board {
     public boolean findCheck(Move move) {
         //Looks to see if the King of a given color will be in check at the end of a given move.
         //TODO: Restructure doMove and findCheck so you can pass a FEN instead of a move to findCheck
+        //Why did I write this? Not sure. Might remember later.
 
         String origFen = generateFen();
         //Stores the current board in a FEN string before modifying it
@@ -414,16 +376,12 @@ public class Board {
         else kingPos = bKingPos;
         if(move.getMovedPiece() instanceof King) kingPos = move.getEndPos();
         //Stores the King position for the given color
-        //TODO: Move "if King is moved" check to helper method forceMove
 
         if(DEBUG) System.out.println("King is at [" + kingPos.x + ", " + kingPos.y + "]");
         //[DEBUG TEXT] Prints out where the King is
 
-        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
-        //Sets the tile at the end position to the moved piece
-        board[move.getStartX()][move.getStartY()] = null;
-        //Sets the tile at the start position to null (empty tile)
-        //TODO: Move this to helper method forceMove
+        forceMove(move);
+        //Moves the piece to the end position
 
         for(int x = 0; x <= tSize; x++) {
             //Loop through ranks
@@ -446,9 +404,12 @@ public class Board {
 
                     board = readFen(origFen);
                     //Rebuild the board with the original FEN string
+                    //TODO: Add support for moveCount retention
+
+                    state = BoardState.CHECK;
+                    //Sets the board state to CHECK if there is a check
 
                     return true;
-                    //TODO: Add checkmate test
                     //TODO: Add support for multiple attacks at once? (Not sure if this is necessary)
 
                 }
@@ -461,6 +422,123 @@ public class Board {
         //Rebuild the board with the original FEN string
 
         return false;
+
+    }
+
+    public ArrayList<Move> getLegalMoves(Color color) {
+
+        ArrayList<Piece> checkedPieces;
+
+        if(color == Color.WHITE) checkedPieces = wPieces;
+        else checkedPieces = bPieces;
+        //Create a piece array representing either the white or black pieces,
+        //depending on the color that is passed in
+
+        ArrayList<Move> legalMoves = new ArrayList<>();
+
+        for(Piece p : checkedPieces)
+
+        for(int x = 0; x <= tSize; x++) {
+            //Loop through ranks
+
+            for(int y = 0; y <= tSize; y++) {
+                //Loop through columns
+
+                Move m = new Move(this, p.getPos(), x, y, true);
+
+                if(p.isLegal(m) && !findCheck(m)) legalMoves.add(m);
+                //If the move is legal for the piece and does not result in check
+                //TODO: This is quite slow, need to optimize
+
+            }
+
+        }
+
+        if(DEBUG) System.out.println("Legal moves: " + legalMoves.size());
+        //[DEBUG TEXT] Prints the amount of legal moves available from this board
+
+        return legalMoves;
+
+    }
+
+    private boolean findCheckMate(Color color) {
+        //Returns true if there is a checkmate, false if not.
+        if(DEBUG) System.out.println("findCheckmate is running");
+        //[DEBUG TEXT] Prints when findCheckmate runs
+
+        return getLegalMoves(color).size() == 0;
+
+    }
+
+    public void doMove(Move move) {
+        //Performs a move on the board when passed a move object.
+
+        if(move.getMovedPiece() == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
+        //If there is no piece at the starting position, throw an Illegal Argument
+
+        if(DEBUG) System.out.println("Moving piece: " + move.getMovedPiece().getString());
+        //[DEBUG TEXT] Prints the string of the piece being moved
+
+        if(!move.getMovedPiece().isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
+        //If the move is illegal for this piece type, throw an IllegalArgument
+
+        if(findCheck(move)) throw new IllegalArgumentException("ERROR: Move cannot result in self-check");
+        //If the King is put in check by this move, throw an IllegalArgument
+        //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
+
+        move.getMovedPiece().incMoveCount(1);
+        //Add 1 to the moveCount of the moved piece
+
+        if(move.getCapturedPiece() != null) {
+            //If there is a capture
+
+            Piece p = move.getCapturedPiece();
+
+            if(p.getColor() == Color.WHITE) wCaptured.add(p.getString());
+            else bCaptured.add(p.getString());
+            //Add the captured piece to its respective capture list
+
+        }
+
+        forceMove(move);
+        //Moves the piece to the end position
+
+        if(move.getMovedPiece() instanceof King) {
+            //If the moved piece is a King
+
+            if(turn == Color.WHITE) wKingPos = move.getEndPos();
+                //If the King is white, make the move's end position the new wKingPos
+            else bKingPos = move.getEndPos();
+            //If the King is black, make the move's end position the new bKingPos
+
+        }
+
+        if(turn == Color.WHITE) turn = Color.BLACK;
+        else turn = Color.WHITE;
+        //Change the current turn color
+
+        generateFen();
+        //[TEST CODE] Generates the FEN string of the board every time a move is made
+
+        if(findCheckMate(turn)) {
+            //If the current side has no possible legal moves (is in checkmate)
+            //TODO: Stalemate?
+
+            state = BoardState.CHECKMATE;
+            System.out.println("Checkmate!");
+            //TODO: Move this print to somewhere better
+
+        }
+
+    }
+
+    private void forceMove(Move move) {
+        //Simply makes the move in the passed Move, disregarding rules.
+
+        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
+        //Sets the tile at the end position to the moved piece
+        board[move.getStartX()][move.getStartY()] = null;
+        //Sets the tile at the start position to null (empty tile)
 
     }
 

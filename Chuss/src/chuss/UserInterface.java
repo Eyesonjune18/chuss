@@ -3,6 +3,8 @@ package chuss;
 //Abstract type for UIs, allows for two different types of interaction with the Board object
 //using either a command line (console/ASCII) or a graphic interface (program window)
 
+import chuss.Piece.Color;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class UserInterface {
@@ -23,9 +25,11 @@ public abstract class UserInterface {
 
     //OTHER
 
-    public abstract Move getMove();
+    public abstract Move promptMove();
 
     public abstract void updateBoard();
+
+    public abstract void playGame(Interactable whiteUser, Interactable blackUser);
 
 } class CommandInterface extends UserInterface {
 
@@ -40,17 +44,59 @@ public abstract class UserInterface {
 
     //OTHER
 
-    public Move getMove() {
+    public void playGame(Interactable whiteUser, Interactable blackUser) {
+        //Starts a game using the UI and the board.
+        //[TEST CODE] Probably will clean this up later
+
+        board.setUsers(whiteUser, blackUser);
+        updateBoard();
+//        Scanner input = new Scanner(System.in);
+
+        boolean gameOver = false;
+
+        while(!gameOver) {
+
+            boolean illegalMove;
+
+            do {
+
+                try {
+
+//                    System.out.println("Press enter to move");
+//                    String s = input.nextLine();
+
+                    board.doMove(board.getCurrentUser().getMove());
+                    illegalMove = false;
+
+                } catch(IllegalArgumentException e) {
+
+                    System.out.println("Illegal move, try again");
+                    illegalMove = true;
+
+                }
+
+                if(board.getState() == Board.BoardState.CHECKMATE) {
+
+                    gameOver = true;
+                    illegalMove = false;
+
+                }
+
+            } while(illegalMove);
+
+            updateBoard();
+
+        }
+
+    }
+
+    public Move promptMove() {
         //Takes user input for a move and returns the Move object
 
         Scanner input = new Scanner(System.in);
-        //Scanner for the console input
 
-        String move = null;
-        //Initializing the move string
-
+        String move;
         boolean again;
-        //Boolean to repeat do-while loop
 
         do {
 
@@ -82,8 +128,7 @@ public abstract class UserInterface {
     public void updateBoard() {
         //Prints the board in basic ASCII format.
 
-        //[TEMPORARILY REMOVED] System.out.println();
-        //[TEMPORARILY REMOVED] drawCaptured(whiteCaptured);
+        drawCaptured(Color.WHITE);
 
         System.out.println();
         //Adds a line before the board starts printing
@@ -142,9 +187,28 @@ public abstract class UserInterface {
 
         }
 
-        //[TEMPORARILY REMOVED] drawCaptured(blackCaptured);
+        drawCaptured(Color.BLACK);
+        //Prints all black pieces that have been captured
         System.out.println();
+
+    }
+
+    private void drawCaptured(Color color) {
+        //Prints captured pieces of either color.
+
         System.out.println();
+        //Prints a blank line
+
+        ArrayList<String> capturedPieces = board.getCaptured(color);
+
+        if(capturedPieces == null) return;
+
+        for(String p : capturedPieces) {
+
+            System.out.print(p + " ");
+            //TODO: Remove trailing whitespace
+
+        }
 
     }
 

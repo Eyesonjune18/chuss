@@ -8,27 +8,24 @@ import java.awt.*;
 
 public class Move {
 
+    //ENUMS
+
     public enum MoveType {HORIZONTAL, VERTICAL, DIAGONAL, KNIGHT, NONE}
 
     //FIELDS
 
     private final Board board;
     //The board that the move occurs on
-    private final Piece movedPiece;
+    private final Piece movedPiece, capturedPiece;
     //The piece being moved
-    private final Piece capturedPiece;
     //The piece being captured
-    private final Point startPos;
+    private final Point startPos, endPos;
     //The starting position of the piece
-    private final Point endPos;
     //The ending position of the piece
-    private final int delX;
+    private final int delX, delY, absX, absY;
     //The change in X without absolute value
-    private final int delY;
     //The change in Y without absolute value
-    private final int absX;
     //The change in X with absolute value
-    private final int absY;
     //The change in Y with absolute value
     private final boolean overrideTurn;
     //Whether to override the turn legality check
@@ -80,6 +77,14 @@ public class Move {
         //and a Point for the end position, and adds the override parameter
 
         this(board, x, y, end.x, end.y, override);
+
+    }
+
+    public Move(Board board, Point start, int x, int y, boolean override) {
+        //The manual constructor that uses a Point for the start position
+        //and x and y ints for the end position, and adds the override parameter
+
+        this(board, start.x, start.y, x, y, override);
 
     }
 

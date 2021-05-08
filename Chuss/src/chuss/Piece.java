@@ -17,6 +17,8 @@ public abstract class Piece {
     5. Must make a move that takes themselves out of check if they are in check
     */
 
+    //ENUMS
+
     public enum Color {WHITE, BLACK}
     //The enum for the piece color, either WHITE or BLACK
 
@@ -52,6 +54,12 @@ public abstract class Piece {
     public Color getColor() {
 
         return color;
+
+    }
+
+    public Point getPos() {
+
+        return pos;
 
     }
 
