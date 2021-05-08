@@ -72,14 +72,15 @@ public abstract class Piece {
         //True if the piece is not moving into itself
         boolean c2 = true;
         //True if the piece is not trying to capture a friendly piece
-        boolean c3;
+        boolean c3 = true;
         //True if the piece is on the correct side for this turn
         boolean c4;
         //True if move resolves check state
 
         c1 = move.getStartPos() != move.getEndPos();
+        //[ISSUE] Not detecting moves that have the same start and end position
         if(move.getCapturedPiece() != null) c2 = move.getCapturedPiece().getColor() != move.getMovedPiece().getColor();
-        c3 = color == move.getMoveBoard().getTurn();
+        if(!move.getOverride()) c3 = color == move.getMoveBoard().getTurn();
         c4 = true;
 
         return c1 && c2 && c3 && c4;
@@ -330,7 +331,7 @@ public abstract class Piece {
                 (move.getAbsX() <= 1 && move.getAbsY() <= 1);
         //Checks if the move is valid for a King
 
-        return c1;
+        return true;
 
     }
 

@@ -1,0 +1,2415 @@
+"C:\Program Files (x86)\Java\jdk1.8.0_251\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\lib\idea_rt.jar=53321:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\deploy.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\access-bridge-32.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\cldrdata.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\dnsns.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\jaccess.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\jfxrt.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\localedata.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\nashorn.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\sunec.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\sunjce_provider.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\sunmscapi.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\sunpkcs11.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\ext\zipfs.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\javaws.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\jfxswt.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\management-agent.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\plugin.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_251\jre\lib\rt.jar;D:\Documents\Coding\Chuss\out\production\Chuss" chuss.ChussMain
+Fen: rnbqkbnr/pppppppp/////PPPPPPPP/RNBQKBNR
+White King is at [4, 0]
+Black King is at [4, 7]
+
+8 [r](n)[b](q)[k](b)[n](r)
+7 (p)[p](p)[p](p)[p](p)[p]
+6 [ ]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [P](P)[P](P)[P](P)[P](P)
+1 (R)[N](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: N
+Generated FEN: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
+King is at [4, 0]
+Fen: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
+Generated FEN: rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR
+
+8 [r](n)[b](q)[k](b)[n](r)
+7 (p)[p](p)[p](p)[p](p)[p]
+6 [ ]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (N)[ ]( )[ ]( )[ ]( )[ ]
+2 [P](P)[P](P)[P](P)[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR
+King is at [4, 7]
+Fen: rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR
+Generated FEN: rnbqkbnr/pppp1ppp/4p3/8/8/N7/PPPPPPPP/R1BQKBNR
+
+8 [r](n)[b](q)[k](b)[n](r)
+7 (p)[p](p)[p]( )[p](p)[p]
+6 [ ]( )[ ]( )[p]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (N)[ ]( )[ ]( )[ ]( )[ ]
+2 [P](P)[P](P)[P](P)[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnbqkbnr/pppp1ppp/4p3/8/8/N7/PPPPPPPP/R1BQKBNR
+King is at [4, 0]
+Fen: rnbqkbnr/pppp1ppp/4p3/8/8/N7/PPPPPPPP/R1BQKBNR
+Generated FEN: rnbqkbnr/pppp1ppp/4p3/8/8/N4P2/PPPPP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k](b)[n](r)
+7 (p)[p](p)[p]( )[p](p)[p]
+6 [ ]( )[ ]( )[p]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (N)[ ]( )[ ]( )[P]( )[ ]
+2 [P](P)[P](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnbqkbnr/pppp1ppp/4p3/8/8/N4P2/PPPPP1PP/R1BQKBNR
+King is at [4, 7]
+Fen: rnbqkbnr/pppp1ppp/4p3/8/8/N4P2/PPPPP1PP/R1BQKBNR
+Generated FEN: rnbqkbnr/pppp2pp/4p3/5p2/8/N4P2/PPPPP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k](b)[n](r)
+7 (p)[p](p)[p]( )[ ](p)[p]
+6 [ ]( )[ ]( )[p]( )[ ]( )
+5 ( )[ ]( )[ ]( )[p]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (N)[ ]( )[ ]( )[P]( )[ ]
+2 [P](P)[P](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnbqkbnr/pppp2pp/4p3/5p2/8/N4P2/PPPPP1PP/R1BQKBNR
+King is at [4, 0]
+Fen: rnbqkbnr/pppp2pp/4p3/5p2/8/N4P2/PPPPP1PP/R1BQKBNR
+Generated FEN: rnbqkbnr/pppp2pp/4p3/5p2/2P5/N4P2/PP1PP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k](b)[n](r)
+7 (p)[p](p)[p]( )[ ](p)[p]
+6 [ ]( )[ ]( )[p]( )[ ]( )
+5 ( )[ ]( )[ ]( )[p]( )[ ]
+4 [ ]( )[P]( )[ ]( )[ ]( )
+3 (N)[ ]( )[ ]( )[P]( )[ ]
+2 [P](P)[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnbqkbnr/pppp2pp/4p3/5p2/2P5/N4P2/PP1PP1PP/R1BQKBNR
+King is at [4, 7]
+Fen: rnbqkbnr/pppp2pp/4p3/5p2/2P5/N4P2/PP1PP1PP/R1BQKBNR
+Generated FEN: rnbqk1nr/pppp2pp/4p3/5p2/1bP5/N4P2/PP1PP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k]( )[n](r)
+7 (p)[p](p)[p]( )[ ](p)[p]
+6 [ ]( )[ ]( )[p]( )[ ]( )
+5 ( )[ ]( )[ ]( )[p]( )[ ]
+4 [ ](b)[P]( )[ ]( )[ ]( )
+3 (N)[ ]( )[ ]( )[P]( )[ ]
+2 [P](P)[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnbqk1nr/pppp2pp/4p3/5p2/1bP5/N4P2/PP1PP1PP/R1BQKBNR
+King is at [4, 0]
+Fen: rnbqk1nr/pppp2pp/4p3/5p2/1bP5/N4P2/PP1PP1PP/R1BQKBNR
+Generated FEN: rnbqk1nr/pppp2pp/4p3/5p2/1bP5/NP3P2/P2PP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k]( )[n](r)
+7 (p)[p](p)[p]( )[ ](p)[p]
+6 [ ]( )[ ]( )[p]( )[ ]( )
+5 ( )[ ]( )[ ]( )[p]( )[ ]
+4 [ ](b)[P]( )[ ]( )[ ]( )
+3 (N)[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnbqk1nr/pppp2pp/4p3/5p2/1bP5/NP3P2/P2PP1PP/R1BQKBNR
+King is at [4, 7]
+Fen: rnbqk1nr/pppp2pp/4p3/5p2/1bP5/NP3P2/P2PP1PP/R1BQKBNR
+Generated FEN: rnbqk1nr/pppp3p/4p1p1/5p2/1bP5/NP3P2/P2PP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k]( )[n](r)
+7 (p)[p](p)[p]( )[ ]( )[p]
+6 [ ]( )[ ]( )[p]( )[p]( )
+5 ( )[ ]( )[ ]( )[p]( )[ ]
+4 [ ](b)[P]( )[ ]( )[ ]( )
+3 (N)[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnbqk1nr/pppp3p/4p1p1/5p2/1bP5/NP3P2/P2PP1PP/R1BQKBNR
+King is at [4, 0]
+Fen: rnbqk1nr/pppp3p/4p1p1/5p2/1bP5/NP3P2/P2PP1PP/R1BQKBNR
+Generated FEN: rnbqk1nr/pppp3p/4p1p1/2P2p2/1b6/NP3P2/P2PP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[k]( )[n](r)
+7 (p)[p](p)[p]( )[ ]( )[p]
+6 [ ]( )[ ]( )[p]( )[p]( )
+5 ( )[ ](P)[ ]( )[p]( )[ ]
+4 [ ](b)[ ]( )[ ]( )[ ]( )
+3 (N)[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: k
+Generated FEN: rnbqk1nr/pppp3p/4p1p1/2P2p2/1b6/NP3P2/P2PP1PP/R1BQKBNR
+King is at [4, 7]
+Fen: rnbqk1nr/pppp3p/4p1p1/2P2p2/1b6/NP3P2/P2PP1PP/R1BQKBNR
+Generated FEN: rnbq2nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P2/P2PP1PP/R1BQKBNR
+
+8 [r](n)[b](q)[ ]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[p]( )[p]( )
+5 ( )[ ](P)[ ]( )[p]( )[ ]
+4 [ ](b)[ ]( )[ ]( )[ ]( )
+3 (N)[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B](N)[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: N
+Generated FEN: rnbq2nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P2/P2PP1PP/R1BQKBNR
+King is at [4, 0]
+Fen: rnbq2nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P2/P2PP1PP/R1BQKBNR
+Generated FEN: rnbq2nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P1N/P2PP1PP/R1BQKB1R
+
+8 [r](n)[b](q)[ ]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[p]( )[p]( )
+5 ( )[ ](P)[ ]( )[p]( )[ ]
+4 [ ](b)[ ]( )[ ]( )[ ]( )
+3 (N)[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: q
+Generated FEN: rnbq2nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P1N/P2PP1PP/R1BQKB1R
+King is at [4, 6]
+Fen: rnbq2nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P1N/P2PP1PP/R1BQKB1R
+Generated FEN: rnb1q1nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P1N/P2PP1PP/R1BQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[p]( )[p]( )
+5 ( )[ ](P)[ ]( )[p]( )[ ]
+4 [ ](b)[ ]( )[ ]( )[ ]( )
+3 (N)[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[ ](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: N
+Generated FEN: rnb1q1nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P1N/P2PP1PP/R1BQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/ppppk2p/4p1p1/2P2p2/1b6/NP3P1N/P2PP1PP/R1BQKB1R
+Generated FEN: rnb1q1nr/ppppk2p/4p1p1/2P2p2/1b6/1P3P1N/P2PP1PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[p]( )[p]( )
+5 ( )[ ](P)[ ]( )[p]( )[ ]
+4 [ ](b)[ ]( )[ ]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb1q1nr/ppppk2p/4p1p1/2P2p2/1b6/1P3P1N/P2PP1PP/RNBQKB1R
+King is at [4, 6]
+Fen: rnb1q1nr/ppppk2p/4p1p1/2P2p2/1b6/1P3P1N/P2PP1PP/RNBQKB1R
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1pp2/1b6/1P3P1N/P2PP1PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[ ]( )[p]( )
+5 ( )[ ](P)[ ](p)[p]( )[ ]
+4 [ ](b)[ ]( )[ ]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[P]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1pp2/1b6/1P3P1N/P2PP1PP/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/ppppk2p/6p1/2P1pp2/1b6/1P3P1N/P2PP1PP/RNBQKB1R
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1pp2/1b2P3/1P3P1N/P2P2PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[ ]( )[p]( )
+5 ( )[ ](P)[ ](p)[p]( )[ ]
+4 [ ](b)[ ]( )[P]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[ ]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1pp2/1b2P3/1P3P1N/P2P2PP/RNBQKB1R
+King is at [4, 6]
+Fen: rnb1q1nr/ppppk2p/6p1/2P1pp2/1b2P3/1P3P1N/P2P2PP/RNBQKB1R
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/1b2p3/1P3P1N/P2P2PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[ ]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ](b)[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[ ]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/1b2p3/1P3P1N/P2P2PP/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/ppppk2p/6p1/2P1p3/1b2p3/1P3P1N/P2P2PP/RNBQKB1R
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/1b2p3/1P3P1N/P2PQ1PP/RNB1KB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[ ]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ](b)[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](P)[Q]( )[P](P)
+1 (R)[N](B)[ ](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/1b2p3/1P3P1N/P2PQ1PP/RNB1KB1R
+King is at [4, 6]
+Fen: rnb1q1nr/ppppk2p/6p1/2P1p3/1b2p3/1P3P1N/P2PQ1PP/RNB1KB1R
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/4p3/1P3P1N/P2bQ1PP/RNB1KB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[ ]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](b)[Q]( )[P](P)
+1 (R)[N](B)[ ](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/4p3/1P3P1N/P2bQ1PP/RNB1KB1R
+King is at [4, 0]
+Fen: rnb1q1nr/ppppk2p/6p1/2P1p3/4p3/1P3P1N/P2bQ1PP/RNB1KB1R
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/4p3/1P3P1N/P2b2PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p](k)[ ]( )[p]
+6 [ ]( )[ ]( )[ ]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](b)[ ]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: k
+Generated FEN: rnb1q1nr/ppppk2p/6p1/2P1p3/4p3/1P3P1N/P2b2PP/RNBQKB1R
+King is at [4, 6]
+Fen: rnb1q1nr/ppppk2p/6p1/2P1p3/4p3/1P3P1N/P2b2PP/RNBQKB1R
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/4p3/1P3P1N/P2b2PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p]( )[ ]( )[p]
+6 [ ]( )[ ]( )[k]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[N]
+2 [P]( )[ ](b)[ ]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: N
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/4p3/1P3P1N/P2b2PP/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/pppp3p/4k1p1/2P1p3/4p3/1P3P1N/P2b2PP/RNBQKB1R
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/4pN2/1P3P2/P2b2PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p]( )[ ]( )[p]
+6 [ ]( )[ ]( )[k]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[p](N)[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](b)[ ]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/4pN2/1P3P2/P2b2PP/RNBQKB1R
+King is at [4, 5]
+Fen: rnb1q1nr/pppp3p/4k1p1/2P1p3/4pN2/1P3P2/P2b2PP/RNBQKB1R
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/5N2/1P3p2/P2b2PP/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p]( )[ ]( )[p]
+6 [ ]( )[ ]( )[k]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](N)[ ]( )
+3 ( )[P]( )[ ]( )[p]( )[ ]
+2 [P]( )[ ](b)[ ]( )[P](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/5N2/1P3p2/P2b2PP/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/pppp3p/4k1p1/2P1p3/5N2/1P3p2/P2b2PP/RNBQKB1R
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/5N2/1P3P2/P2b3P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 (p)[p](p)[p]( )[ ]( )[p]
+6 [ ]( )[ ]( )[k]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](N)[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](b)[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb1q1nr/pppp3p/4k1p1/2P1p3/5N2/1P3P2/P2b3P/RNBQKB1R
+King is at [4, 5]
+Fen: rnb1q1nr/pppp3p/4k1p1/2P1p3/5N2/1P3P2/P2b3P/RNBQKB1R
+Generated FEN: rnb1q1nr/1ppp3p/p3k1p1/2P1p3/5N2/1P3P2/P2b3P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[p](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[k]( )[p]( )
+5 ( )[ ](P)[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](N)[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](b)[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb1q1nr/1ppp3p/p3k1p1/2P1p3/5N2/1P3P2/P2b3P/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/1ppp3p/p3k1p1/2P1p3/5N2/1P3P2/P2b3P/RNBQKB1R
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k1p1/4p3/5N2/1P3P2/P2b3P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[p](p)[p]( )[ ]( )[p]
+6 [p]( )[P]( )[k]( )[p]( )
+5 ( )[ ]( )[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](N)[ ]( )
+3 ( )[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](b)[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k1p1/4p3/5N2/1P3P2/P2b3P/RNBQKB1R
+King is at [4, 5]
+Fen: rnb1q1nr/1ppp3p/p1P1k1p1/4p3/5N2/1P3P2/P2b3P/RNBQKB1R
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k3/4p3/5Np1/1P3P2/P2b3P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[p](p)[p]( )[ ]( )[p]
+6 [p]( )[P]( )[k]( )[ ]( )
+5 ( )[ ]( )[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](N)[p]( )
+3 ( )[P]( )[ ]( )[P]( )[ ]
+2 [P]( )[ ](b)[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k3/4p3/5Np1/1P3P2/P2b3P/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/1ppp3p/p1P1k3/4p3/5Np1/1P3P2/P2b3P/RNBQKB1R
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k3/4p3/5NP1/1P6/P2b3P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[p](p)[p]( )[ ]( )[p]
+6 [p]( )[P]( )[k]( )[ ]( )
+5 ( )[ ]( )[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](N)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ](b)[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k3/4p3/5NP1/1P6/P2b3P/RNBQKB1R
+King is at [4, 5]
+Fen: rnb1q1nr/1ppp3p/p1P1k3/4p3/5NP1/1P6/P2b3P/RNBQKB1R
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k3/4p3/5bP1/1P6/P6P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[p](p)[p]( )[ ]( )[p]
+6 [p]( )[P]( )[k]( )[ ]( )
+5 ( )[ ]( )[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ]( )[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb1q1nr/1ppp3p/p1P1k3/4p3/5bP1/1P6/P6P/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/1ppp3p/p1P1k3/4p3/5bP1/1P6/P6P/RNBQKB1R
+Generated FEN: rnb1q1nr/1Ppp3p/p3k3/4p3/5bP1/1P6/P6P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[k]( )[ ]( )
+5 ( )[ ]( )[ ](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ]( )[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: k
+Generated FEN: rnb1q1nr/1Ppp3p/p3k3/4p3/5bP1/1P6/P6P/RNBQKB1R
+King is at [4, 5]
+Fen: rnb1q1nr/1Ppp3p/p3k3/4p3/5bP1/1P6/P6P/RNBQKB1R
+Generated FEN: rnb1q1nr/1Ppp3p/p7/3kp3/5bP1/1P6/P6P/RNBQKB1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[k](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ]( )[ ]( )[ ](P)
+1 (R)[N](B)[Q](K)[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: K
+Generated FEN: rnb1q1nr/1Ppp3p/p7/3kp3/5bP1/1P6/P6P/RNBQKB1R
+King is at [4, 0]
+Fen: rnb1q1nr/1Ppp3p/p7/3kp3/5bP1/1P6/P6P/RNBQKB1R
+Generated FEN: rnb1q1nr/1Ppp3p/p7/3kp3/5bP1/1P6/P3K2P/RNBQ1B1R
+
+8 [r](n)[b]( )[q]( )[n](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[k](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ]( )[K]( )[ ](P)
+1 (R)[N](B)[Q]( )[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: n
+Generated FEN: rnb1q1nr/1Ppp3p/p7/3kp3/5bP1/1P6/P3K2P/RNBQ1B1R
+King is at [3, 4]
+Fen: rnb1q1nr/1Ppp3p/p7/3kp3/5bP1/1P6/P3K2P/RNBQ1B1R
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3kp3/5bP1/1P6/P3K2P/RNBQ1B1R
+
+8 [r](n)[b]( )[q]( )[ ](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[ ]( )[ ](n)
+5 ( )[ ]( )[k](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ]( )[K]( )[ ](P)
+1 (R)[N](B)[Q]( )[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: K
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3kp3/5bP1/1P6/P3K2P/RNBQ1B1R
+King is at [4, 1]
+Fen: rnb1q2r/1Ppp3p/p6n/3kp3/5bP1/1P6/P3K2P/RNBQ1B1R
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3kp3/5bP1/1P6/P2K3P/RNBQ1B1R
+
+8 [r](n)[b]( )[q]( )[ ](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[ ]( )[ ](n)
+5 ( )[ ]( )[k](p)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ](K)[ ]( )[ ](P)
+1 (R)[N](B)[Q]( )[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3kp3/5bP1/1P6/P2K3P/RNBQ1B1R
+King is at [3, 4]
+Fen: rnb1q2r/1Ppp3p/p6n/3kp3/5bP1/1P6/P2K3P/RNBQ1B1R
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3k4/4pbP1/1P6/P2K3P/RNBQ1B1R
+
+8 [r](n)[b]( )[q]( )[ ](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p](b)[P]( )
+3 ( )[P]( )[ ]( )[ ]( )[ ]
+2 [P]( )[ ](K)[ ]( )[ ](P)
+1 (R)[N](B)[Q]( )[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3k4/4pbP1/1P6/P2K3P/RNBQ1B1R
+King is at [3, 1]
+Fen: rnb1q2r/1Ppp3p/p6n/3k4/4pbP1/1P6/P2K3P/RNBQ1B1R
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3k4/4pbP1/1P1B4/P2K3P/RNBQ3R
+
+8 [r](n)[b]( )[q]( )[ ](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ]( )[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p](b)[P]( )
+3 ( )[P]( )[B]( )[ ]( )[ ]
+2 [P]( )[ ](K)[ ]( )[ ](P)
+1 (R)[N](B)[Q]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnb1q2r/1Ppp3p/p6n/3k4/4pbP1/1P1B4/P2K3P/RNBQ3R
+King is at [3, 4]
+Fen: rnb1q2r/1Ppp3p/p6n/3k4/4pbP1/1P1B4/P2K3P/RNBQ3R
+Generated FEN: rnb1q2r/1Ppp3p/p2b3n/3k4/4p1P1/1P1B4/P2K3P/RNBQ3R
+
+8 [r](n)[b]( )[q]( )[ ](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ](b)[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[ ]( )[ ]
+2 [P]( )[ ](K)[ ]( )[ ](P)
+1 (R)[N](B)[Q]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: rnb1q2r/1Ppp3p/p2b3n/3k4/4p1P1/1P1B4/P2K3P/RNBQ3R
+King is at [3, 1]
+Fen: rnb1q2r/1Ppp3p/p2b3n/3k4/4p1P1/1P1B4/P2K3P/RNBQ3R
+Generated FEN: rnb1q2r/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q2/P2K3P/RNB4R
+
+8 [r](n)[b]( )[q]( )[ ](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ](b)[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[Q]( )[ ]
+2 [P]( )[ ](K)[ ]( )[ ](P)
+1 (R)[N](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: q
+Generated FEN: rnb1q2r/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q2/P2K3P/RNB4R
+King is at [3, 4]
+Fen: rnb1q2r/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q2/P2K3P/RNB4R
+Generated FEN: rnb3qr/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q2/P2K3P/RNB4R
+
+8 [r](n)[b]( )[ ]( )[q](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ](b)[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[Q]( )[ ]
+2 [P]( )[ ](K)[ ]( )[ ](P)
+1 (R)[N](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb3qr/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q2/P2K3P/RNB4R
+King is at [3, 1]
+Fen: rnb3qr/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q2/P2K3P/RNB4R
+Generated FEN: rnb3qr/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB4R
+
+8 [r](n)[b]( )[ ]( )[q](r)
+7 ( )[P](p)[p]( )[ ]( )[p]
+6 [p]( )[ ](b)[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb3qr/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB4R
+King is at [3, 4]
+Fen: rnb3qr/1Ppp3p/p2b3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB4R
+Generated FEN: rnb3qr/1P1p3p/p1pb3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB4R
+
+8 [r](n)[b]( )[ ]( )[q](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p](b)[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: R
+Generated FEN: rnb3qr/1P1p3p/p1pb3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB4R
+King is at [3, 1]
+Fen: rnb3qr/1P1p3p/p1pb3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB4R
+Generated FEN: rnb3qr/1P1p3p/p1pb3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[q](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p](b)[ ]( )[ ](n)
+5 ( )[ ]( )[k]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: k
+Generated FEN: rnb3qr/1P1p3p/p1pb3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB2R2
+King is at [3, 4]
+Fen: rnb3qr/1P1p3p/p1pb3n/3k4/4p1P1/1P1B1Q1P/P2K4/RNB2R2
+Generated FEN: rnb3qr/1P1p3p/p1pb3n/4k3/4p1P1/1P1B1Q1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[q](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p](b)[ ]( )[ ](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[P]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: rnb3qr/1P1p3p/p1pb3n/4k3/4p1P1/1P1B1Q1P/P2K4/RNB2R2
+King is at [3, 1]
+Fen: rnb3qr/1P1p3p/p1pb3n/4k3/4p1P1/1P1B1Q1P/P2K4/RNB2R2
+Generated FEN: rnb3qr/1P1p3p/p1pb2Pn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[q](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p](b)[ ]( )[P](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: q
+Generated FEN: rnb3qr/1P1p3p/p1pb2Pn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+King is at [4, 4]
+Fen: rnb3qr/1P1p3p/p1pb2Pn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1p3p/p1pb2qn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p](b)[ ]( )[q](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: rnb4r/1P1p3p/p1pb2qn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+King is at [3, 1]
+Fen: rnb4r/1P1p3p/p1pb2qn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1p3p/p1pb1Qqn/4k3/4p3/1P1B3P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p](b)[ ](Q)[q](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[B]( )[ ]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnb4r/1P1p3p/p1pb1Qqn/4k3/4p3/1P1B3P/P2K4/RNB2R2
+King is at [4, 4]
+Fen: rnb4r/1P1p3p/p1pb1Qqn/4k3/4p3/1P1B3P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p2Qqn/4k3/4p3/1P1B3P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ](Q)[q](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[B]( )[ ]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: rnb4r/1P1pb2p/p1p2Qqn/4k3/4p3/1P1B3P/P2K4/RNB2R2
+King is at [3, 1]
+Fen: rnb4r/1P1pb2p/p1p2Qqn/4k3/4p3/1P1B3P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p3qn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[q](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[p]( )[ ]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb4r/1P1pb2p/p1p3qn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+King is at [4, 4]
+Fen: rnb4r/1P1pb2p/p1p3qn/4k3/4p3/1P1B1Q1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p3qn/4k3/8/1P1BpQ1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[q](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[P]( )[B](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb4r/1P1pb2p/p1p3qn/4k3/8/1P1BpQ1P/P2K4/RNB2R2
+King is at [3, 1]
+Fen: rnb4r/1P1pb2p/p1p3qn/4k3/8/1P1BpQ1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p3qn/4k3/2B5/1P2pQ1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[q](n)
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[B]( )[ ]( )[ ]( )
+3 ( )[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: n
+Generated FEN: rnb4r/1P1pb2p/p1p3qn/4k3/2B5/1P2pQ1P/P2K4/RNB2R2
+King is at [4, 4]
+Fen: rnb4r/1P1pb2p/p1p3qn/4k3/2B5/1P2pQ1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p3q1/4k3/2B3n1/1P2pQ1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[q]( )
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[B]( )[ ]( )[n]( )
+3 ( )[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb4r/1P1pb2p/p1p3q1/4k3/2B3n1/1P2pQ1P/P2K4/RNB2R2
+King is at [3, 1]
+Fen: rnb4r/1P1pb2p/p1p3q1/4k3/2B3n1/1P2pQ1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p3q1/1B2k3/6n1/1P2pQ1P/P2K4/RNB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[q]( )
+5 ( )[B]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 ( )[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[N](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: q
+Generated FEN: rnb4r/1P1pb2p/p1p3q1/1B2k3/6n1/1P2pQ1P/P2K4/RNB2R2
+King is at [4, 4]
+Fen: rnb4r/1P1pb2p/p1p3q1/1B2k3/6n1/1P2pQ1P/P2K4/RNB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p5/1B2k3/6n1/1P2pQ1P/P2K4/RqB2R2
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[B]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 ( )[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[q](B)[ ]( )[R]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: R
+Generated FEN: rnb4r/1P1pb2p/p1p5/1B2k3/6n1/1P2pQ1P/P2K4/RqB2R2
+King is at [3, 1]
+Fen: rnb4r/1P1pb2p/p1p5/1B2k3/6n1/1P2pQ1P/P2K4/RqB2R2
+Generated FEN: rnb4r/1P1pb2p/p1p5/1B2k3/6n1/1P2pQ1P/P2K4/RqB4R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p](b)[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[B]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 ( )[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[q](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnb4r/1P1pb2p/p1p5/1B2k3/6n1/1P2pQ1P/P2K4/RqB4R
+King is at [4, 4]
+Fen: rnb4r/1P1pb2p/p1p5/1B2k3/6n1/1P2pQ1P/P2K4/RqB4R
+Generated FEN: rnb4r/1P1p3p/p1p5/1B2k3/6n1/bP2pQ1P/P2K4/RqB4R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[B]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[q](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb4r/1P1p3p/p1p5/1B2k3/6n1/bP2pQ1P/P2K4/RqB4R
+King is at [3, 1]
+Fen: rnb4r/1P1p3p/p1p5/1B2k3/6n1/bP2pQ1P/P2K4/RqB4R
+Generated FEN: rnb4r/1P1p3p/p1p5/4k3/6n1/bP2pQ1P/P2K4/RqB2B1R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](k)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[q](B)[ ]( )[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: k
+Generated FEN: rnb4r/1P1p3p/p1p5/4k3/6n1/bP2pQ1P/P2K4/RqB2B1R
+King is at [4, 4]
+Fen: rnb4r/1P1p3p/p1p5/4k3/6n1/bP2pQ1P/P2K4/RqB2B1R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2K4/RqB2B1R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[q](B)[ ]( )[B]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2K4/RqB2B1R
+King is at [3, 1]
+Fen: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2K4/RqB2B1R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2KB3/RqB4R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[B]( )[ ]( )
+1 (R)[q](B)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: q
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2KB3/RqB4R
+King is at [5, 4]
+Fen: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2KB3/RqB4R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2KB3/R1q4R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[B]( )[ ]( )
+1 (R)[ ](q)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2KB3/R1q4R
+King is at [3, 1]
+Fen: rnb4r/1P1p3p/p1p5/5k2/6n1/bP2pQ1P/P2KB3/R1q4R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P2K4/R1q4R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[B]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[ ](q)[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: q
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P2K4/R1q4R
+King is at [5, 4]
+Fen: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P2K4/R1q4R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P2K4/R2q3R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[B]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ](K)[ ]( )[ ]( )
+1 (R)[ ]( )[q]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: K
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P2K4/R2q3R
+King is at [3, 1]
+Fen: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P2K4/R2q3R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P7/R2K3R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[B]( )[ ]( )[n]( )
+3 (b)[P]( )[ ](p)[Q]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[K]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P7/R2K3R
+King is at [5, 4]
+Fen: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP2pQ1P/P7/R2K3R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP3Q1P/P7/R2Kp2R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[B]( )[ ]( )[n]( )
+3 (b)[P]( )[ ]( )[Q]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[K](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP3Q1P/P7/R2Kp2R
+King is at [3, 0]
+Fen: rnb4r/1P1p3p/p1p5/5k2/2B3n1/bP3Q1P/P7/R2Kp2R
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP1B1Q1P/P7/R2Kp2R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 (b)[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[K](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: rnb4r/1P1p3p/p1p5/5k2/6n1/bP1B1Q1P/P7/R2Kp2R
+King is at [5, 4]
+Fen: rnb4r/1P1p3p/p1p5/5k2/6n1/bP1B1Q1P/P7/R2Kp2R
+Generated FEN: rnb4r/1P1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R2Kp2R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ](b)[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[K](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: K
+Generated FEN: rnb4r/1P1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R2Kp2R
+King is at [3, 0]
+Fen: rnb4r/1P1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R2Kp2R
+Generated FEN: rnb4r/1P1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R1K1p2R
+
+8 [r](n)[b]( )[ ]( )[ ](r)
+7 ( )[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ](b)[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ](K)[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: rnb4r/1P1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R1K1p2R
+King is at [5, 4]
+Fen: rnb4r/1P1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R1K1p2R
+Generated FEN: 1nb4r/rP1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R1K1p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ](b)[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[n]( )
+3 ( )[P]( )[B]( )[Q]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ](K)[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1nb4r/rP1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R1K1p2R
+King is at [2, 0]
+Fen: 1nb4r/rP1p3p/p1p5/2b2k2/6n1/1P1B1Q1P/P7/R1K1p2R
+Generated FEN: 1nb4r/rP1p3p/p1p5/2b2k2/6Q1/1P1B3P/P7/R1K1p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ](b)[ ]( )[k]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[Q]( )
+3 ( )[P]( )[B]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ](K)[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: k
+Generated FEN: 1nb4r/rP1p3p/p1p5/2b2k2/6Q1/1P1B3P/P7/R1K1p2R
+King is at [5, 4]
+Fen: 1nb4r/rP1p3p/p1p5/2b2k2/6Q1/1P1B3P/P7/R1K1p2R
+Generated FEN: 1nb4r/rP1p3p/p1p5/2b3k1/6Q1/1P1B3P/P7/R1K1p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[ ]( )[ ]( )
+5 ( )[ ](b)[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[Q]( )
+3 ( )[P]( )[B]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ](K)[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1nb4r/rP1p3p/p1p5/2b3k1/6Q1/1P1B3P/P7/R1K1p2R
+King is at [2, 0]
+Fen: 1nb4r/rP1p3p/p1p5/2b3k1/6Q1/1P1B3P/P7/R1K1p2R
+Generated FEN: 1nb4r/rP1p3p/p1p1Q3/2b3k1/8/1P1B3P/P7/R1K1p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[Q]( )[ ]( )
+5 ( )[ ](b)[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[P]( )[B]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ](K)[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1nb4r/rP1p3p/p1p1Q3/2b3k1/8/1P1B3P/P7/R1K1p2R
+King is at [6, 4]
+Fen: 1nb4r/rP1p3p/p1p1Q3/2b3k1/8/1P1B3P/P7/R1K1p2R
+Generated FEN: 1nb4r/rP1p3p/p1p1Q3/6k1/8/bP1B3P/P7/R1K1p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[Q]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[P]( )[B]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ](K)[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: K
+Generated FEN: 1nb4r/rP1p3p/p1p1Q3/6k1/8/bP1B3P/P7/R1K1p2R
+King is at [2, 0]
+Fen: 1nb4r/rP1p3p/p1p1Q3/6k1/8/bP1B3P/P7/R1K1p2R
+Generated FEN: 1nb4r/rP1p3p/p1p1Q3/6k1/8/bP1B3P/PK6/R3p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[p]( )[ ]( )[p]
+6 [p]( )[p]( )[Q]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[P]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1nb4r/rP1p3p/p1p1Q3/6k1/8/bP1B3P/PK6/R3p2R
+King is at [6, 4]
+Fen: 1nb4r/rP1p3p/p1p1Q3/6k1/8/bP1B3P/PK6/R3p2R
+Generated FEN: 1nb4r/rP5p/p1ppQ3/6k1/8/bP1B3P/PK6/R3p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[p](p)[Q]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[P]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: 1nb4r/rP5p/p1ppQ3/6k1/8/bP1B3P/PK6/R3p2R
+King is at [1, 1]
+Fen: 1nb4r/rP5p/p1ppQ3/6k1/8/bP1B3P/PK6/R3p2R
+Generated FEN: 1nb4r/rP5p/p1ppQ3/1P4k1/8/b2B3P/PK6/R3p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[p](p)[Q]( )[ ]( )
+5 ( )[P]( )[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[ ]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1nb4r/rP5p/p1ppQ3/1P4k1/8/b2B3P/PK6/R3p2R
+King is at [6, 4]
+Fen: 1nb4r/rP5p/p1ppQ3/1P4k1/8/b2B3P/PK6/R3p2R
+Generated FEN: 1nb4r/rP5p/p2pQ3/1p4k1/8/b2B3P/PK6/R3p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[ ](p)[Q]( )[ ]( )
+5 ( )[p]( )[ ]( )[ ](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[ ]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1nb4r/rP5p/p2pQ3/1p4k1/8/b2B3P/PK6/R3p2R
+King is at [1, 1]
+Fen: 1nb4r/rP5p/p2pQ3/1p4k1/8/b2B3P/PK6/R3p2R
+Generated FEN: 1nb4r/rP5p/p2p4/1p3Qk1/8/b2B3P/PK6/R3p2R
+
+8 [ ](n)[b]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ]( )[Q](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[ ]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1nb4r/rP5p/p2p4/1p3Qk1/8/b2B3P/PK6/R3p2R
+King is at [6, 4]
+Fen: 1nb4r/rP5p/p2p4/1p3Qk1/8/b2B3P/PK6/R3p2R
+Generated FEN: 1n5r/rP5p/p2pb3/1p3Qk1/8/b2B3P/PK6/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[ ](p)[b]( )[ ]( )
+5 ( )[p]( )[ ]( )[Q](k)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[ ]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n5r/rP5p/p2pb3/1p3Qk1/8/b2B3P/PK6/R3p2R
+King is at [1, 1]
+Fen: 1n5r/rP5p/p2pb3/1p3Qk1/8/b2B3P/PK6/R3p2R
+Generated FEN: 1n5r/rP5p/p2pb3/1p4Q1/8/b2B3P/PK6/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[ ](p)[b]( )[ ]( )
+5 ( )[p]( )[ ]( )[ ](Q)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 (b)[ ]( )[B]( )[ ]( )[P]
+2 [P](K)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n5r/rP5p/p2pb3/1p4Q1/8/b2B3P/PK6/R3p2R
+King is at [6, 4]
+Fen: 1n5r/rP5p/p2pb3/1p4Q1/8/b2B3P/PK6/R3p2R
+Generated FEN: 1n5r/rP5p/p2pb3/1p4Q1/8/3B3P/Pb6/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[ ](p)[b]( )[ ]( )
+5 ( )[p]( )[ ]( )[ ](Q)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[B]( )[ ]( )[P]
+2 [P](b)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n5r/rP5p/p2pb3/1p4Q1/8/3B3P/Pb6/R3p2R
+King is at [1, 1]
+Fen: 1n5r/rP5p/p2pb3/1p4Q1/8/3B3P/Pb6/R3p2R
+Generated FEN: 1n5r/rP5p/p2pb3/1p3BQ1/8/7P/Pb6/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[ ]( )[ ]( )[p]
+6 [p]( )[ ](p)[b]( )[ ]( )
+5 ( )[p]( )[ ]( )[B](Q)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P](b)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n5r/rP5p/p2pb3/1p3BQ1/8/7P/Pb6/R3p2R
+King is at [6, 4]
+Fen: 1n5r/rP5p/p2pb3/1p3BQ1/8/7P/Pb6/R3p2R
+Generated FEN: 1n5r/rP1b3p/p2p4/1p3BQ1/8/7P/Pb6/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[b]( )[ ]( )[p]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ]( )[B](Q)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P](b)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n5r/rP1b3p/p2p4/1p3BQ1/8/7P/Pb6/R3p2R
+King is at [1, 1]
+Fen: 1n5r/rP1b3p/p2p4/1p3BQ1/8/7P/Pb6/R3p2R
+Generated FEN: 1n4Qr/rP1b3p/p2p4/1p3B2/8/7P/Pb6/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[Q](r)
+7 (r)[P]( )[b]( )[ ]( )[p]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P](b)[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n4Qr/rP1b3p/p2p4/1p3B2/8/7P/Pb6/R3p2R
+King is at [6, 4]
+Fen: 1n4Qr/rP1b3p/p2p4/1p3B2/8/7P/Pb6/R3p2R
+Generated FEN: 1n4Qr/rP1b2bp/p2p4/1p3B2/8/7P/P7/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[Q](r)
+7 (r)[P]( )[b]( )[ ](b)[p]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n4Qr/rP1b2bp/p2p4/1p3B2/8/7P/P7/R3p2R
+King is at [1, 1]
+Fen: 1n4Qr/rP1b2bp/p2p4/1p3B2/8/7P/P7/R3p2R
+Generated FEN: 1n5r/rP1b2bQ/p2p4/1p3B2/8/7P/P7/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[b]( )[ ](b)[Q]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n5r/rP1b2bQ/p2p4/1p3B2/8/7P/P7/R3p2R
+King is at [6, 4]
+Fen: 1n5r/rP1b2bQ/p2p4/1p3B2/8/7P/P7/R3p2R
+Generated FEN: 1n5r/rP1b3Q/p2p4/1p2bB2/8/7P/P7/R3p2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[b]( )[ ]( )[Q]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ](b)[B]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 (R)[ ]( )[ ](p)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: R
+Generated FEN: 1n5r/rP1b3Q/p2p4/1p2bB2/8/7P/P7/R3p2R
+King is at [1, 1]
+Fen: 1n5r/rP1b3Q/p2p4/1p2bB2/8/7P/P7/R3p2R
+Generated FEN: 1n5r/rP1b3Q/p2p4/1p2bB2/8/7P/P7/4R2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[b]( )[ ]( )[Q]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[p]( )[ ](b)[B]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1n5r/rP1b3Q/p2p4/1p2bB2/8/7P/P7/4R2R
+King is at [6, 4]
+Fen: 1n5r/rP1b3Q/p2p4/1p2bB2/8/7P/P7/4R2R
+Generated FEN: 1n5r/rP1b3Q/p2p4/4bB2/8/1p5P/P7/4R2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[b]( )[ ]( )[Q]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[ ]( )[ ](b)[B]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[p]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n5r/rP1b3Q/p2p4/4bB2/8/1p5P/P7/4R2R
+King is at [1, 1]
+Fen: 1n5r/rP1b3Q/p2p4/4bB2/8/1p5P/P7/4R2R
+Generated FEN: 1n5r/rP1b3Q/p2p4/4b3/6B1/1p5P/P7/4R2R
+
+8 [ ](n)[ ]( )[ ]( )[ ](r)
+7 (r)[P]( )[b]( )[ ]( )[Q]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[ ]( )[ ](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[B]( )
+3 ( )[p]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n5r/rP1b3Q/p2p4/4b3/6B1/1p5P/P7/4R2R
+King is at [6, 4]
+Fen: 1n5r/rP1b3Q/p2p4/4b3/6B1/1p5P/P7/4R2R
+Generated FEN: 1n2r3/rP1b3Q/p2p4/4b3/6B1/1p5P/P7/4R2R
+
+8 [ ](n)[ ]( )[r]( )[ ]( )
+7 (r)[P]( )[b]( )[ ]( )[Q]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[ ]( )[ ](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[B]( )
+3 ( )[p]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n2r3/rP1b3Q/p2p4/4b3/6B1/1p5P/P7/4R2R
+King is at [1, 1]
+Fen: 1n2r3/rP1b3Q/p2p4/4b3/6B1/1p5P/P7/4R2R
+Generated FEN: 1n2r3/rP1Q4/p2p4/4b3/6B1/1p5P/P7/4R2R
+
+8 [ ](n)[ ]( )[r]( )[ ]( )
+7 (r)[P]( )[Q]( )[ ]( )[ ]
+6 [p]( )[ ](p)[ ]( )[ ]( )
+5 ( )[ ]( )[ ](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[B]( )
+3 ( )[p]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1n2r3/rP1Q4/p2p4/4b3/6B1/1p5P/P7/4R2R
+King is at [6, 4]
+Fen: 1n2r3/rP1Q4/p2p4/4b3/6B1/1p5P/P7/4R2R
+Generated FEN: 1n2r3/rP1Q4/p7/3pb3/6B1/1p5P/P7/4R2R
+
+8 [ ](n)[ ]( )[r]( )[ ]( )
+7 (r)[P]( )[Q]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[p](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[B]( )
+3 ( )[p]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n2r3/rP1Q4/p7/3pb3/6B1/1p5P/P7/4R2R
+King is at [1, 1]
+Fen: 1n2r3/rP1Q4/p7/3pb3/6B1/1p5P/P7/4R2R
+Generated FEN: 1n1Qr3/rP6/p7/3pb3/6B1/1p5P/P7/4R2R
+
+8 [ ](n)[ ](Q)[r]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[p](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[B]( )
+3 ( )[p]( )[ ]( )[ ]( )[P]
+2 [P]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1n1Qr3/rP6/p7/3pb3/6B1/1p5P/P7/4R2R
+King is at [6, 4]
+Fen: 1n1Qr3/rP6/p7/3pb3/6B1/1p5P/P7/4R2R
+Generated FEN: 1n1Qr3/rP6/p7/3pb3/6B1/7P/p7/4R2R
+
+8 [ ](n)[ ](Q)[r]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[p](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[B]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n1Qr3/rP6/p7/3pb3/6B1/7P/p7/4R2R
+King is at [1, 1]
+Fen: 1n1Qr3/rP6/p7/3pb3/6B1/7P/p7/4R2R
+Generated FEN: 1n1Qr3/rP6/p3B3/3pb3/8/7P/p7/4R2R
+
+8 [ ](n)[ ](Q)[r]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[p](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1n1Qr3/rP6/p3B3/3pb3/8/7P/p7/4R2R
+King is at [6, 4]
+Fen: 1n1Qr3/rP6/p3B3/3pb3/8/7P/p7/4R2R
+Generated FEN: 1n1Qr3/rP6/p3B3/4b3/8/3p3P/p7/4R2R
+
+8 [ ](n)[ ](Q)[r]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n1Qr3/rP6/p3B3/4b3/8/3p3P/p7/4R2R
+King is at [1, 1]
+Fen: 1n1Qr3/rP6/p3B3/4b3/8/3p3P/p7/4R2R
+Generated FEN: 1n2r3/rP6/pQ2B3/4b3/8/3p3P/p7/4R2R
+
+8 [ ](n)[ ]( )[r]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](Q)[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ](b)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n2r3/rP6/pQ2B3/4b3/8/3p3P/p7/4R2R
+King is at [6, 4]
+Fen: 1n2r3/rP6/pQ2B3/4b3/8/3p3P/p7/4R2R
+Generated FEN: 1n2r3/rPb5/pQ2B3/8/8/3p3P/p7/4R2R
+
+8 [ ](n)[ ]( )[r]( )[ ]( )
+7 (r)[P](b)[ ]( )[ ]( )[ ]
+6 [p](Q)[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ](R)[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: R
+Generated FEN: 1n2r3/rPb5/pQ2B3/8/8/3p3P/p7/4R2R
+King is at [1, 1]
+Fen: 1n2r3/rPb5/pQ2B3/8/8/3p3P/p7/4R2R
+Generated FEN: 1n2r3/rPb5/pQ2B3/4R3/8/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[r]( )[ ]( )
+7 (r)[P](b)[ ]( )[ ]( )[ ]
+6 [p](Q)[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n2r3/rPb5/pQ2B3/4R3/8/3p3P/p7/7R
+King is at [6, 4]
+Fen: 1n2r3/rPb5/pQ2B3/4R3/8/3p3P/p7/7R
+Generated FEN: 1n6/rPb1r3/pQ2B3/4R3/8/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P](b)[ ](r)[ ]( )[ ]
+6 [p](Q)[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n6/rPb1r3/pQ2B3/4R3/8/3p3P/p7/7R
+King is at [1, 1]
+Fen: 1n6/rPb1r3/pQ2B3/4R3/8/3p3P/p7/7R
+Generated FEN: 1n6/rPb1r3/p1Q1B3/4R3/8/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P](b)[ ](r)[ ]( )[ ]
+6 [p]( )[Q]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n6/rPb1r3/p1Q1B3/4R3/8/3p3P/p7/7R
+King is at [6, 4]
+Fen: 1n6/rPb1r3/p1Q1B3/4R3/8/3p3P/p7/7R
+Generated FEN: 1n6/rP2r3/p1Q1B3/b3R3/8/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ](r)[ ]( )[ ]
+6 [p]( )[Q]( )[B]( )[ ]( )
+5 (b)[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n6/rP2r3/p1Q1B3/b3R3/8/3p3P/p7/7R
+King is at [1, 1]
+Fen: 1n6/rP2r3/p1Q1B3/b3R3/8/3p3P/p7/7R
+Generated FEN: 1n6/rP2r3/p3B3/b3R3/2Q5/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ](r)[ ]( )[ ]
+6 [p]( )[ ]( )[B]( )[ ]( )
+5 (b)[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[Q]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n6/rP2r3/p3B3/b3R3/2Q5/3p3P/p7/7R
+King is at [6, 4]
+Fen: 1n6/rP2r3/p3B3/b3R3/2Q5/3p3P/p7/7R
+Generated FEN: 1n6/rP2r3/pb2B3/4R3/2Q5/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ](r)[ ]( )[ ]
+6 [p](b)[ ]( )[B]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[Q]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n6/rP2r3/pb2B3/4R3/2Q5/3p3P/p7/7R
+King is at [1, 1]
+Fen: 1n6/rP2r3/pb2B3/4R3/2Q5/3p3P/p7/7R
+Generated FEN: 1n6/rP1Br3/pb6/4R3/2Q5/3p3P/p7/7R
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[B](r)[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[Q]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n6/rP1Br3/pb6/4R3/2Q5/3p3P/p7/7R
+King is at [6, 4]
+Fen: 1n6/rP1Br3/pb6/4R3/2Q5/3p3P/p7/7R
+Generated FEN: 1n1b4/rP1Br3/p7/4R3/2Q5/3p3P/p7/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[B](r)[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[Q]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n1b4/rP1Br3/p7/4R3/2Q5/3p3P/p7/7R
+King is at [1, 1]
+Fen: 1n1b4/rP1Br3/p7/4R3/2Q5/3p3P/p7/7R
+Generated FEN: 1n1b4/rP1Br3/p7/4R3/5Q2/3p3P/p7/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[B](r)[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](Q)[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n1b4/rP1Br3/p7/4R3/5Q2/3p3P/p7/7R
+King is at [6, 4]
+Fen: 1n1b4/rP1Br3/p7/4R3/5Q2/3p3P/p7/7R
+Generated FEN: 1n1br3/rP1B4/p7/4R3/5Q2/3p3P/p7/7R
+
+8 [ ](n)[ ](b)[r]( )[ ]( )
+7 (r)[P]( )[B]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ](Q)[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n1br3/rP1B4/p7/4R3/5Q2/3p3P/p7/7R
+King is at [1, 1]
+Fen: 1n1br3/rP1B4/p7/4R3/5Q2/3p3P/p7/7R
+Generated FEN: 1n1br3/rP1B4/p7/4R3/8/3p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[r]( )[ ]( )
+7 (r)[P]( )[B]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](R)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n1br3/rP1B4/p7/4R3/8/3p3P/p6Q/7R
+King is at [6, 4]
+Fen: 1n1br3/rP1B4/p7/4R3/8/3p3P/p6Q/7R
+Generated FEN: 1n1b4/rP1B4/p7/4r3/8/3p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[B]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](r)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n1b4/rP1B4/p7/4r3/8/3p3P/p6Q/7R
+King is at [1, 1]
+Fen: 1n1b4/rP1B4/p7/4r3/8/3p3P/p6Q/7R
+Generated FEN: 1n1b4/rP6/p1B5/4r3/8/3p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[B]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ](r)[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n1b4/rP6/p1B5/4r3/8/3p3P/p6Q/7R
+King is at [6, 4]
+Fen: 1n1b4/rP6/p1B5/4r3/8/3p3P/p6Q/7R
+Generated FEN: 1n1b4/rP6/p1B5/2r5/8/3p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[B]( )[ ]( )[ ]( )
+5 ( )[ ](r)[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n1b4/rP6/p1B5/2r5/8/3p3P/p6Q/7R
+King is at [1, 1]
+Fen: 1n1b4/rP6/p1B5/2r5/8/3p3P/p6Q/7R
+Generated FEN: 1n1b4/rP6/p7/2r5/B7/3p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ](r)[ ]( )[ ]( )[ ]
+4 [B]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n1b4/rP6/p7/2r5/B7/3p3P/p6Q/7R
+King is at [6, 4]
+Fen: 1n1b4/rP6/p7/2r5/B7/3p3P/p6Q/7R
+Generated FEN: 1nrb4/rP6/p7/8/B7/3p3P/p6Q/7R
+
+8 [ ](n)[r](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [B]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1nrb4/rP6/p7/8/B7/3p3P/p6Q/7R
+King is at [1, 1]
+Fen: 1nrb4/rP6/p7/8/B7/3p3P/p6Q/7R
+Generated FEN: 1nrb4/rP6/p7/8/8/3p3P/p1B4Q/7R
+
+8 [ ](n)[r](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[B]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1nrb4/rP6/p7/8/8/3p3P/p1B4Q/7R
+King is at [6, 4]
+Fen: 1nrb4/rP6/p7/8/8/3p3P/p1B4Q/7R
+Generated FEN: 1n1b4/rPr5/p7/8/8/3p3P/p1B4Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P](r)[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[p]( )[ ]( )[P]
+2 [p]( )[B]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n1b4/rPr5/p7/8/8/3p3P/p1B4Q/7R
+King is at [1, 1]
+Fen: 1n1b4/rPr5/p7/8/8/3p3P/p1B4Q/7R
+Generated FEN: 1n1b4/rPr5/p7/8/8/1B1p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P](r)[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[B]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n1b4/rPr5/p7/8/8/1B1p3P/p6Q/7R
+King is at [6, 4]
+Fen: 1n1b4/rPr5/p7/8/8/1B1p3P/p6Q/7R
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B1p3P/p6Q/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ](r)[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[B]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ]( )[ ](Q)
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B1p3P/p6Q/7R
+King is at [1, 1]
+Fen: 1n1b4/rP4r1/p7/8/8/1B1p3P/p6Q/7R
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B1p3P/p4Q2/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ](r)[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[B]( )[p]( )[ ]( )[P]
+2 [p]( )[ ]( )[ ](Q)[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B1p3P/p4Q2/7R
+King is at [6, 4]
+Fen: 1n1b4/rP4r1/p7/8/8/1B1p3P/p4Q2/7R
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B5P/p2p1Q2/7R
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ](r)[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[B]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ](Q)[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[R]
+   a  b  c  d  e  f  g  h
+
+Moving piece: R
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B5P/p2p1Q2/7R
+King is at [1, 1]
+Fen: 1n1b4/rP4r1/p7/8/8/1B5P/p2p1Q2/7R
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B5P/p2p1Q2/6R1
+
+8 [ ](n)[ ](b)[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ](r)[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[B]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ](Q)[ ]( )
+1 ( )[ ]( )[ ]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n1b4/rP4r1/p7/8/8/1B5P/p2p1Q2/6R1
+King is at [6, 4]
+Fen: 1n1b4/rP4r1/p7/8/8/1B5P/p2p1Q2/6R1
+Generated FEN: 1n1b2r1/rP6/p7/8/8/1B5P/p2p1Q2/6R1
+
+8 [ ](n)[ ](b)[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[B]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ](Q)[ ]( )
+1 ( )[ ]( )[ ]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n1b2r1/rP6/p7/8/8/1B5P/p2p1Q2/6R1
+King is at [1, 1]
+Fen: 1n1b2r1/rP6/p7/8/8/1B5P/p2p1Q2/6R1
+Generated FEN: 1n1b2r1/rP6/p7/8/8/7P/p2p1Q2/3B2R1
+
+8 [ ](n)[ ](b)[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ](Q)[ ]( )
+1 ( )[ ]( )[B]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n1b2r1/rP6/p7/8/8/7P/p2p1Q2/3B2R1
+King is at [6, 4]
+Fen: 1n1b2r1/rP6/p7/8/8/7P/p2p1Q2/3B2R1
+Generated FEN: 1n4r1/rP6/p7/b7/8/7P/p2p1Q2/3B2R1
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 (b)[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ](Q)[ ]( )
+1 ( )[ ]( )[B]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n4r1/rP6/p7/b7/8/7P/p2p1Q2/3B2R1
+King is at [1, 1]
+Fen: 1n4r1/rP6/p7/b7/8/7P/p2p1Q2/3B2R1
+Generated FEN: 1n4r1/rP6/p7/b7/8/7P/p2p4/3B1QR1
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 (b)[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[B]( )[Q](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n4r1/rP6/p7/b7/8/7P/p2p4/3B1QR1
+King is at [6, 4]
+Fen: 1n4r1/rP6/p7/b7/8/7P/p2p4/3B1QR1
+Generated FEN: 1n4r1/rP6/pb6/8/8/7P/p2p4/3B1QR1
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[B]( )[Q](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n4r1/rP6/pb6/8/8/7P/p2p4/3B1QR1
+King is at [1, 1]
+Fen: 1n4r1/rP6/pb6/8/8/7P/p2p4/3B1QR1
+Generated FEN: 1n4r1/rP6/pb6/8/2Q5/7P/p2p4/3B2R1
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[Q]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[B]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n4r1/rP6/pb6/8/2Q5/7P/p2p4/3B2R1
+King is at [6, 4]
+Fen: 1n4r1/rP6/pb6/8/2Q5/7P/p2p4/3B2R1
+Generated FEN: 1n6/rP6/pb6/8/2Q5/7P/p2p2r1/3B2R1
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[Q]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[r]( )
+1 ( )[ ]( )[B]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n6/rP6/pb6/8/2Q5/7P/p2p2r1/3B2R1
+King is at [1, 1]
+Fen: 1n6/rP6/pb6/8/2Q5/7P/p2p2r1/3B2R1
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p2p2r1/2QB2R1
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[r]( )
+1 ( )[ ](Q)[B]( )[ ](R)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p2p2r1/2QB2R1
+King is at [6, 4]
+Fen: 1n6/rP6/pb6/8/8/7P/p2p2r1/2QB2R1
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p2p4/2QB2r1
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ](Q)[B]( )[ ](r)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p2p4/2QB2r1
+King is at [1, 1]
+Fen: 1n6/rP6/pb6/8/8/7P/p2p4/2QB2r1
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p2p4/1Q1B2r1
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[Q]( )[B]( )[ ](r)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p2p4/1Q1B2r1
+King is at [6, 4]
+Fen: 1n6/rP6/pb6/8/8/7P/p2p4/1Q1B2r1
+Generated FEN: 1n6/rP6/pb6/6r1/8/7P/p2p4/1Q1B4
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ](r)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[Q]( )[B]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n6/rP6/pb6/6r1/8/7P/p2p4/1Q1B4
+King is at [1, 1]
+Fen: 1n6/rP6/pb6/6r1/8/7P/p2p4/1Q1B4
+Generated FEN: 1n6/rP6/pb6/6r1/8/7P/p1Bp4/1Q6
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ](r)[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[B](p)[ ]( )[ ]( )
+1 ( )[Q]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n6/rP6/pb6/6r1/8/7P/p1Bp4/1Q6
+King is at [6, 4]
+Fen: 1n6/rP6/pb6/6r1/8/7P/p1Bp4/1Q6
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p1Bp4/1Q4r1
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[B](p)[ ]( )[ ]( )
+1 ( )[Q]( )[ ]( )[ ](r)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p1Bp4/1Q4r1
+King is at [1, 1]
+Fen: 1n6/rP6/pb6/8/8/7P/p1Bp4/1Q4r1
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p1Bp4/Q5r1
+
+8 [ ](n)[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[B](p)[ ]( )[ ]( )
+1 (Q)[ ]( )[ ]( )[ ](r)[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1n6/rP6/pb6/8/8/7P/p1Bp4/Q5r1
+King is at [6, 4]
+Fen: 1n6/rP6/pb6/8/8/7P/p1Bp4/Q5r1
+Generated FEN: 1n4r1/rP6/pb6/8/8/7P/p1Bp4/Q7
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[B](p)[ ]( )[ ]( )
+1 (Q)[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: Q
+Generated FEN: 1n4r1/rP6/pb6/8/8/7P/p1Bp4/Q7
+King is at [1, 1]
+Fen: 1n4r1/rP6/pb6/8/8/7P/p1Bp4/Q7
+Generated FEN: 1n4r1/rP6/pb6/8/3Q4/7P/p1Bp4/8
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](Q)[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[B](p)[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1n4r1/rP6/pb6/8/3Q4/7P/p1Bp4/8
+King is at [6, 4]
+Fen: 1n4r1/rP6/pb6/8/3Q4/7P/p1Bp4/8
+Generated FEN: 1n4r1/rP6/p7/8/3b4/7P/p1Bp4/8
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[B](p)[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 1n4r1/rP6/p7/8/3b4/7P/p1Bp4/8
+King is at [1, 1]
+Fen: 1n4r1/rP6/p7/8/3b4/7P/p1Bp4/8
+Generated FEN: 1n4r1/rP6/p7/5B2/3b4/7P/p2p4/8
+
+8 [ ](n)[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[ ]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: n
+Generated FEN: 1n4r1/rP6/p7/5B2/3b4/7P/p2p4/8
+King is at [6, 4]
+Fen: 1n4r1/rP6/p7/5B2/3b4/7P/p2p4/8
+Generated FEN: 6r1/rP1n4/p7/5B2/3b4/7P/p2p4/8
+
+8 [ ]( )[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[n]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[P]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: 6r1/rP1n4/p7/5B2/3b4/7P/p2p4/8
+King is at [1, 1]
+Fen: 6r1/rP1n4/p7/5B2/3b4/7P/p2p4/8
+Generated FEN: 6r1/rP1n4/p7/5B2/3b3P/8/p2p4/8
+
+8 [ ]( )[ ]( )[ ]( )[r]( )
+7 (r)[P]( )[n]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[ ](P)
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 6r1/rP1n4/p7/5B2/3b3P/8/p2p4/8
+King is at [6, 4]
+Fen: 6r1/rP1n4/p7/5B2/3b3P/8/p2p4/8
+Generated FEN: 8/rP1n4/p7/5B2/3b2rP/8/p2p4/8
+
+8 [ ]( )[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[n]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[B]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[r](P)
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: B
+Generated FEN: 8/rP1n4/p7/5B2/3b2rP/8/p2p4/8
+King is at [1, 1]
+Fen: 8/rP1n4/p7/5B2/3b2rP/8/p2p4/8
+Generated FEN: 8/rP1n4/p7/8/3b2rP/8/p2p4/1B6
+
+8 [ ]( )[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[n]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[r](P)
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [p]( )[ ](p)[ ]( )[ ]( )
+1 ( )[B]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: p
+Generated FEN: 8/rP1n4/p7/8/3b2rP/8/p2p4/1B6
+King is at [6, 4]
+Fen: 8/rP1n4/p7/8/3b2rP/8/p2p4/1B6
+Generated FEN: 8/rP1n4/p7/8/3b2rP/8/3p4/1p6
+
+8 [ ]( )[ ]( )[ ]( )[ ]( )
+7 (r)[P]( )[n]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[r](P)
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: 8/rP1n4/p7/8/3b2rP/8/3p4/1p6
+King is at [1, 1]
+Fen: 8/rP1n4/p7/8/3b2rP/8/3p4/1p6
+Generated FEN: 1P6/r2n4/p7/8/3b2rP/8/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ]( )[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[r](P)
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1P6/r2n4/p7/8/3b2rP/8/3p4/1p6
+King is at [6, 4]
+Fen: 1P6/r2n4/p7/8/3b2rP/8/3p4/1p6
+Generated FEN: 1P6/r2n2r1/p7/8/3b3P/8/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ](r)[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[ ](P)
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: 1P6/r2n2r1/p7/8/3b3P/8/3p4/1p6
+King is at [1, 1]
+Fen: 1P6/r2n2r1/p7/8/3b3P/8/3p4/1p6
+Generated FEN: 1P6/r2n2r1/p7/7P/3b4/8/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ](r)[ ]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[P]
+4 [ ]( )[ ](b)[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1P6/r2n2r1/p7/7P/3b4/8/3p4/1p6
+King is at [6, 4]
+Fen: 1P6/r2n2r1/p7/7P/3b4/8/3p4/1p6
+Generated FEN: 1P6/r2n2r1/pb6/7P/8/8/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ](r)[ ]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[P]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: 1P6/r2n2r1/pb6/7P/8/8/3p4/1p6
+King is at [1, 1]
+Fen: 1P6/r2n2r1/pb6/7P/8/8/3p4/1p6
+Generated FEN: 1P6/r2n2r1/pb5P/8/8/8/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ](r)[ ]
+6 [p](b)[ ]( )[ ]( )[ ](P)
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ]( )[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: r
+Generated FEN: 1P6/r2n2r1/pb5P/8/8/8/3p4/1p6
+King is at [6, 4]
+Fen: 1P6/r2n2r1/pb5P/8/8/8/3p4/1p6
+Generated FEN: 1P6/r2n4/pb5P/8/8/6r1/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ]( )[ ]
+6 [p](b)[ ]( )[ ]( )[ ](P)
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ](r)[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: P
+Generated FEN: 1P6/r2n4/pb5P/8/8/6r1/3p4/1p6
+King is at [1, 1]
+Fen: 1P6/r2n4/pb5P/8/8/6r1/3p4/1p6
+Generated FEN: 1P6/r2n3P/pb6/8/8/6r1/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ]( )[P]
+6 [p](b)[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ]( )[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ](r)[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
+Moving piece: b
+Generated FEN: 1P6/r2n3P/pb6/8/8/6r1/3p4/1p6
+King is at [6, 4]
+Fen: 1P6/r2n3P/pb6/8/8/6r1/3p4/1p6
+Generated FEN: 1P6/r2n3P/p7/8/3b4/6r1/3p4/1p6
+
+8 [ ](P)[ ]( )[ ]( )[ ]( )
+7 (r)[ ]( )[n]( )[ ]( )[P]
+6 [p]( )[ ]( )[ ]( )[ ]( )
+5 ( )[ ]( )[ ]( )[ ]( )[ ]
+4 [ ]( )[ ](b)[ ]( )[ ]( )
+3 ( )[ ]( )[ ]( )[ ](r)[ ]
+2 [ ]( )[ ](p)[ ]( )[ ]( )
+1 ( )[p]( )[ ]( )[ ]( )[ ]
+   a  b  c  d  e  f  g  h
+
