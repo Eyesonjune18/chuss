@@ -131,7 +131,6 @@ public class Board {
 
     public void setUser(Interactable user, Color color) {
         //Set either user based on the Interactable passed in.
-        //TODO: Make a setUser for both colors at once
 
         if(color == Color.WHITE) whiteUser = user;
         else blackUser = user;
@@ -150,7 +149,7 @@ public class Board {
 
     private Piece[][] readFen(String fen) {
         //Take in a FEN string and turns it into a Piece array (board).
-        //TODO: Add full FEN interpretation, not just board layout
+        //TODO: Add further FEN interpretation layers
 
         Piece[][] fenBoard = new Piece[size][size];
         //Initialize a board to add pieces to and return
@@ -314,7 +313,6 @@ public class Board {
 
     private Point findKing(Color color) {
         //Finds the King of a given color and returns its position on the board in terms of a Point.
-        //TODO: Use ArrayList instead of whole board
 
         ArrayList<Piece> pieces = getPieces(color);
         //Get the list of pieces for the passed color
@@ -337,30 +335,30 @@ public class Board {
         //TODO: Restructure doMove and findCheck so you can pass a FEN instead of a move to findCheck
         //Why did I write this? Not sure. Might remember later.
 
+        forceMove(move);
+        //Moves the piece to the end position
+
         ArrayList<Piece> pieces;
         Point kingPos;
+
         if(turn == Color.WHITE) {
-            pieces = wPieces;
+            pieces = bPieces;
             kingPos = wKingPos;
         } else {
-            pieces = bPieces;
+            pieces = wPieces;
             kingPos = bKingPos;
         }
-        if(move.getMovedPiece() instanceof King) kingPos = move.getEndPos();
         //Stores the King position and piece array for the given color
 
         if(DEBUG) System.out.println("King is at [" + kingPos.x + ", " + kingPos.y + "]");
         //[DEBUG TEXT] Prints out where the King is
 
-        forceMove(move);
-        //Moves the piece to the end position
-
         for(Piece p : pieces) {
 
-            if(p.getColor() != turn && p.isLegal(new Move(this, p.getPos(), kingPos, true))) {
+            if(p.isLegal(new Move(this, p.getPos(), kingPos, true))) {
                 //If the color of this piece matches the color that was passed in and it is attacking the King
 
-                if (DEBUG) {
+                if(DEBUG) {
                     //[DEBUG TEXT] Prints a statement indicating which piece is putting the King in check
 
                     if (turn == Color.WHITE) System.out.print("WHITE ");
@@ -372,15 +370,17 @@ public class Board {
                 state = BoardState.CHECK;
                 //Sets the board state to CHECK if there is a check
 
+                forceUndoMove(move);
+                //Undo the move we just did
+
                 return true;
 
             }
 
-            forceUndoMove(move);
-            //Undo the move we just did
-            //TODO: Add support for multiple attacks at once? (Not sure if this is necessary)
-
         }
+
+        forceUndoMove(move);
+        //Undo the move we just did
 
         return false;
 
@@ -436,7 +436,6 @@ public class Board {
         //Performs a move on the board when passed a move object.
 
         Piece p = move.getMovedPiece();
-        Piece c = move.getCapturedPiece();
 
         if(p == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
         //If there is no piece at the starting position, throw an Illegal Argument
@@ -451,8 +450,43 @@ public class Board {
         //If the King is put in check by this move, throw an IllegalArgument
         //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
 
+        forceMove(move);
+        //Moves the piece to the end position
+
+        if(turn == Color.WHITE) turn = Color.BLACK;
+        else turn = Color.WHITE;
+        //Change the current turn color
+
+        if(findCheckMate(turn)) {
+            //If the current side has no possible legal moves (is in checkmate)
+            //TODO: Stalemate?
+
+            state = BoardState.CHECKMATE;
+            System.out.println("Checkmate!");
+            //TODO: Move this print to somewhere better
+
+        }
+
+    }
+
+    private void forceMove(Move move) {
+        //Simply make the move in the passed Move, disregarding rules.
+
+        Piece p = move.getMovedPiece();
+        Piece c = move.getCapturedPiece();
+
+        board[move.getEndX()][move.getEndY()] = p;
+        //Set the tile at the end position to the moved piece
+        board[move.getStartX()][move.getStartY()] = null;
+        //Set the tile at the start position to null (empty tile)
+
+        p.setPos(move.getEndPos());
+        //Set the new coordinates for the piece
+
         p.incMoveCount(1);
         //Add 1 to the moveCount of the moved piece
+        updateKingPos(p);
+        //Update the King's position on the board
 
         if(c != null) {
             //If there is a capture
@@ -475,58 +509,60 @@ public class Board {
 
         }
 
-        forceMove(move);
-        //Moves the piece to the end position
-
-        if(p instanceof King) {
-            //If the moved piece is a King
-
-            if(turn == Color.WHITE) wKingPos = move.getEndPos();
-                //If the King is white, make the move's end position the new wKingPos
-            else bKingPos = move.getEndPos();
-            //If the King is black, make the move's end position the new bKingPos
-
-        }
-
-        if(turn == Color.WHITE) turn = Color.BLACK;
-        else turn = Color.WHITE;
-        //Change the current turn color
-
-        if(findCheckMate(turn)) {
-            //If the current side has no possible legal moves (is in checkmate)
-            //TODO: Stalemate?
-
-            state = BoardState.CHECKMATE;
-            System.out.println("Checkmate!");
-            //TODO: Move this print to somewhere better
-
-        }
-
-    }
-
-    private void forceMove(Move move) {
-        //Simply make the move in the passed Move, disregarding rules.
-
-        board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
-        //Set the tile at the end position to the moved piece
-        board[move.getStartX()][move.getStartY()] = null;
-        //Set the tile at the start position to null (empty tile)
-
-        move.getMovedPiece().setPos(move.getEndPos());
-        //Set the new coordinates for the piece
-
     }
 
     private void forceUndoMove(Move move) {
         //Undo the passed Move, disregarding rules.
+        //TODO: Invert move and pass to forceMove
 
-        board[move.getStartX()][move.getStartY()] = move.getMovedPiece();
+        Piece p = move.getMovedPiece();
+        Piece c = move.getCapturedPiece();
+
+        board[move.getStartX()][move.getStartY()] = p;
         //Set the tile at the start position to the moved piece
-        board[move.getEndX()][move.getEndY()] = move.getCapturedPiece();
+        board[move.getEndX()][move.getEndY()] = c;
         //Set the tile at the end position to the captured piece in the move
 
-        move.getMovedPiece().setPos(move.getStartPos());
+        p.setPos(move.getStartPos());
         //Reset the piece coordinates to its starting postion
+        p.incMoveCount(-1);
+        //Subtract 1 from the moveCount of the moved piece
+        updateKingPos(p);
+        //Update the King's position on the board
+
+        if(c != null) {
+            //If there was a capture
+
+            if(c.getColor() == Color.WHITE) {
+
+                wCaptured.remove(c.getString());
+                wPieces.add(c);
+
+            }
+            else {
+
+                bCaptured.remove(c.getString());
+                bPieces.add(c);
+
+            }
+
+            aPieces.add(c);
+            //Add the captured piece to its respective capture list and remove it from the piece lists
+
+        }
+
+    }
+
+    private void updateKingPos(Piece piece) {
+        //Take a piece and determine if it is a King. If it is,
+        //then change wKingPos or bKingPos accordingly.
+
+        if(piece instanceof King) {
+
+            if(piece.getColor() == Color.WHITE) wKingPos = piece.getPos();
+            else bKingPos = piece.getPos();
+
+        }
 
     }
 
