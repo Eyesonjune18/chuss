@@ -88,6 +88,15 @@ public class Move {
 
     }
 
+    public Move(Board board, Point start, Point end, boolean override) {
+        //The manual constructor that uses a Point for the start
+        //and end position, and adds the override parameter
+
+        this(board, start.x, start.y, end.x, end.y, override);
+
+    }
+
+
     public Move(Board board, String moveStr) {
         //The automatic constructor for the Move object,
         //takes in a move in SMN and turns it into a Move object.

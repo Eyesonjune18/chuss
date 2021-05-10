@@ -63,11 +63,29 @@ public abstract class Piece {
 
     }
 
+    public int getMoveCount() {
+
+        return moveCount;
+
+    }
+
     //MUTATORS
+
+    public void setMoveCount(int i) {
+
+        moveCount = i;
+
+    }
 
     public void incMoveCount(int i) {
 
         moveCount += i;
+
+    }
+
+    public void setPos(Point pos) {
+
+        this.pos = pos;
 
     }
 

@@ -22,21 +22,20 @@ public class Board {
     //TODO: Potential issues with board size > 10, must fix
     private final int tSize = size - 1;
     //Used when referencing the "true size," usually when iterating starting from 0
-    private Piece[][] board;
+    private final Piece[][] board;
     //The Piece array that represents the actual chess board
     private Color turn;
     //The side that whose turn it is
     private Point wKingPos, bKingPos;
     //The current coordinates of the white and black Kings
-    private ArrayList<Piece> wPieces, bPieces;
-    //A list of all white and black pieces on the board
+    private ArrayList<Piece> wPieces, bPieces, aPieces;
+    //A list of the pieces for each side, and another list for all pieces combined
     private final ArrayList<String> wCaptured, bCaptured;
     //A list of captured pieces for each side
     private Interactable whiteUser, blackUser;
     //The Interactables that are controlling the white and black side
     private BoardState state;
     //What state the board is in (check, checkmate, etc)
-    //TODO: Convert boolean to enum for stalemate etc
 
     //CONSTRUCTORS
 
@@ -44,7 +43,7 @@ public class Board {
         //The default constructor for the Board object, creates a board
         //from the standard starting chess layout FEN string.
 
-         this("rnbqkbnr/pppppppp/////PPPPPPPP/RNBQKBNR");
+         this("rnbqkbnr/pppppppp/////PPPPPPPP/RNBQKBNR#00000000000000000000000000000000");
          //Call the FEN constructor with the FEN string for the default chess setup
 
     }
@@ -69,9 +68,7 @@ public class Board {
         wCaptured = new ArrayList<>();
         bCaptured = new ArrayList<>();
         whiteUser = null;
-        //Initializes the white user
         blackUser = null;
-        //Initializes the black user
         state = BoardState.NONE;
 
     }
@@ -123,10 +120,17 @@ public class Board {
 
     }
 
+    public ArrayList<Piece> getPieces(Color color) {
+
+        if(color == Color.WHITE) return wPieces;
+        else return bPieces;
+
+    }
+
     //MUTATORS
 
     public void setUser(Interactable user, Color color) {
-        //Sets either user based on the Interactable passed in.
+        //Set either user based on the Interactable passed in.
         //TODO: Make a setUser for both colors at once
 
         if(color == Color.WHITE) whiteUser = user;
@@ -135,7 +139,7 @@ public class Board {
     }
 
     public void setUsers(Interactable whiteUser, Interactable blackUser) {
-        //Sets both users using a function chain.
+        //Set both users using a function chain.
 
         setUser(whiteUser, Color.WHITE);
         setUser(blackUser, Color.BLACK);
@@ -145,28 +149,38 @@ public class Board {
     //OTHER
 
     private Piece[][] readFen(String fen) {
-        //Takes in a FEN string and turns it into a Piece array (board).
+        //Take in a FEN string and turns it into a Piece array (board).
         //TODO: Add full FEN interpretation, not just board layout
 
         Piece[][] fenBoard = new Piece[size][size];
         //Initialize a board to add pieces to and return
-        char[] fenArr = fen.toCharArray();
-        //Create an array of characters from the FEN string
+
+        String[] fens = fen.split("#");
+        //Splits the FEN string into 2 layers - the basic board layout and the piece data
+        char[] fen1Chars = fens[0].toCharArray();
+        char[] fen2Chars = fens[1].toCharArray();
+        //Create two separate character arrays from the first and second layers of the FEN string
 
         wPieces = new ArrayList<>();
         bPieces = new ArrayList<>();
-        //Either initializes or resets the ArrayLists for each side's pieces
+        aPieces = new ArrayList<>();
+        //Either initializes or resets the piece lists for each side and both sides
 
 
         int x = 0;
         int y = tSize;
         //Start at the top-left corner (0, 7)
 
+        int dataIndex = 0;
+        //Save an extra int to get the index of the piece data we want to use
+
         if(DEBUG) System.out.println("Fen: " + fen);
         //[DEBUG TEXT] Print the FEN string
 
-        for(char c : fenArr) {
+        for(char c : fen1Chars) {
             //For each char in the FEN string:
+
+            Piece p = null;
 
             if(c >= '1' && c <= '9') x += (c - 49);
                 //If c is between num 1 through 8, add num - 1 to the x value
@@ -177,88 +191,39 @@ public class Board {
                 y--;
                 //Go down a rank
             }
-            else if(c == 'P') {
-                Piece p = new Pawn(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'R') {
-                Piece p = new Rook(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'N') {
-                Piece p = new Knight(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'B') {
-                Piece p = new Bishop(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'Q') {
-                Piece p = new Queen(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'K') {
-                Piece p = new King(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'E') {
-                Piece p = new Earl(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'M') {
-                Piece p = new Monk(Color.WHITE, x, y);
-                fenBoard[x][y] = p;
-                wPieces.add(p);
-            }
-            else if(c == 'p') {
-                Piece p = new Pawn(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'r') {
-                Piece p = new Rook(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'n') {
-                Piece p = new Knight(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'b') {
-                Piece p = new Bishop(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'q') {
-                Piece p = new Queen(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'k') {
-                Piece p = new King(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'e') {
-                Piece p = new Earl(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
-            else if(c == 'm') {
-                Piece p = new Monk(Color.BLACK, x, y);
-                fenBoard[x][y] = p;
-                bPieces.add(p);
-            }
+            else if(c == 'P') p = new Pawn(Color.WHITE, x, y);
+            else if(c == 'R') p = new Rook(Color.WHITE, x, y);
+            else if(c == 'N') p = new Knight(Color.WHITE, x, y);
+            else if(c == 'B') p = new Bishop(Color.WHITE, x, y);
+            else if(c == 'Q') p = new Queen(Color.WHITE, x, y);
+            else if(c == 'K') p = new King(Color.WHITE, x, y);
+            else if(c == 'E') p = new Earl(Color.WHITE, x, y);
+            else if(c == 'M') p = new Monk(Color.WHITE, x, y);
+            else if(c == 'p') p = new Pawn(Color.BLACK, x, y);
+            else if(c == 'r') p = new Rook(Color.BLACK, x, y);
+            else if(c == 'n') p = new Knight(Color.BLACK, x, y);
+            else if(c == 'b') p = new Bishop(Color.BLACK, x, y);
+            else if(c == 'q') p = new Queen(Color.BLACK, x, y);
+            else if(c == 'k') p = new King(Color.BLACK, x, y);
+            else if(c == 'e') p = new Earl(Color.BLACK, x, y);
+            else if(c == 'm') p = new Monk(Color.BLACK, x, y);
             else throw new IllegalArgumentException("ERROR: Invalid FEN string");
             //If c is not a recognized character, throw an IllegalArgument
+
+            if(p != null) {
+                //If a new piece was created
+
+                fenBoard[x][y] = p;
+                //Set the tile at the current position to the newly created piece
+                aPieces.add(p);
+                //Add the piece to the ArrayList of all pieces
+                if(p.getColor() == Color.WHITE) wPieces.add(p);
+                else bPieces.add(p);
+                //Add the piece to its respective color ArrayList
+                p.setMoveCount(fen2Chars[dataIndex] - '0');
+                //Set the piece's moveCount to the moveCount contained in the data string
+
+            }
 
             x++;
             //Every time the current character has been checked, move over a tile
@@ -271,7 +236,7 @@ public class Board {
     }
 
     private String generateFen() {
-        //Uses the current board to generate a FEN String.
+        //Use the current board to generate a FEN String.
 
         StringBuilder fen = new StringBuilder();
         //Create a StringBuilder to add to and return
@@ -323,12 +288,20 @@ public class Board {
                     if(tC == Color.WHITE) fen.append("M");
                     else fen.append("m");
                 }
+                //If the tile contains a piece, add its respective char to the FEN string
 
             }
 
             if(y != 0) fen.append('/');
+            //Add a / when going down a row, except on the first iteration
 
         }
+
+        fen.append("#");
+        //Add the delimiter to separate layer 1 and 2
+
+        for(Piece p : aPieces) fen.append(p.getMoveCount());
+        //For all pieces, add their moveCount to the second layer of the FEN string
 
         String fenStr = fen.toString();
 
@@ -343,18 +316,14 @@ public class Board {
         //Finds the King of a given color and returns its position on the board in terms of a Point.
         //TODO: Use ArrayList instead of whole board
 
-        for(int x = 0; x <= tSize; x++) {
-            //Loop through ranks
+        ArrayList<Piece> pieces = getPieces(color);
+        //Get the list of pieces for the passed color
 
-            for(int y = 0; y <= tSize; y++) {
-                //Loop through columns
+        for(Piece p : pieces) {
+            //Look through all pieces in the list
 
-                if(board[x][y] == null) continue;
-                //If the piece at the current tile is null, check the next tile
-                if(board[x][y] instanceof King && board[x][y].getColor() == color) return new Point(x, y);
-                //If the piece at the current tile is a King and of the correct color, return its coordinates
-
-            }
+            if(p instanceof King) return p.getPos();
+            //If the piece at the current tile is a King, return its coordinates
 
         }
 
@@ -364,18 +333,21 @@ public class Board {
     }
 
     public boolean findCheck(Move move) {
-        //Looks to see if the King of a given color will be in check at the end of a given move.
+        //Look to see if the King of a given color will be in check at the end of a given move.
         //TODO: Restructure doMove and findCheck so you can pass a FEN instead of a move to findCheck
         //Why did I write this? Not sure. Might remember later.
 
-        String origFen = generateFen();
-        //Stores the current board in a FEN string before modifying it
-
+        ArrayList<Piece> pieces;
         Point kingPos;
-        if(turn == Color.WHITE) kingPos = wKingPos;
-        else kingPos = bKingPos;
+        if(turn == Color.WHITE) {
+            pieces = wPieces;
+            kingPos = wKingPos;
+        } else {
+            pieces = bPieces;
+            kingPos = bKingPos;
+        }
         if(move.getMovedPiece() instanceof King) kingPos = move.getEndPos();
-        //Stores the King position for the given color
+        //Stores the King position and piece array for the given color
 
         if(DEBUG) System.out.println("King is at [" + kingPos.x + ", " + kingPos.y + "]");
         //[DEBUG TEXT] Prints out where the King is
@@ -383,49 +355,39 @@ public class Board {
         forceMove(move);
         //Moves the piece to the end position
 
-        for(int x = 0; x <= tSize; x++) {
-            //Loop through ranks
+        for(Piece p : pieces) {
 
-            for(int y = 0; y <= tSize; y++) {
-                //Loop through columns
+            if(p.getColor() != turn && p.isLegal(new Move(this, p.getPos(), kingPos, true))) {
+                //If the color of this piece matches the color that was passed in and it is attacking the King
 
-                //If the piece at the current tile is null, check the next tile
-                if(board[x][y] != null && board[x][y].getColor() != turn && board[x][y].isLegal(new Move(this, x, y, kingPos, true))) {
-                    //If the color of this piece matches the color that was passed in and it is attacking the King
+                if (DEBUG) {
+                    //[DEBUG TEXT] Prints a statement indicating which piece is putting the King in check
 
-                    if(DEBUG) {
-                        //[DEBUG TEXT] Prints a statement indicating which piece is putting the King in check
-
-                        if(turn == Color.WHITE) System.out.print("WHITE ");
-                        else System.out.print("BLACK ");
-                        System.out.print("King is currently being put IN CHECK by " + board[x][y].getString() + "\n");
-
-                    }
-
-                    board = readFen(origFen);
-                    //Rebuild the board with the original FEN string
-                    //TODO: Add support for moveCount retention
-
-                    state = BoardState.CHECK;
-                    //Sets the board state to CHECK if there is a check
-
-                    return true;
-                    //TODO: Add support for multiple attacks at once? (Not sure if this is necessary)
+                    if (turn == Color.WHITE) System.out.print("WHITE ");
+                    else System.out.print("BLACK ");
+                    System.out.print("King is currently being put IN CHECK by " + p.getString() + "\n");
 
                 }
 
+                state = BoardState.CHECK;
+                //Sets the board state to CHECK if there is a check
+
+                return true;
+
             }
 
-        }
+            forceUndoMove(move);
+            //Undo the move we just did
+            //TODO: Add support for multiple attacks at once? (Not sure if this is necessary)
 
-        board = readFen(origFen);
-        //Rebuild the board with the original FEN string
+        }
 
         return false;
 
     }
 
     public ArrayList<Move> getLegalMoves(Color color) {
+        //Create a list of all legal moves on the current board for a given color.
 
         ArrayList<Piece> checkedPieces;
 
@@ -473,37 +435,50 @@ public class Board {
     public void doMove(Move move) {
         //Performs a move on the board when passed a move object.
 
-        if(move.getMovedPiece() == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
+        Piece p = move.getMovedPiece();
+        Piece c = move.getCapturedPiece();
+
+        if(p == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
         //If there is no piece at the starting position, throw an Illegal Argument
 
-        if(DEBUG) System.out.println("Moving piece: " + move.getMovedPiece().getString());
+        if(DEBUG) System.out.println("Moving piece: " + p.getString());
         //[DEBUG TEXT] Prints the string of the piece being moved
 
-        if(!move.getMovedPiece().isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
+        if(!p.isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
         //If the move is illegal for this piece type, throw an IllegalArgument
 
         if(findCheck(move)) throw new IllegalArgumentException("ERROR: Move cannot result in self-check");
         //If the King is put in check by this move, throw an IllegalArgument
         //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
 
-        move.getMovedPiece().incMoveCount(1);
+        p.incMoveCount(1);
         //Add 1 to the moveCount of the moved piece
 
-        if(move.getCapturedPiece() != null) {
+        if(c != null) {
             //If there is a capture
 
-            Piece p = move.getCapturedPiece();
+            if(c.getColor() == Color.WHITE) {
 
-            if(p.getColor() == Color.WHITE) wCaptured.add(p.getString());
-            else bCaptured.add(p.getString());
-            //Add the captured piece to its respective capture list
+                wCaptured.add(c.getString());
+                wPieces.remove(c);
+
+            }
+            else {
+
+                bCaptured.add(c.getString());
+                bPieces.remove(c);
+
+            }
+
+            aPieces.remove(c);
+            //Add the captured piece to its respective capture list and remove it from the piece lists
 
         }
 
         forceMove(move);
         //Moves the piece to the end position
 
-        if(move.getMovedPiece() instanceof King) {
+        if(p instanceof King) {
             //If the moved piece is a King
 
             if(turn == Color.WHITE) wKingPos = move.getEndPos();
@@ -516,9 +491,6 @@ public class Board {
         if(turn == Color.WHITE) turn = Color.BLACK;
         else turn = Color.WHITE;
         //Change the current turn color
-
-        generateFen();
-        //[TEST CODE] Generates the FEN string of the board every time a move is made
 
         if(findCheckMate(turn)) {
             //If the current side has no possible legal moves (is in checkmate)
@@ -533,12 +505,28 @@ public class Board {
     }
 
     private void forceMove(Move move) {
-        //Simply makes the move in the passed Move, disregarding rules.
+        //Simply make the move in the passed Move, disregarding rules.
 
         board[move.getEndX()][move.getEndY()] = move.getMovedPiece();
-        //Sets the tile at the end position to the moved piece
+        //Set the tile at the end position to the moved piece
         board[move.getStartX()][move.getStartY()] = null;
-        //Sets the tile at the start position to null (empty tile)
+        //Set the tile at the start position to null (empty tile)
+
+        move.getMovedPiece().setPos(move.getEndPos());
+        //Set the new coordinates for the piece
+
+    }
+
+    private void forceUndoMove(Move move) {
+        //Undo the passed Move, disregarding rules.
+
+        board[move.getStartX()][move.getStartY()] = move.getMovedPiece();
+        //Set the tile at the start position to the moved piece
+        board[move.getEndX()][move.getEndY()] = move.getCapturedPiece();
+        //Set the tile at the end position to the captured piece in the move
+
+        move.getMovedPiece().setPos(move.getStartPos());
+        //Reset the piece coordinates to its starting postion
 
     }
 

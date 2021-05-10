@@ -16,7 +16,7 @@ public class ChussMain {
         //Creates a UserInterface to interact with the board
         Interactable whiteUser = new Player(ui);
         //Creates a user for the white side
-        Interactable blackUser = new Computer(board);
+        Interactable blackUser = new Player(ui);
         //Creates a user for the black side
         ui.playGame(whiteUser, blackUser);
         //Starts the game by passing in the desired users for each side
