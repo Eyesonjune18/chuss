@@ -36,6 +36,10 @@ public class Board {
     //The Interactables that are controlling the white and black side
     private BoardState state;
     //What state the board is in (check, checkmate, etc)
+    private int moves;
+    //How many moves have occurred
+    private int halfMove;
+    //How many moves have occurred since a piece was captured or a pawn was moved
 
     //CONSTRUCTORS
 
@@ -77,7 +81,19 @@ public class Board {
 
     public int getSize() {
 
+        return size;
+
+    }
+
+    public int getZeroSize() {
+
         return tSize;
+
+    }
+
+    public int getMoves() {
+
+        return moves;
 
     }
 
@@ -127,6 +143,36 @@ public class Board {
 
     }
 
+    private Interactable getUser(Color color) {
+
+        if(color == Color.WHITE) return whiteUser;
+        else return blackUser;
+
+    }
+
+    public int pieceCount() {
+
+        return aPieces.size();
+
+    }
+
+    public int pieceCount(Color color) {
+
+        return getPieces(color).size();
+
+    }
+
+    private int pieceTypeCount(Class<? extends Piece> type) {
+        //Counts the amount of a given Piece type in the board.
+
+        int count = 0;
+
+        for(Piece p : aPieces) if(p.getClass().equals(type)) count++;
+
+        return count;
+
+    }
+
     //MUTATORS
 
     public void setUser(Interactable user, Color color) {
@@ -142,6 +188,75 @@ public class Board {
 
         setUser(whiteUser, Color.WHITE);
         setUser(blackUser, Color.BLACK);
+
+    }
+
+    private void updateKingPos(Piece piece) {
+        //Take a piece and determine if it is a King. If it is,
+        //then change wKingPos or bKingPos accordingly.
+
+        if(piece instanceof King) {
+
+            if(piece.getColor() == Color.WHITE) wKingPos = piece.getPos();
+            else bKingPos = piece.getPos();
+
+        }
+
+    }
+
+    private void findEndGame() {
+        //Check various endgame requirements to see if there is a checkmate or a stalemate.
+
+        int legalMoves = getLegalMoves(turn).size();
+
+        if(legalMoves == 0) {
+
+            if(state == BoardState.CHECK) state = BoardState.CHECKMATE;
+            else state = BoardState.STALEMATE;
+
+        }
+
+        int pieceCount = aPieces.size();
+
+        if(pieceCount == 2 ||
+                (pieceCount == 3 && pieceTypeCount(Bishop.class) == 1) ||
+                (pieceCount == 3 && pieceTypeCount(Knight.class) == 1)) state = BoardState.STALEMATE;
+        //Catch "dead positions" where a checkmate cannot physically happen due to insufficient pieces
+        //TODO: Add 2 Kings, 2 Bishops on same color tile
+
+        if(halfMove >= 50) state = BoardState.STALEMATE;
+        //If there has been 50 moves without any captures or pawn moves, stalemate
+
+    }
+
+    private void updatePiece(Piece piece, boolean remove) {
+        //Update the piece ArrayLists for the given color.
+        //"remove" tells the function whether to add or remove the piece.
+
+        ArrayList<Piece> pieces = getPieces(piece.getColor());
+
+        if(!remove) {
+
+            pieces.add(piece);
+            aPieces.add(piece);
+
+        } else {
+
+            pieces.remove(piece);
+            aPieces.remove(piece);
+
+        }
+
+    }
+
+    private void updateCaptured(Piece piece, boolean remove) {
+        //Update the captured pieces for the given color.
+        //"remove" tells the function whether to add or remove the capture.
+
+        ArrayList<String> captured = getCaptured(piece.getColor());
+
+        if(!remove) captured.add(piece.getString());
+        else captured.remove(piece.getString());
 
     }
 
@@ -216,8 +331,7 @@ public class Board {
                 //Set the tile at the current position to the newly created piece
                 aPieces.add(p);
                 //Add the piece to the ArrayList of all pieces
-                if(p.getColor() == Color.WHITE) wPieces.add(p);
-                else bPieces.add(p);
+                updatePiece(p, false);
                 //Add the piece to its respective color ArrayList
                 p.setMoveCount(fen2Chars[dataIndex] - '0');
                 //Set the piece's moveCount to the moveCount contained in the data string
@@ -368,7 +482,7 @@ public class Board {
                 }
 
                 state = BoardState.CHECK;
-                //Sets the board state to CHECK if there is a check
+                //Set the board state to CHECK if there is a check
 
                 forceUndoMove(move);
                 //Undo the move we just did
@@ -381,6 +495,8 @@ public class Board {
 
         forceUndoMove(move);
         //Undo the move we just did
+        state = BoardState.NONE;
+        //Set the board state to NONE if there is no check
 
         return false;
 
@@ -389,10 +505,7 @@ public class Board {
     public ArrayList<Move> getLegalMoves(Color color) {
         //Create a list of all legal moves on the current board for a given color.
 
-        ArrayList<Piece> checkedPieces;
-
-        if(color == Color.WHITE) checkedPieces = wPieces;
-        else checkedPieces = bPieces;
+        ArrayList<Piece> checkedPieces = getPieces(color);
         //Create a piece array representing either the white or black pieces,
         //depending on the color that is passed in
 
@@ -423,19 +536,11 @@ public class Board {
 
     }
 
-    private boolean findCheckMate(Color color) {
-        //Returns true if there is a checkmate, false if not.
-        if(DEBUG) System.out.println("findCheckmate is running");
-        //[DEBUG TEXT] Prints when findCheckmate runs
-
-        return getLegalMoves(color).size() == 0;
-
-    }
-
     public void doMove(Move move) {
-        //Performs a move on the board when passed a move object.
+        //Perform a move on the board when passed a move object.
 
         Piece p = move.getMovedPiece();
+        Piece c = move.getCapturedPiece();
 
         if(p == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
         //If there is no piece at the starting position, throw an Illegal Argument
@@ -451,67 +556,40 @@ public class Board {
         //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
 
         forceMove(move);
-        //Moves the piece to the end position
+        //Move the piece to the end position
+
+        if(p instanceof Pawn) {
+
+            if((p.getColor() == Color.WHITE && move.getEndY() == 7) ||
+                    (p.getColor() == Color.BLACK && move.getEndY() == 0)) {
+
+                board[move.getEndX()][move.getEndY()] = getUser(turn).getPromotion(move);
+
+                updatePiece(p, true);
+                updatePiece(board[move.getEndX()][move.getEndY()], false);
+
+            }
+
+        }
+
+        if(p instanceof Pawn || c != null) halfMove = 0;
+        else halfMove++;
+        //Increment halfMove by 1 if there is no piece capture or pawn move, otherwise set to 0
+
+        moves++;
+        //Increment the total number of moves
 
         if(turn == Color.WHITE) turn = Color.BLACK;
         else turn = Color.WHITE;
         //Change the current turn color
 
-        if(findCheckMate(turn)) {
-            //If the current side has no possible legal moves (is in checkmate)
-            //TODO: Stalemate?
-
-            state = BoardState.CHECKMATE;
-            System.out.println("Checkmate!");
-            //TODO: Move this print to somewhere better
-
-        }
+        findEndGame();
+        //If the current side has no possible legal moves (is in checkmate)
+        //TODO: Stalemate?
 
     }
 
-    private void forceMove(Move move) {
-        //Simply make the move in the passed Move, disregarding rules.
-
-        Piece p = move.getMovedPiece();
-        Piece c = move.getCapturedPiece();
-
-        board[move.getEndX()][move.getEndY()] = p;
-        //Set the tile at the end position to the moved piece
-        board[move.getStartX()][move.getStartY()] = null;
-        //Set the tile at the start position to null (empty tile)
-
-        p.setPos(move.getEndPos());
-        //Set the new coordinates for the piece
-
-        p.incMoveCount(1);
-        //Add 1 to the moveCount of the moved piece
-        updateKingPos(p);
-        //Update the King's position on the board
-
-        if(c != null) {
-            //If there is a capture
-
-            if(c.getColor() == Color.WHITE) {
-
-                wCaptured.add(c.getString());
-                wPieces.remove(c);
-
-            }
-            else {
-
-                bCaptured.add(c.getString());
-                bPieces.remove(c);
-
-            }
-
-            aPieces.remove(c);
-            //Add the captured piece to its respective capture list and remove it from the piece lists
-
-        }
-
-    }
-
-    private void forceUndoMove(Move move) {
+    public void forceUndoMove(Move move) {
         //Undo the passed Move, disregarding rules.
         //TODO: Invert move and pass to forceMove
 
@@ -533,34 +611,41 @@ public class Board {
         if(c != null) {
             //If there was a capture
 
-            if(c.getColor() == Color.WHITE) {
+            updatePiece(c, false);
+            updateCaptured(c, true);
 
-                wCaptured.remove(c.getString());
-                wPieces.add(c);
-
-            }
-            else {
-
-                bCaptured.remove(c.getString());
-                bPieces.add(c);
-
-            }
-
-            aPieces.add(c);
             //Add the captured piece to its respective capture list and remove it from the piece lists
 
         }
 
     }
 
-    private void updateKingPos(Piece piece) {
-        //Take a piece and determine if it is a King. If it is,
-        //then change wKingPos or bKingPos accordingly.
+    public void forceMove(Move move) {
+        //Simply make the move in the passed Move, disregarding rules.
 
-        if(piece instanceof King) {
+        Piece p = move.getMovedPiece();
+        Piece c = move.getCapturedPiece();
 
-            if(piece.getColor() == Color.WHITE) wKingPos = piece.getPos();
-            else bKingPos = piece.getPos();
+        board[move.getEndX()][move.getEndY()] = p;
+        //Set the tile at the end position to the moved piece
+        board[move.getStartX()][move.getStartY()] = null;
+        //Set the tile at the start position to null (empty tile)
+
+        p.setPos(move.getEndPos());
+        //Set the new coordinates for the piece
+
+        p.incMoveCount(1);
+        //Add 1 to the moveCount of the moved piece
+        updateKingPos(p);
+        //Update the King's position on the board
+
+        if(c != null) {
+            //If there is a capture
+
+            updatePiece(c, true);
+            updateCaptured(c, false);
+
+            //Add the captured piece to its respective capture list and remove it from the piece lists
 
         }
 

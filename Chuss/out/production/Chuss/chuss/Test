@@ -1,140 +1,15 @@
-8 [r](n)[b](q)[k](b)[n](r)
-7 (p)[p](p)[p](p)[p](p)[p]
+White is now stalemated. Game over!
+
+N B B P P P P P P P Q R R
+8 [ ]( )[ ]( )[ ]( )[ ](r)
+7 (p)[ ](p)[n](p)[p]( )[p]
 6 [ ]( )[ ]( )[ ]( )[ ]( )
-5 ( )[ ]( )[ ]( )[ ]( )[ ]
+5 (k)[ ]( )[ ]( )[ ]( )[ ]
 4 [ ]( )[ ]( )[ ]( )[ ]( )
 3 ( )[ ]( )[ ]( )[ ]( )[ ]
-2 [P](P)[P](P)[P](P)[P](P)
-1 (R)[N](B)[Q](K)[B](N)[R]
+2 [K]( )[P]( )[ ]( )[ ]( )
+1 ( )[ ]( )[ ]( )[ ](N)[ ]
    a  b  c  d  e  f  g  h
+n r q b b p p p
 
-Enter your move (? for help): e2 e4
-
-
-8 [r](n)[b](q)[k](b)[n](r)
-7 (p)[p](p)[p](p)[p](p)[p]
-6 [ ]( )[ ]( )[ ]( )[ ]( )
-5 ( )[ ]( )[ ]( )[ ]( )[ ]
-4 [ ]( )[ ]( )[P]( )[ ]( )
-3 ( )[ ]( )[ ]( )[ ]( )[ ]
-2 [P](P)[P](P)[ ](P)[P](P)
-1 (R)[N](B)[Q](K)[B](N)[R]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): e7 e5
-
-
-8 [r](n)[b](q)[k](b)[n](r)
-7 (p)[p](p)[p]( )[p](p)[p]
-6 [ ]( )[ ]( )[ ]( )[ ]( )
-5 ( )[ ]( )[ ](p)[ ]( )[ ]
-4 [ ]( )[ ]( )[P]( )[ ]( )
-3 ( )[ ]( )[ ]( )[ ]( )[ ]
-2 [P](P)[P](P)[ ](P)[P](P)
-1 (R)[N](B)[Q](K)[B](N)[R]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): h2 h4
-
-
-8 [r](n)[b](q)[k](b)[n](r)
-7 (p)[p](p)[p]( )[p](p)[p]
-6 [ ]( )[ ]( )[ ]( )[ ]( )
-5 ( )[ ]( )[ ](p)[ ]( )[ ]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[ ]( )[ ]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[R]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): h7 h5
-
-
-8 [r](n)[b](q)[k](b)[n](r)
-7 (p)[p](p)[p]( )[p](p)[ ]
-6 [ ]( )[ ]( )[ ]( )[ ]( )
-5 ( )[ ]( )[ ](p)[ ]( )[p]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[ ]( )[ ]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[R]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): h1 h3
-
-
-8 [r](n)[b](q)[k](b)[n](r)
-7 (p)[p](p)[p]( )[p](p)[ ]
-6 [ ]( )[ ]( )[ ]( )[ ]( )
-5 ( )[ ]( )[ ](p)[ ]( )[p]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[ ]( )[R]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[ ]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): h8 h6
-
-
-8 [r](n)[b](q)[k](b)[n]( )
-7 (p)[p](p)[p]( )[p](p)[ ]
-6 [ ]( )[ ]( )[ ]( )[ ](r)
-5 ( )[ ]( )[ ](p)[ ]( )[p]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[ ]( )[R]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[ ]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): h3 e2
-Illegal move, try again
-Enter your move (? for help): h3 f3
-
-
-8 [r](n)[b](q)[k](b)[n]( )
-7 (p)[p](p)[p]( )[p](p)[ ]
-6 [ ]( )[ ]( )[ ]( )[ ](r)
-5 ( )[ ]( )[ ](p)[ ]( )[p]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[R]( )[ ]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[ ]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): h6 f6
-
-
-8 [r](n)[b](q)[k](b)[n]( )
-7 (p)[p](p)[p]( )[p](p)[ ]
-6 [ ]( )[ ]( )[ ](r)[ ]( )
-5 ( )[ ]( )[ ](p)[ ]( )[p]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[R]( )[ ]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[ ]
-   a  b  c  d  e  f  g  h
-
-Enter your move (? for help): f3 f6
-
-
-8 [r](n)[b](q)[k](b)[n]( )
-7 (p)[p](p)[p]( )[p](p)[ ]
-6 [ ]( )[ ]( )[ ](R)[ ]( )
-5 ( )[ ]( )[ ](p)[ ]( )[p]
-4 [ ]( )[ ]( )[P]( )[ ](P)
-3 ( )[ ]( )[ ]( )[ ]( )[ ]
-2 [P](P)[P](P)[ ](P)[P]( )
-1 (R)[N](B)[Q](K)[B](N)[ ]
-   a  b  c  d  e  f  g  h
-r 
-Enter your move (? for help): e1 e2
-Illegal move, try again
-Enter your move (? for help): e1 e2
-Illegal move, try again
-Enter your move (? for help): f2 f4
-Illegal move, try again
-Enter your move (? for help): a2 a4
-Illegal move, try again
-Enter your move (? for help): a2 a4
-Illegal move, try again
-Enter your move (? for help): 
+Process finished with exit code 0

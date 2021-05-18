@@ -19,8 +19,27 @@ public abstract class Piece {
 
     //ENUMS
 
-    public enum Color {WHITE, BLACK}
-    //The enum for the piece color, either WHITE or BLACK
+    public enum Color {
+        WHITE,
+        BLACK;
+
+        public Color getOther() {
+
+            if(this == WHITE) return BLACK;
+            else return WHITE;
+
+        }
+
+        public String toString() {
+
+            if(this == WHITE) return "White";
+            else return "Black";
+
+        }
+
+    }
+
+    public enum PieceType {PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING, EARL, MONK, NONE}
 
     //FIELDS
 
@@ -100,20 +119,19 @@ public abstract class Piece {
         //True if the piece is not trying to capture a friendly piece
         boolean c3 = true;
         //True if the piece is on the correct side for this turn
-        boolean c4;
-        //True if move resolves check state
 
         c1 = move.getStartPos() != move.getEndPos();
         //[ISSUE] Not detecting moves that have the same start and end position
         if(move.getCapturedPiece() != null) c2 = move.getCapturedPiece().getColor() != move.getMovedPiece().getColor();
         if(!move.getOverride()) c3 = color == move.getMoveBoard().getTurn();
-        c4 = true;
 
-        return c1 && c2 && c3 && c4;
+        return c1 && c2 && c3;
 
     }
 
-} class Pawn extends Piece {
+}
+
+class Pawn extends Piece {
     /*
     PAWN RULES:
     1. May move one tile vertically, except when a piece is in the way
@@ -176,7 +194,9 @@ public abstract class Piece {
 
     }
 
-} class Rook extends Piece {
+}
+
+class Rook extends Piece {
     /*
     ROOK RULES:
     1. May move any distance vertically or horizontally, as long as no collisions occur
@@ -216,7 +236,9 @@ public abstract class Piece {
 
     }
 
-} class Knight extends Piece {
+}
+
+class Knight extends Piece {
     /*
     KNIGHT RULES:
     1. May move with ΔX = 2 ^ 1, ΔY = 1 ^ 2, disregarding all other pieces
@@ -250,7 +272,9 @@ public abstract class Piece {
 
     }
 
-} class Bishop extends Piece {
+}
+
+class Bishop extends Piece {
     /*
     BISHOP RULES:
     1. May move any distance diagonally in any direction, as long as no collisions occur
@@ -286,7 +310,9 @@ public abstract class Piece {
 
     }
 
-} class Queen extends Piece {
+}
+
+class Queen extends Piece {
     /*
     QUEEN RULES:
     1. May move any distance horizontally, vertically, or diagonally in any direction, as long as no collisions occur
@@ -324,7 +350,9 @@ public abstract class Piece {
 
     }
 
-} class King extends Piece {
+}
+
+class King extends Piece {
     /*
     KING RULES:
     1. May move one tile horizontally, vertically, or diagonally in any direction, as long as no collisions occur
@@ -361,7 +389,9 @@ public abstract class Piece {
 
     }
 
-} class Earl extends Piece {
+}
+
+class Earl extends Piece {
     /*
     EARL RULES:
     1. May move two tiles horizontally, vertically, or diagonally in any direction, as long as no collisions occur
@@ -378,7 +408,9 @@ public abstract class Piece {
 
     }
 
-} class Monk extends Piece {
+}
+
+class Monk extends Piece {
     /*
     MONK RULES:
     1. May move one tile horizontally, vertically, or diagonally in any direction, as long as no collisions occur

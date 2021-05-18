@@ -29,12 +29,13 @@ public class Move {
     //The change in Y with absolute value
     private final boolean overrideTurn;
     //Whether to override the turn legality check
+    private final boolean isCastle;
     private final MoveType moveType;
     //Whether the move is horizontal, vertical, diagonal, or none
 
     //CONSTRUCTORS
 
-    public Move(Board board, int x, int y, int x1, int y1, boolean override) {
+    public Move(Board board, int x, int y, int x1, int y1, boolean override, boolean castle) {
         //The manual constructor for the Move object.
 
         this.board = board;
@@ -47,6 +48,7 @@ public class Move {
         absX = Math.abs(delX);
         absY = Math.abs(delY);
         overrideTurn = override;
+        isCastle = castle;
         moveType = findMoveType();
 
     }
@@ -54,7 +56,7 @@ public class Move {
     public Move(Board board, int x, int y, int x1, int y1) {
         //The manual constructor for the Move object, with default override parameter of false.
 
-        this(board, x, y, x1, y1, false);
+        this(board, x, y, x1, y1, false, false);
 
     }
 
@@ -76,7 +78,7 @@ public class Move {
         //The manual constructor that uses x and y ints for the start position
         //and a Point for the end position, and adds the override parameter
 
-        this(board, x, y, end.x, end.y, override);
+        this(board, x, y, end.x, end.y, override, false);
 
     }
 
@@ -84,7 +86,7 @@ public class Move {
         //The manual constructor that uses a Point for the start position
         //and x and y ints for the end position, and adds the override parameter
 
-        this(board, start.x, start.y, x, y, override);
+        this(board, start.x, start.y, x, y, override, false);
 
     }
 
@@ -92,12 +94,11 @@ public class Move {
         //The manual constructor that uses a Point for the start
         //and end position, and adds the override parameter
 
-        this(board, start.x, start.y, end.x, end.y, override);
+        this(board, start.x, start.y, end.x, end.y, override, false);
 
     }
 
-
-    public Move(Board board, String moveStr) {
+    public Move(Board board, String moveStr, boolean castle) {
         //The automatic constructor for the Move object,
         //takes in a move in SMN and turns it into a Move object.
 
@@ -115,7 +116,14 @@ public class Move {
         absX = Math.abs(delX);
         absY = Math.abs(delY);
         overrideTurn = false;
+        isCastle = castle;
         moveType = findMoveType();
+
+    }
+
+    public Move(Board board, String moveStr) {
+
+        this(board, moveStr, false);
 
     }
 
@@ -215,6 +223,12 @@ public class Move {
 
     private Point[] interpretMove(String moveStr) {
         //Turns a SMN string into two Points representing the start and end positions of the move.
+
+        if(moveStr.equalsIgnoreCase("CASTLE")) {
+
+
+
+        }
 
         Point[] move = new Point[2];
         //Create a move array to return

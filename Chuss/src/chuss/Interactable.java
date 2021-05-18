@@ -7,4 +7,6 @@ public interface Interactable {
 
     public Move getMove();
 
+    public Piece getPromotion(Move move);
+
 }
