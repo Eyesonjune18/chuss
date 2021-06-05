@@ -6,29 +6,28 @@ import java.util.Scanner;
 public class Client {
     static Socket socket;
 
-    {
-        try {
-            socket = new Socket("http://73.35.247.165/", 80);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(0);
-        }
-    }
+//    {
+//        try {
+//            socket = new Socket("http://73.35.247.165/", 80);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private static OutputStream myMoveStream = null;
     private static InputStream theirMoveStream = null;
 
     private static InputStreamReader theirMoveReader;
 
-    static {
-        try {
-            theirMoveReader = new InputStreamReader(socket.getInputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    static {
+//        try {
+//            theirMoveReader = new InputStreamReader(socket.getInputStream());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
-    private static BufferedReader theirBuffer = new BufferedReader(theirMoveReader);
+    private static BufferedReader theirBuffer;
 
 
     public static String myMove = null;
@@ -36,6 +35,9 @@ public class Client {
 
 
     public static void main(String[] args) throws IOException {
+        socket = new Socket("http://73.35.247.165/", 80);
+        theirMoveReader = new InputStreamReader(socket.getInputStream());
+        theirBuffer = new BufferedReader(theirMoveReader);
         Scanner textTest = new Scanner(System.in);
         System.out.println("Say Something");
 
