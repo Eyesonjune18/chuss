@@ -5,8 +5,6 @@ package chuss;
 
 import chuss.Piece.Color;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Computer implements Interactable {
@@ -38,20 +36,20 @@ public class Computer implements Interactable {
 
     public Move getMove() {
 
-        try {
+//        try {
+//
+//            TimeUnit.SECONDS.sleep(1);
+//
+//        } catch(InterruptedException e) {
+//
+//            e.printStackTrace();
+//
+//        }
 
-            TimeUnit.SECONDS.sleep(1);
-
-        } catch(InterruptedException e) {
-
-            e.printStackTrace();
-
-        }
-
-        List<Move> legalMoves = board.getLegalMoves(color);
+        ArrList<Move> legalMoves = board.getLegalMoves(color);
         MinMaxer<Move> moveValues = new MinMaxer<>();
 
-        for(Move m : legalMoves) moveValues.add(m, getMaterialValue(m) + getHeatmapValue(m) + getRepeatValue(m));
+        for(Move m : legalMoves) moveValues.add(m, getMaterialValue(m) * 5 + getHeatmapValue(m) + getRepeatValue(m) * 10);
 
         Move chosenMove = moveValues.getMax();
 
@@ -76,8 +74,8 @@ public class Computer implements Interactable {
 
         board.forceMove(move);
 
-        ArrayList<Piece> friendlyPieces = board.getPieces(col);
-        ArrayList<Piece> enemyPieces = board.getPieces(col.getOther());
+        ArrList<Piece> friendlyPieces = board.getPieces(col);
+        ArrList<Piece> enemyPieces = board.getPieces(col.getOther());
 
         int friendlyValue = 0;
         int enemyValue = 0;
@@ -175,37 +173,52 @@ public class Computer implements Interactable {
 
         } else if(p instanceof King) {
 
-            if(board.pieceCount(color) > 7) {
+            if (board.pieceCount(color) > 7) {
 
-                tileHeatmap = new int[] {
+                tileHeatmap = new int[]{
 
-                        -30,-40,-40,-50,-50,-40,-40,-30,
-                        -30,-40,-40,-50,-50,-40,-40,-30,
-                        -30,-40,-40,-50,-50,-40,-40,-30,
-                        -30,-40,-40,-50,-50,-40,-40,-30,
-                        -20,-30,-30,-40,-40,-30,-30,-20,
-                        -10,-20,-20,-20,-20,-20,-20,-10,
-                         20, 20,  0,  0,  0,  0, 20, 20,
-                         20, 30, 10,  0,  0, 10, 30, 20
+                        -30, -40, -40, -50, -50, -40, -40, -30,
+                        -30, -40, -40, -50, -50, -40, -40, -30,
+                        -30, -40, -40, -50, -50, -40, -40, -30,
+                        -30, -40, -40, -50, -50, -40, -40, -30,
+                        -20, -30, -30, -40, -40, -30, -30, -20,
+                        -10, -20, -20, -20, -20, -20, -20, -10,
+                        20, 20, 0, 0, 0, 0, 20, 20,
+                        20, 30, 10, 0, 0, 10, 30, 20
 
                 };
 
             } else {
 
-                tileHeatmap = new int[] {
+                tileHeatmap = new int[]{
 
-                        -50,-40,-30,-20,-20,-30,-40,-50,
-                        -30,-20,-10,  0,  0,-10,-20,-30,
-                        -30,-10, 20, 30, 30, 20,-10,-30,
-                        -30,-10, 30, 40, 40, 30,-10,-30,
-                        -30,-10, 30, 40, 40, 30,-10,-30,
-                        -30,-10, 20, 30, 30, 20,-10,-30,
-                        -30,-30,  0,  0,  0,  0,-30,-30,
-                        -50,-30,-30,-30,-30,-30,-30,-50
+                        -50, -40, -30, -20, -20, -30, -40, -50,
+                        -30, -20, -10, 0, 0, -10, -20, -30,
+                        -30, -10, 20, 30, 30, 20, -10, -30,
+                        -30, -10, 30, 40, 40, 30, -10, -30,
+                        -30, -10, 30, 40, 40, 30, -10, -30,
+                        -30, -10, 20, 30, 30, 20, -10, -30,
+                        -30, -30, 0, 0, 0, 0, -30, -30,
+                        -50, -30, -30, -30, -30, -30, -30, -50
 
                 };
 
             }
+
+        } else if(p instanceof Earl) {
+
+            tileHeatmap = new int[]{
+
+                    -20, -10, -10, -5, -5, -10, -10, -20,
+                    -10, 0, 0, 0, 0, 0, 0, -10,
+                    -10, 0, 5, 5, 5, 5, 0, -10,
+                    -5, 0, 5, 5, 5, 5, 0, -5,
+                    0, 0, 5, 5, 5, 5, 0, -5,
+                    -10, 5, 5, 5, 5, 5, 0, -10,
+                    -10, 0, 5, 0, 0, 0, 0, -10,
+                    -20, -10, -10, -5, -5, -10, -10, -20
+
+            };
 
         }
 

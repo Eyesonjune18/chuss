@@ -16,8 +16,8 @@ public class ChussMain {
         //Creates a Board object to play a game with
         UserInterface ui = new CommandInterface(board);
         //Creates a UserInterface to interact with the board
-        Interactable whiteUser = new Player(ui);
-//        Interactable whiteUser = new Computer(board, Color.WHITE);
+//        Interactable whiteUser = new Player(ui);
+        Interactable whiteUser = new Computer(board, Color.WHITE);
 //        Creates a user for the white side
 //        Interactable blackUser = new Player(ui);
         Interactable blackUser = new Computer(board, Color.BLACK);

@@ -9,7 +9,6 @@ import chuss.Piece.PieceType;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -93,7 +92,6 @@ class CommandInterface extends UserInterface {
                 if(board.getState() == BoardState.CHECKMATE) {
 
                     System.out.println("\n" + board.getTurn().toString() + " is now checkmated. Game over!");
-
                     gameOver = true;
                     illegalMove = false;
 
@@ -122,42 +120,57 @@ class CommandInterface extends UserInterface {
         //Takes user input for a move and returns the Move object
 
         Scanner input = new Scanner(System.in);
+        boolean again = true;
 
         String move;
-        boolean again;
 
-        do {
+        Move m = null;
 
-            System.out.print("Enter your move (? for help): ");
-            move = input.nextLine();
+        while(m == null) {
 
-            if(move.equals("?")) {
-                //If the user asks for help
+            try {
 
-                System.out.printf("%nHELP: To move, you must type a move in the following format:"
-                        + "%n<STARTING TILE> <ENDING TILE>"
-                        + "%nThe starting tile is the tile of the piece you wish to move."
-                        + "%nThe ending tile is the tile you wish to move your piece to."
-                        + "%nEach tile is notated with \"<COLUMN><RANK>\", example: \"e5\""
-                        + "%n%nFull example move: \"a5 g5\"%n");
+                do {
 
+                    System.out.print("Enter your move (? for help): ");
+                    move = input.nextLine();
+
+                    if (move.equals("?")) {
+                        //If the user asks for help
+
+                        System.out.printf("%nHELP: To move, you must type a move in the following format:"
+                                + "%n<STARTING TILE> <ENDING TILE>"
+                                + "%nThe starting tile is the tile of the piece you wish to move."
+                                + "%nThe ending tile is the tile you wish to move your piece to."
+                                + "%nEach tile is notated with \"<COLUMN><RANK>\", example: \"e5\""
+                                + "%n%nFull example move: \"a5 g5\"%n");
+
+                    } else if (move.equalsIgnoreCase("CASTLE")) {
+
+                        System.out.print("Enter the movement of the King: ");
+
+                        move = input.nextLine();
+
+                        m = new Move(board, move, true);
+
+                    } else again = false;
+
+                } while (again);
+                //Reprompt if the user asks for help
+
+                m = new Move(board, move);
+                //Returns a Move object made from the SMN string
+
+            } catch(NullPointerException e) {
+
+                System.out.println("ERROR: Not a valid SMN string");
                 again = true;
 
-            } else if(move.equalsIgnoreCase("CASTLE")) {
+            }
 
-                System.out.print("Enter the movement of the King: ");
+        }
 
-                move = input.nextLine();
-
-                return new Move(board, move, true);
-
-            } else again = false;
-
-        } while(again);
-        //Reprompt if the user asks for help
-
-        return new Move(board, move);
-        //Returns a Move object made from the SMN string
+        return m;
 
     }
 
@@ -270,9 +283,10 @@ class CommandInterface extends UserInterface {
         System.out.println();
         //Prints a blank line
 
-        ArrayList<String> capturedPieces = board.getCaptured(color);
+        ArrList<String> capturedPieces = board.getCaptured(color);
 
         if(capturedPieces == null) return;
+        System.out.println("Captured piece array size: " + capturedPieces.size());
 
         for(String p : capturedPieces) {
 
@@ -293,20 +307,22 @@ class GraphicInterface {
     private final JLabel message;
     private final String columnNames;
     private final Board board;
-    //remove later
-    private final String path = "src/chuss/icons/";
-    private ImageIcon BK;
     private ImageIcon WP;
     private ImageIcon WR;
     private ImageIcon WN;
     private ImageIcon WB;
     private ImageIcon WQ;
     private ImageIcon WK;
+    private ImageIcon WE;
+    private ImageIcon WM;
     private ImageIcon BP;
     private ImageIcon BR;
     private ImageIcon BN;
     private ImageIcon BB;
     private ImageIcon BQ;
+    private ImageIcon BK;
+    private ImageIcon BE;
+    private ImageIcon BM;
     private ImageIcon blank;
 
     public GraphicInterface(Board board) {
@@ -317,18 +333,23 @@ class GraphicInterface {
 
         try {
 
-            BK = new ImageIcon(ImageIO.read(new File(path + "BK.gif")));
-            WP = new ImageIcon(ImageIO.read(new File(path + "WP.gif")));
-            WR = new ImageIcon(ImageIO.read(new File(path + "WR.gif")));
-            WN = new ImageIcon(ImageIO.read(new File(path + "WN.gif")));
-            WB = new ImageIcon(ImageIO.read(new File(path + "WB.gif")));
-            WQ = new ImageIcon(ImageIO.read(new File(path + "WQ.gif")));
-            WK = new ImageIcon(ImageIO.read(new File(path + "WK.gif")));
-            BP = new ImageIcon(ImageIO.read(new File(path + "BP.gif")));
-            BR = new ImageIcon(ImageIO.read(new File(path + "BR.gif")));
-            BN = new ImageIcon(ImageIO.read(new File(path + "BN.gif")));
-            BB = new ImageIcon(ImageIO.read(new File(path + "BB.gif")));
-            BQ = new ImageIcon(ImageIO.read(new File(path + "BQ.gif")));
+            String path = "src/chuss/icons/";
+            WP = new ImageIcon(ImageIO.read(new File(path + "WP.png")));
+            WR = new ImageIcon(ImageIO.read(new File(path + "WR.png")));
+            WN = new ImageIcon(ImageIO.read(new File(path + "WN.png")));
+            WB = new ImageIcon(ImageIO.read(new File(path + "WB.png")));
+            WQ = new ImageIcon(ImageIO.read(new File(path + "WQ.png")));
+            WK = new ImageIcon(ImageIO.read(new File(path + "WK.png")));
+            WE = new ImageIcon(ImageIO.read(new File(path + "WE.png")));
+            WM = new ImageIcon(ImageIO.read(new File(path + "WM.png")));
+            BP = new ImageIcon(ImageIO.read(new File(path + "BP.png")));
+            BR = new ImageIcon(ImageIO.read(new File(path + "BR.png")));
+            BN = new ImageIcon(ImageIO.read(new File(path + "BN.png")));
+            BB = new ImageIcon(ImageIO.read(new File(path + "BB.png")));
+            BQ = new ImageIcon(ImageIO.read(new File(path + "BQ.png")));
+            BK = new ImageIcon(ImageIO.read(new File(path + "BK.png")));
+            BE = new ImageIcon(ImageIO.read(new File(path + "BE.png")));
+            BM = new ImageIcon(ImageIO.read(new File(path + "BM.png")));
             blank = new ImageIcon(ImageIO.read(new File(path + "blank.png")));
 
         } catch(IOException e) {
@@ -416,12 +437,16 @@ class GraphicInterface {
                 else if(p instanceof Bishop && p.getColor() == Color.WHITE) icon = WB;
                 else if(p instanceof Queen && p.getColor() == Color.WHITE) icon = WQ;
                 else if(p instanceof King && p.getColor() == Color.WHITE) icon = WK;
+                else if(p instanceof Earl && p.getColor() == Color.WHITE) icon = WE;
+                else if(p instanceof Monk && p.getColor() == Color.WHITE) icon = WM;
                 else if(p instanceof Pawn && p.getColor() == Color.BLACK) icon = BP;
                 else if(p instanceof Rook && p.getColor() == Color.BLACK) icon = BR;
                 else if(p instanceof Knight && p.getColor() == Color.BLACK) icon = BN;
                 else if(p instanceof Bishop && p.getColor() == Color.BLACK) icon = BB;
                 else if(p instanceof Queen && p.getColor() == Color.BLACK) icon = BQ;
                 else if(p instanceof King && p.getColor() == Color.BLACK) icon = BK;
+                else if(p instanceof Earl && p.getColor() == Color.BLACK) icon = BE;
+                else if(p instanceof Monk && p.getColor() == Color.BLACK) icon = BM;
                 else if(p == null) icon = blank;
 
                 b.setIcon(icon);

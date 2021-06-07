@@ -238,10 +238,18 @@ public class Move {
         char[] cMove = moveStr.toCharArray();
         //Turn the string into a char array
 
+        if(cMove.length != 4) return null;
+
         move[0] = new Point(cMove[0] - 'a', cMove[1] - '1');
         //Turns the start tile name into a Point
         move[1] = new Point(cMove[2] - 'a', cMove[3] - '1');
         //Turns the end tile name into a Point
+
+        for(Point p : move) {
+
+            if(p.getX() < 0 || p.getX() >= 8 || p.getY() < 0 || p.getY() >= 8) return null;
+
+        }
 
         return move;
         //Return the Point array

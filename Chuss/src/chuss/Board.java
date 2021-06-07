@@ -4,8 +4,8 @@ package chuss;
 //The Board object. Stores all necessary info about the current game.
 
 import chuss.Piece.Color;
-import java.util.ArrayList;
 import java.awt.*;
+import java.util.Random;
 
 public class Board {
 
@@ -28,9 +28,9 @@ public class Board {
     //The side that whose turn it is
     private Point wKingPos, bKingPos;
     //The current coordinates of the white and black Kings
-    private ArrayList<Piece> wPieces, bPieces, aPieces;
+    private ArrList<Piece> wPieces, bPieces, aPieces;
     //A list of the pieces for each side, and another list for all pieces combined
-    private final ArrayList<String> wCaptured, bCaptured;
+    private final ArrList<String> wCaptured, bCaptured;
     //A list of captured pieces for each side
     private Interactable whiteUser, blackUser;
     //The Interactables that are controlling the white and black side
@@ -47,7 +47,7 @@ public class Board {
         //The default constructor for the Board object, creates a board
         //from the standard starting chess layout FEN string.
 
-         this("rnbqkbnr/pppppppp/////PPPPPPPP/RNBQKBNR#00000000000000000000000000000000");
+         this("rnbqkbnr/emppppme/////EMPPPPME/RNBQKBNR#00000000000000000000000000000000#W");
          //Call the FEN constructor with the FEN string for the default chess setup
 
     }
@@ -69,8 +69,8 @@ public class Board {
         //Finds and stores the black King's coordinates
         if(DEBUG) System.out.println("Black King is at [" + bKingPos.x + ", " + bKingPos.y + "]");
         //[DEBUG TEXT] Prints out where the black King is
-        wCaptured = new ArrayList<>();
-        bCaptured = new ArrayList<>();
+        wCaptured = new ArrList<>();
+        bCaptured = new ArrList<>();
         whiteUser = null;
         blackUser = null;
         state = BoardState.NONE;
@@ -116,7 +116,7 @@ public class Board {
 
     }
 
-    public ArrayList<String> getCaptured(Color color) {
+    public ArrList<String> getCaptured(Color color) {
 
         if(color == Color.WHITE) return wCaptured;
         else return bCaptured;
@@ -136,7 +136,7 @@ public class Board {
 
     }
 
-    public ArrayList<Piece> getPieces(Color color) {
+    public ArrList<Piece> getPieces(Color color) {
 
         if(color == Color.WHITE) return wPieces;
         else return bPieces;
@@ -230,10 +230,11 @@ public class Board {
     }
 
     private void updatePiece(Piece piece, boolean remove) {
-        //Update the piece ArrayLists for the given color.
+        //Update the piece ArrList
+        //s for the given color.
         //"remove" tells the function whether to add or remove the piece.
 
-        ArrayList<Piece> pieces = getPieces(piece.getColor());
+        ArrList<Piece> pieces = getPieces(piece.getColor());
 
         if(!remove) {
 
@@ -253,7 +254,7 @@ public class Board {
         //Update the captured pieces for the given color.
         //"remove" tells the function whether to add or remove the capture.
 
-        ArrayList<String> captured = getCaptured(piece.getColor());
+        ArrList<String> captured = getCaptured(piece.getColor());
 
         if(!remove) captured.add(piece.getString());
         else captured.remove(piece.getString());
@@ -273,11 +274,12 @@ public class Board {
         //Splits the FEN string into 2 layers - the basic board layout and the piece data
         char[] fen1Chars = fens[0].toCharArray();
         char[] fen2Chars = fens[1].toCharArray();
+        char[] fen3Chars = fens[2].toCharArray();
         //Create two separate character arrays from the first and second layers of the FEN string
 
-        wPieces = new ArrayList<>();
-        bPieces = new ArrayList<>();
-        aPieces = new ArrayList<>();
+        wPieces = new ArrList<>();
+        bPieces = new ArrList<>();
+        aPieces = new ArrList<>();
         //Either initializes or resets the piece lists for each side and both sides
 
 
@@ -330,9 +332,10 @@ public class Board {
                 fenBoard[x][y] = p;
                 //Set the tile at the current position to the newly created piece
                 aPieces.add(p);
-                //Add the piece to the ArrayList of all pieces
+                //Add the piece to the ArrList
+                //of all pieces
                 updatePiece(p, false);
-                //Add the piece to its respective color ArrayList
+                //Add the piece to its respective color ArrList
                 p.setMoveCount(fen2Chars[dataIndex] - '0');
                 //Set the piece's moveCount to the moveCount contained in the data string
 
@@ -342,6 +345,10 @@ public class Board {
             //Every time the current character has been checked, move over a tile
 
         }
+
+        if(fen3Chars[0] == 'W') turn = Color.WHITE;
+        else turn = Color.BLACK;
+        //Retrieve the current moving color
 
         return fenBoard;
         //Return the new board with the pieces on it
@@ -416,6 +423,13 @@ public class Board {
         for(Piece p : aPieces) fen.append(p.getMoveCount());
         //For all pieces, add their moveCount to the second layer of the FEN string
 
+        fen.append("#");
+        //Add the delimiter to separate layer 2 and 3
+
+        if(turn == Color.WHITE) fen.append("W");
+        else fen.append("B");
+        //Store the current moving color
+
         String fenStr = fen.toString();
 
         if(DEBUG) System.out.println("Generated FEN: " + fenStr);
@@ -428,7 +442,7 @@ public class Board {
     private Point findKing(Color color) {
         //Finds the King of a given color and returns its position on the board in terms of a Point.
 
-        ArrayList<Piece> pieces = getPieces(color);
+        ArrList<Piece> pieces = getPieces(color);
         //Get the list of pieces for the passed color
 
         for(Piece p : pieces) {
@@ -452,7 +466,7 @@ public class Board {
         forceMove(move);
         //Moves the piece to the end position
 
-        ArrayList<Piece> pieces;
+        ArrList<Piece> pieces;
         Point kingPos;
 
         if(turn == Color.WHITE) {
@@ -502,14 +516,14 @@ public class Board {
 
     }
 
-    public ArrayList<Move> getLegalMoves(Color color) {
+    public ArrList<Move> getLegalMoves(Color color) {
         //Create a list of all legal moves on the current board for a given color.
 
-        ArrayList<Piece> checkedPieces = getPieces(color);
+        ArrList<Piece> checkedPieces = getPieces(color);
         //Create a piece array representing either the white or black pieces,
         //depending on the color that is passed in
 
-        ArrayList<Move> legalMoves = new ArrayList<>();
+        ArrList<Move> legalMoves = new ArrList<>();
 
         for(Piece p : checkedPieces)
 
@@ -555,7 +569,21 @@ public class Board {
         //If the King is put in check by this move, throw an IllegalArgument
         //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
 
-        forceMove(move);
+        if(p instanceof Monk && c != null) {
+
+            if(c instanceof King) throw new IllegalArgumentException("Error: Illegal move");
+
+            Random rnd = new Random();
+
+            if(rnd.nextInt(2) == 0) {
+
+                updatePiece(c, true);
+                c.switchColor();
+                updatePiece(c, false);
+
+            }
+
+        } else forceMove(move);
         //Move the piece to the end position
 
         if(p instanceof Pawn) {
@@ -602,7 +630,7 @@ public class Board {
         //Set the tile at the end position to the captured piece in the move
 
         p.setPos(move.getStartPos());
-        //Reset the piece coordinates to its starting postion
+        //Reset the piece coordinates to its starting position
         p.incMoveCount(-1);
         //Subtract 1 from the moveCount of the moved piece
         updateKingPos(p);
@@ -614,7 +642,7 @@ public class Board {
             updatePiece(c, false);
             updateCaptured(c, true);
 
-            //Add the captured piece to its respective capture list and remove it from the piece lists
+            //Add the captured piece to its respective piece lists and remove it from the capture list
 
         }
 
@@ -641,6 +669,8 @@ public class Board {
 
         if(c != null) {
             //If there is a capture
+
+//            System.out.println(p.getString() + c.getString());
 
             updatePiece(c, true);
             updateCaptured(c, false);
