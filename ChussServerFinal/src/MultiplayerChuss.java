@@ -1,7 +1,6 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -32,31 +31,15 @@ public class MultiplayerChuss extends Thread {
             String blackMove = "";
 
             InputStreamReader whiteReader = new InputStreamReader(white.getInputStream());
-            BufferedReader whiteBuffer = new BufferedReader(whiteReader);
             InputStreamReader blackReader = new InputStreamReader(black.getInputStream());
-            BufferedReader blackBuffer = new BufferedReader(blackReader);
-
-            ArrayList<Character> whiteMessage = new ArrayList<>();
-            ArrayList<Character> blackMessage = new ArrayList<>();
-
-            boolean whiteHasBeenPrinted = false;
-            boolean blackHasBeenPrinted = false;
 
             do {
 
+                ArrayList<Character> whiteMessage = new ArrayList<>();
+                ArrayList<Character> blackMessage = new ArrayList<>();
+
                 while(whiteReader.ready()) whiteMessage.add((char) whiteReader.read());
                 while(blackReader.ready()) blackMessage.add((char) blackReader.read());
-
-                if(!whiteMove.equals(String.valueOf(whiteBuffer))) {
-                    whiteMove = String.valueOf(whiteBuffer);
-                    blackOutput.write(whiteMove.getBytes(StandardCharsets.UTF_8));
-                } else{
-                    if(!blackMove.equals(String.valueOf(blackBuffer))) {
-                        blackMove = String.valueOf(blackBuffer);
-                        whiteOutput.write(blackMove.getBytes(StandardCharsets.UTF_8));
-                    }
-
-                }
 
                 Character[] whiteMessageArr = new Character[0];
                 whiteMessageArr = whiteMessage.toArray(whiteMessageArr);
@@ -66,8 +49,14 @@ public class MultiplayerChuss extends Thread {
                 whiteMove = new String(getPrimitiveArray(whiteMessageArr));
                 blackMove = new String(getPrimitiveArray(blackMessageArr));
 
-                if(!whiteMove.equals("") && !whiteHasBeenPrinted) { System.out.println(whiteMove); whiteHasBeenPrinted = true; }
-                if(!blackMove.equals("") && !blackHasBeenPrinted) { System.out.println(blackMove); blackHasBeenPrinted = true; }
+                if(!whiteMove.equals("")) {
+                    System.out.print("White moved:" + whiteMove);
+                    blackOutput.write(whiteMove.getBytes(StandardCharsets.UTF_8));
+                }
+                if(!blackMove.equals("")) {
+                    System.out.print("Black moved:" + blackMove);
+                    whiteOutput.write(blackMove.getBytes(StandardCharsets.UTF_8));
+                }
 
             } while(true);
 
