@@ -224,11 +224,11 @@ public class Move {
     private Point[] interpretMove(String moveStr) {
         //Turns a SMN string into two Points representing the start and end positions of the move.
 
-        if(moveStr.equalsIgnoreCase("CASTLE")) {
-
-
-
-        }
+//        if(moveStr.equalsIgnoreCase("CASTLE")) {
+//
+//
+//
+//        }
 
         Point[] move = new Point[2];
         //Create a move array to return

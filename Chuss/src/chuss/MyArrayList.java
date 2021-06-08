@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MyArrayList<T> {
 
-    private ArrayList<T> data;
+    private final ArrayList<T> data;
 
     public MyArrayList() {
 

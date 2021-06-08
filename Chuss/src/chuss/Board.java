@@ -32,7 +32,7 @@ public class Board {
     //A list of the pieces for each side, and another list for all pieces combined
     private final ArrList<String> wCaptured, bCaptured;
     //A list of captured pieces for each side
-    private Interactable whiteUser, blackUser;
+    private Interactable wUser, bUser;
     //The Interactables that are controlling the white and black side
     private BoardState state;
     //What state the board is in (check, checkmate, etc)
@@ -57,22 +57,21 @@ public class Board {
         //by interpreting a FEN string into a board layout.
 
         turn = Color.WHITE;
-        //Sets the starting turn to white
         board = readFen(fen);
         //Set the board field containing the piece array
         //to the array returned by the FEN interpreter
+
         wKingPos = findKing(Color.WHITE);
-        //Finds and stores the white King's coordinates
         if(DEBUG) System.out.println("White King is at [" + wKingPos.x + ", " + wKingPos.y + "]");
-        //[DEBUG TEXT] Prints out where the white King is
         bKingPos = findKing(Color.BLACK);
-        //Finds and stores the black King's coordinates
         if(DEBUG) System.out.println("Black King is at [" + bKingPos.x + ", " + bKingPos.y + "]");
-        //[DEBUG TEXT] Prints out where the black King is
+
         wCaptured = new ArrList<>();
         bCaptured = new ArrList<>();
-        whiteUser = null;
-        blackUser = null;
+
+        wUser = null;
+        bUser = null;
+
         state = BoardState.NONE;
 
     }
@@ -125,8 +124,8 @@ public class Board {
 
     public Interactable getCurrentUser() {
 
-        if(turn == Color.WHITE) return whiteUser;
-        else return blackUser;
+        if(turn == Color.WHITE) return wUser;
+        else return bUser;
 
     }
 
@@ -145,18 +144,20 @@ public class Board {
 
     private Interactable getUser(Color color) {
 
-        if(color == Color.WHITE) return whiteUser;
-        else return blackUser;
+        if(color == Color.WHITE) return wUser;
+        else return bUser;
 
     }
 
     public int pieceCount() {
+        //Gets the total piece count.
 
         return aPieces.size();
 
     }
 
     public int pieceCount(Color color) {
+        //Gets the amount of pieces for a given side.
 
         return getPieces(color).size();
 
@@ -176,15 +177,15 @@ public class Board {
     //MUTATORS
 
     public void setUser(Interactable user, Color color) {
-        //Set either user based on the Interactable passed in.
+        //Sets either user based on the Interactable passed in.
 
-        if(color == Color.WHITE) whiteUser = user;
-        else blackUser = user;
+        if(color == Color.WHITE) wUser = user;
+        else bUser = user;
 
     }
 
     public void setUsers(Interactable whiteUser, Interactable blackUser) {
-        //Set both users using a function chain.
+        //Sets both users using a function chain.
 
         setUser(whiteUser, Color.WHITE);
         setUser(blackUser, Color.BLACK);
@@ -192,8 +193,8 @@ public class Board {
     }
 
     private void updateKingPos(Piece piece) {
-        //Take a piece and determine if it is a King. If it is,
-        //then change wKingPos or bKingPos accordingly.
+        //Takes a piece and determine if it is a King. If it is,
+        //then changes wKingPos or bKingPos accordingly.
 
         if(piece instanceof King) {
 
@@ -205,7 +206,7 @@ public class Board {
     }
 
     private void findEndGame() {
-        //Check various endgame requirements to see if there is a checkmate or a stalemate.
+        //Checks various endgame requirements to see if there is a checkmate or a stalemate.
 
         int legalMoves = getLegalMoves(turn).size();
 
@@ -221,17 +222,16 @@ public class Board {
         if(pieceCount == 2 ||
                 (pieceCount == 3 && pieceTypeCount(Bishop.class) == 1) ||
                 (pieceCount == 3 && pieceTypeCount(Knight.class) == 1)) state = BoardState.STALEMATE;
-        //Catch "dead positions" where a checkmate cannot physically happen due to insufficient pieces
+        //Catches "dead positions" where a checkmate cannot physically happen due to insufficient pieces
         //TODO: Add 2 Kings, 2 Bishops on same color tile
 
         if(halfMove >= 50) state = BoardState.STALEMATE;
-        //If there has been 50 moves without any captures or pawn moves, stalemate
+        //If there has been 50 moves without any captures or pawn moves, creates a stalemate
 
     }
 
     private void updatePiece(Piece piece, boolean remove) {
-        //Update the piece ArrList
-        //s for the given color.
+        //Updates the piece ArrLists for the given color.
         //"remove" tells the function whether to add or remove the piece.
 
         ArrList<Piece> pieces = getPieces(piece.getColor());
@@ -251,7 +251,7 @@ public class Board {
     }
 
     private void updateCaptured(Piece piece, boolean remove) {
-        //Update the captured pieces for the given color.
+        //Updates the captured pieces for the given color.
         //"remove" tells the function whether to add or remove the capture.
 
         ArrList<String> captured = getCaptured(piece.getColor());
@@ -264,31 +264,27 @@ public class Board {
     //OTHER
 
     private Piece[][] readFen(String fen) {
-        //Take in a FEN string and turns it into a Piece array (board).
+        //Takes in a FEN string and turns it into a Piece array (board).
         //TODO: Add further FEN interpretation layers
 
         Piece[][] fenBoard = new Piece[size][size];
-        //Initialize a board to add pieces to and return
 
         String[] fens = fen.split("#");
-        //Splits the FEN string into 2 layers - the basic board layout and the piece data
+        //Splits the FEN string into 3 layers - the basic board layout, the piece move counts, and the current turn
         char[] fen1Chars = fens[0].toCharArray();
         char[] fen2Chars = fens[1].toCharArray();
         char[] fen3Chars = fens[2].toCharArray();
-        //Create two separate character arrays from the first and second layers of the FEN string
 
         wPieces = new ArrList<>();
         bPieces = new ArrList<>();
         aPieces = new ArrList<>();
         //Either initializes or resets the piece lists for each side and both sides
 
-
         int x = 0;
         int y = tSize;
-        //Start at the top-left corner (0, 7)
+        //Starts at the top-left corner (0, tSize)
 
         int dataIndex = 0;
-        //Save an extra int to get the index of the piece data we want to use
 
         if(DEBUG) System.out.println("Fen: " + fen);
         //[DEBUG TEXT] Print the FEN string
@@ -299,13 +295,13 @@ public class Board {
             Piece p = null;
 
             if(c >= '1' && c <= '9') x += (c - 49);
-                //If c is between num 1 through 8, add num - 1 to the x value
+                //If c is between num 1 through 8, adds num - 1 to the x value
                 //TODO: Remove hard-coded chars?
             else if(c == '/') {
                 x = -1;
-                //Go back to the start of the rank
+                //Goes back to the start of the rank
                 y--;
-                //Go down a rank
+                //Goes down a rank
             }
             else if(c == 'P') p = new Pawn(Color.WHITE, x, y);
             else if(c == 'R') p = new Rook(Color.WHITE, x, y);
@@ -324,42 +320,41 @@ public class Board {
             else if(c == 'e') p = new Earl(Color.BLACK, x, y);
             else if(c == 'm') p = new Monk(Color.BLACK, x, y);
             else throw new IllegalArgumentException("ERROR: Invalid FEN string");
-            //If c is not a recognized character, throw an IllegalArgument
+            //If c is not a recognized character, throws an IllegalArgument
 
             if(p != null) {
                 //If a new piece was created
 
                 fenBoard[x][y] = p;
-                //Set the tile at the current position to the newly created piece
+                //Sets the tile at the current position to the newly created piece
                 aPieces.add(p);
-                //Add the piece to the ArrList
-                //of all pieces
+                //Adds the piece to the ArrList of all pieces
                 updatePiece(p, false);
-                //Add the piece to its respective color ArrList
+                //Adds the piece to its respective color ArrList
                 p.setMoveCount(fen2Chars[dataIndex] - '0');
-                //Set the piece's moveCount to the moveCount contained in the data string
+                //Sets the piece's moveCount to the moveCount contained in the data string
 
             }
 
             x++;
-            //Every time the current character has been checked, move over a tile
+            //Every time the current character has been checked, moves over a tile
 
         }
 
         if(fen3Chars[0] == 'W') turn = Color.WHITE;
-        else turn = Color.BLACK;
-        //Retrieve the current moving color
+        else if(fen3Chars[0] == 'B') turn = Color.BLACK;
+        else throw new IllegalArgumentException("ERROR: Invalid FEN string");
+        //Retrieves the current moving color
 
         return fenBoard;
-        //Return the new board with the pieces on it
+        //Returns the new board with the pieces on it
 
     }
 
     private String generateFen() {
-        //Use the current board to generate a FEN String.
+        //Uses the current board to generate a FEN String.
 
         StringBuilder fen = new StringBuilder();
-        //Create a StringBuilder to add to and return
 
         for(int y = tSize; y >= 0; y--) {
             //Starts at the top of the board and iterates down
@@ -460,8 +455,6 @@ public class Board {
 
     public boolean findCheck(Move move) {
         //Look to see if the King of a given color will be in check at the end of a given move.
-        //TODO: Restructure doMove and findCheck so you can pass a FEN instead of a move to findCheck
-        //Why did I write this? Not sure. Might remember later.
 
         forceMove(move);
         //Moves the piece to the end position
@@ -496,10 +489,10 @@ public class Board {
                 }
 
                 state = BoardState.CHECK;
-                //Set the board state to CHECK if there is a check
+                //Sets the board state to CHECK if there is a check
 
                 forceUndoMove(move);
-                //Undo the move we just did
+                //Reverts the move
 
                 return true;
 
@@ -508,19 +501,18 @@ public class Board {
         }
 
         forceUndoMove(move);
-        //Undo the move we just did
         state = BoardState.NONE;
-        //Set the board state to NONE if there is no check
+        //Sets the board state to NONE if there is no check
 
         return false;
 
     }
 
     public ArrList<Move> getLegalMoves(Color color) {
-        //Create a list of all legal moves on the current board for a given color.
+        //Creates a list of all legal moves on the current board for a given color.
 
         ArrList<Piece> checkedPieces = getPieces(color);
-        //Create a piece array representing either the white or black pieces,
+        //Creates a piece array representing either the white or black pieces,
         //depending on the color that is passed in
 
         ArrList<Move> legalMoves = new ArrList<>();
@@ -557,16 +549,16 @@ public class Board {
         Piece c = move.getCapturedPiece();
 
         if(p == null) throw new IllegalArgumentException("ERROR: No piece at starting position");
-        //If there is no piece at the starting position, throw an Illegal Argument
+        //If there is no piece at the starting position, throws an Illegal Argument
 
         if(DEBUG) System.out.println("Moving piece: " + p.getString());
         //[DEBUG TEXT] Prints the string of the piece being moved
 
         if(!p.isLegal(move)) throw new IllegalArgumentException("ERROR: Illegal move");
-        //If the move is illegal for this piece type, throw an IllegalArgument
+        //If the move is illegal for this piece type, throws an IllegalArgument
 
         if(findCheck(move)) throw new IllegalArgumentException("ERROR: Move cannot result in self-check");
-        //If the King is put in check by this move, throw an IllegalArgument
+        //If the King is put in check by this move, throws an IllegalArgument
         //TODO: Move to isLegal or somewhere where it will be supported by a move sorting algorithm as a base legality check
 
         if(p instanceof Monk && c != null) {
@@ -584,7 +576,7 @@ public class Board {
             }
 
         } else forceMove(move);
-        //Move the piece to the end position
+        //Moves the piece to the end position
 
         if(p instanceof Pawn) {
 
@@ -602,7 +594,7 @@ public class Board {
 
         if(p instanceof Pawn || c != null) halfMove = 0;
         else halfMove++;
-        //Increment halfMove by 1 if there is no piece capture or pawn move, otherwise set to 0
+        //Increments halfMove by 1 if there is no piece capture or pawn move, otherwise set to 0
 
         moves++;
         //Increment the total number of moves

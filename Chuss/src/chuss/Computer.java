@@ -14,7 +14,7 @@ public class Computer implements Interactable {
     private final boolean DEBUG = false;
     //Constant to determine whether [DEBUG TEXT] will be displayed for this class
     private final Board board;
-    //The board that the player is interacting with
+    //The board that the computer is interacting with
     private final Color color;
     //What color this computer is playing
     private Move lastMove;

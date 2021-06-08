@@ -425,12 +425,20 @@ class Earl extends Piece {
         //If the move is universally illegal, return false
 
         boolean c1;
-        //If the move is vertical, horizontal or diagonal and only one tile away
+        //If the move is vertical, horizontal or diagonal and only one or two tiles away
+        boolean c2;
+        //If the move is a valid diagonal capture
 
-        c1 = (move.getAbsX() <= 2 && move.getAbsY() <= 2) && (move.getMoveType() != MoveType.KNIGHT);
-        //Checks if the move is valid for an Earl
+        MoveType moveType = move.getMoveType();
+        boolean isCapture = move.getCapturedPiece() != null;
 
-        return c1;
+        c1 = move.getAbsX() <= 2 && move.getAbsY() <= 2;
+        if(c1) c1 = move.checkPath();
+        c2 = (moveType == MoveType.DIAGONAL && isCapture) ||
+                (moveType == MoveType.VERTICAL && !isCapture) ||
+                (moveType == MoveType.HORIZONTAL && !isCapture);
+
+        return c1 && c2;
 
     }
 
@@ -464,11 +472,13 @@ class Monk extends Piece {
 
         boolean c1;
         //If the move is vertical, horizontal or diagonal and only one tile away
+        boolean c2;
+        //If the move is not trying to convert a King
 
         c1 = move.getAbsX() <= 1 && move.getAbsY() <= 1;
-        //Checks if the move is valid for a Monk
+        c2 = !(move.getCapturedPiece() instanceof King);
 
-        return c1;
+        return c1 && c2;
 
     }
 

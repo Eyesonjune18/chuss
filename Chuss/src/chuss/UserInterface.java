@@ -286,7 +286,6 @@ class CommandInterface extends UserInterface {
         ArrList<String> capturedPieces = board.getCaptured(color);
 
         if(capturedPieces == null) return;
-        System.out.println("Captured piece array size: " + capturedPieces.size());
 
         for(String p : capturedPieces) {
 
@@ -304,7 +303,6 @@ class GraphicInterface {
     private final JPanel gui;
     private final JButton[][] chessBoardSquares;
     private JPanel buttonsAndLabels;
-    private final JLabel message;
     private final String columnNames;
     private final Board board;
     private ImageIcon WP;
@@ -360,7 +358,6 @@ class GraphicInterface {
 
         gui = new JPanel(new BorderLayout(3, 3));
         chessBoardSquares = new JButton[8][8];
-        message = new JLabel("Chuss Champ is ready to play!");
         columnNames = "ABCDEFGH";
 
         initializeGui();
@@ -379,7 +376,6 @@ class GraphicInterface {
         tools.addSeparator();
         tools.add(new JButton("Resign")); // TODO - add functionality!
         tools.addSeparator();
-        tools.add(message);
 
         gui.add(new JLabel("?"), BorderLayout.LINE_START);
         // create the chess board squares
