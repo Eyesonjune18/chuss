@@ -49,7 +49,7 @@ public abstract class Piece {
     //The string representing the type of piece
     protected Point pos;
     //The position of the piece on the board
-    protected final Color color;
+    protected Color color;
     //The color of the piece
 
     //CONSTRUCTORS
@@ -105,6 +105,17 @@ public abstract class Piece {
     public void setPos(Point pos) {
 
         this.pos = pos;
+
+    }
+
+    public void switchColor() {
+
+        color = color.getOther();
+
+        System.out.println("String: " + pString + " Uppercase: " + pString.toUpperCase());
+
+        if(pString.toUpperCase().equals(pString)) pString = pString.toLowerCase();
+        else pString = pString.toUpperCase();
 
     }
 
@@ -182,7 +193,7 @@ class Pawn extends Piece {
         if(absX == 0 && delY == 1 && move.getCapturedPiece() == null) c1 = true;
         if(absX == 0 && delY == 2 && move.getCapturedPiece() == null && moveCount == 0 &&
                 move.getMoveBoard().pieceAt(move.getStartX(), move.getStartY() + colorMod) == null) c2 = true;
-        //TODO: Absolutely disgusting conditional above, must fix (possibly keep the "next square" as a field for pawns?)
+
         if(absX == 1 && delY == 1 && move.getCapturedPiece() != null) {
 
             if(move.getCapturedPiece().getColor() != color) c3 = true;
@@ -379,10 +390,7 @@ class King extends Piece {
         boolean c1;
         //If the move is vertical, horizontal or diagonal and only one tile away
 
-        c1 = (move.getMoveType() == MoveType.HORIZONTAL ||
-                move.getMoveType() == MoveType.VERTICAL ||
-                move.getMoveType() == MoveType.DIAGONAL) &&
-                (move.getAbsX() <= 1 && move.getAbsY() <= 1);
+        c1 = move.getAbsX() <= 1 && move.getAbsY() <= 1;
         //Checks if the move is valid for a King
 
         return c1;
@@ -408,6 +416,32 @@ class Earl extends Piece {
 
     }
 
+    //OTHER
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1;
+        //If the move is vertical, horizontal or diagonal and only one or two tiles away
+        boolean c2;
+        //If the move is a valid diagonal capture
+
+        MoveType moveType = move.getMoveType();
+        boolean isCapture = move.getCapturedPiece() != null;
+
+        c1 = move.getAbsX() <= 2 && move.getAbsY() <= 2;
+        if(c1) c1 = move.checkPath();
+        c2 = (moveType == MoveType.DIAGONAL && isCapture) ||
+                (moveType == MoveType.VERTICAL && !isCapture) ||
+                (moveType == MoveType.HORIZONTAL && !isCapture);
+
+        return c1 && c2;
+
+    }
+
 }
 
 class Monk extends Piece {
@@ -425,6 +459,26 @@ class Monk extends Piece {
         super(color, new Point(x, y));
         if(color == Color.WHITE) pString = "M";
         if(color == Color.BLACK) pString = "m";
+
+    }
+
+    //OTHER
+
+    @Override
+    public boolean isLegal(Move move) {
+
+        if(!super.isLegal(move)) return false;
+        //If the move is universally illegal, return false
+
+        boolean c1;
+        //If the move is vertical, horizontal or diagonal and only one tile away
+        boolean c2;
+        //If the move is not trying to convert a King
+
+        c1 = move.getAbsX() <= 1 && move.getAbsY() <= 1;
+        c2 = !(move.getCapturedPiece() instanceof King);
+
+        return c1 && c2;
 
     }
 
