@@ -76,13 +76,12 @@ class CommandInterface extends UserInterface {
 
                 try {
 
-//                    System.out.println("Press enter to move");
-//                    String s = input.nextLine();
-
-                    board.doMove(board.getCurrentUser().getMove());
+                    Move move = board.getCurrentUser().getMove();
+                    board.doMove(move);
+                    if(board.getCurrentUser() instanceof OtherPlayer) Client.sendMove(move.toString());
                     illegalMove = false;
 
-                } catch(IllegalArgumentException e) {
+                } catch(IllegalArgumentException | IOException e) {
 
                     System.out.println(e.getMessage());
                     illegalMove = true;

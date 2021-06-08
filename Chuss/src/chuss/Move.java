@@ -322,4 +322,20 @@ public class Move {
 
     }
 
+    public String toString() {
+
+        StringBuilder moveStr = new StringBuilder();
+
+        moveStr.append((char) (getStartX() + 'a'));
+        moveStr.append(getStartY() + 1);
+        moveStr.append(' ');
+        moveStr.append((char) (getEndX() + 'a'));
+        moveStr.append(getEndY() + 1);
+
+        System.out.println(moveStr);
+
+        return moveStr.toString();
+
+    }
+
 }
