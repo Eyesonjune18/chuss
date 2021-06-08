@@ -26,15 +26,18 @@ public class Client {
         System.out.println("You Said: " + myMove);
 
         //myMove = "YOUR_STRING_HERE";
+        theirMove = "";
 
         myMoveStream.write(myMove.getBytes(Charset.forName("UTF-8")));
-        String bufferLine = null;
+        String bufferLine = "";
+        System.out.println("something");
         do {
             bufferLine = theirBuffer.readLine();
+            System.out.println("Buffer Line:");
             if(theirMoveStream != null){
-                theirMove = theirBuffer.readLine();
+                theirMove = bufferLine;
             }
-        } while(!theirMove.equals(bufferLine));
+        } while(!theirMove.equals(bufferLine) && bufferLine != null);
         System.out.println("They Said: " + theirMove);
     }
 }
